@@ -13,11 +13,19 @@
 
 @implementation Faire (methods)
 
-@dynamic defaultContext;
+static NSManagedObjectContext *context;
 
 + (Faire *)currentFaire
 {
-    return nil;
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Faire"];
+    
+    NSPredicate *currentPredicate = [NSPredicate predicateWithFormat:@"current == YES"];
+    
+    [request setPredicate:currentPredicate];
+    
+    Faire *current = [[[Faire defaultContext] executeFetchRequest:request error:nil] firstObject];
+    
+    return current;
 }
 
 + (void)updateFaire
@@ -26,17 +34,14 @@
     [Event updateEvents];
 }
 
-- (NSManagedObjectContext *)defaultContext
++ (NSManagedObjectContext *)defaultContext
 {
-    if (self.defaultContext == nil)
+    if (context == nil)
     {
-        NSManagedObjectContext *context = nil;
-        
         AppDelegate *del = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         context = [del managedObjectContext];
-        self.defaultContext = context;
     }
     
-    return self.defaultContext;
+    return context;
 }
 @end

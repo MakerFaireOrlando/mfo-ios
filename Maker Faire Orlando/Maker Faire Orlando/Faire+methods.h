@@ -14,6 +14,6 @@
 
 + (void)updateFaire;
 
-@property (weak, nonatomic) NSManagedObjectContext *defaultContext;
++ (NSManagedObjectContext *)defaultContext;
 
 @end

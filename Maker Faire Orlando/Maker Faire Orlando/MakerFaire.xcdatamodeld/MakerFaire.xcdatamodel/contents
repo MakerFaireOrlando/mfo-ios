@@ -11,6 +11,7 @@
     <entity name="Faire" representedClassName="Faire" syncable="YES">
         <attribute name="aboutURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="attendURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="current" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="sponsorURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
         <attribute name="volunteerURL" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,6 +24,7 @@
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="makerName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="organization" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="projectName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="videoURL" optional="YES" attributeType="String" syncable="YES"/>
@@ -36,9 +38,9 @@
         <relationship name="maker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Maker" inverseName="photos" inverseEntity="Maker" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Maker" positionX="-63" positionY="-18" width="128" height="208"/>
+        <element name="Maker" positionX="-63" positionY="-18" width="128" height="223"/>
         <element name="Event" positionX="-54" positionY="-9" width="128" height="133"/>
-        <element name="Faire" positionX="-36" positionY="9" width="128" height="148"/>
+        <element name="Faire" positionX="-36" positionY="9" width="128" height="163"/>
         <element name="Photo" positionX="-9" positionY="90" width="128" height="88"/>
     </elements>
 </model>
