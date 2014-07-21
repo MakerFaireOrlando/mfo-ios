@@ -14,5 +14,7 @@
 #define kEventsFailed @"com.makerfaireorlando.mfo.eventsfailedtoarrive"
 
 + (void)updateEvents;
++ (void)murderEvents;
++ (void)parseEventsWithArray:(NSArray *)events;
 
 @end

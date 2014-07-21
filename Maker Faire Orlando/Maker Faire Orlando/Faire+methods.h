@@ -14,6 +14,4 @@
 
 + (void)updateFaire;
 
-+ (NSManagedObjectContext *)defaultContext;
-
 @end

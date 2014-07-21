@@ -10,6 +10,7 @@
 #import "DataManager.h"
 #import "Faire+methods.h"
 #import "Photo.h"
+#import "NSManagedObject+methods.h"
 
 #define kMakersURL @"http://callformakers.org/orlando2014/default/overviewALL.json/raw"
 
@@ -34,29 +35,7 @@
 
 + (void)murderMakers
 {
-    NSManagedObjectContext *context = [Faire defaultContext];
-    
-    NSFetchRequest *allMakers = [[NSFetchRequest alloc] initWithEntityName:@"Maker"];
-    [allMakers setIncludesPropertyValues:NO];
-    
-    NSError *error = nil;
-    
-    NSArray *makers = [context executeFetchRequest:allMakers
-                                             error:&error];
-    
-    for (Maker *maker in makers)
-    {
-        [context deleteObject:maker];
-    }
-    
-    error = nil;
-    
-    [context save:&error];
-    
-    if (error)
-    {
-        NSLog(@"murder error: %@", error);
-    }
+    [Maker murderTableWithEntityName:@"Maker"];
 }
 
 void (^makersDownloadResponse)(NSData *, NSURLResponse*, NSError*) = ^(NSData *data,NSURLResponse *response, NSError *error)
@@ -73,7 +52,7 @@ void (^makersDownloadResponse)(NSData *, NSURLResponse*, NSError*) = ^(NSData *d
         
         [Maker murderMakers];
         
-        NSManagedObjectContext *context = [Faire defaultContext];
+        NSManagedObjectContext *context = [Maker defaultContext];
         
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         

@@ -7,13 +7,11 @@
 //
 
 #import "Faire+methods.h"
-#import "AppDelegate.h"
 #import "Maker+methods.h"
 #import "Event+methods.h"
+#import "NSManagedObject+methods.h"
 
 @implementation Faire (methods)
-
-static NSManagedObjectContext *context;
 
 + (Faire *)currentFaire
 {
@@ -34,14 +32,4 @@ static NSManagedObjectContext *context;
     [Event updateEvents];
 }
 
-+ (NSManagedObjectContext *)defaultContext
-{
-    if (context == nil)
-    {
-        AppDelegate *del = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        context = [del managedObjectContext];
-    }
-    
-    return context;
-}
 @end
