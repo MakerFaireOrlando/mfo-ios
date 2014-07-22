@@ -22,6 +22,18 @@
 		11937F951976307D00D587F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F741976307D00D587F8 /* UIKit.framework */; };
 		11937F9D1976307D00D587F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11937F9B1976307D00D587F8 /* InfoPlist.strings */; };
 		11937F9F1976307D00D587F8 /* Maker_Faire_OrlandoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11937F9E1976307D00D587F8 /* Maker_Faire_OrlandoTests.m */; };
+		251FD1641978A56A0021F750 /* makerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 251FD1631978A56A0021F750 /* makerTableViewCell.m */; };
+		2559B5071979BE500039C17F /* NSManagedObject+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559B5061979BE500039C17F /* NSManagedObject+methods.m */; };
+		25A7AC45197D80E300C193FC /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A7AC44197D80E300C193FC /* EventTableViewCell.m */; };
+		25A86CB2197721EB00B45778 /* MakerFaire.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CB0197721EB00B45778 /* MakerFaire.xcdatamodeld */; };
+		25A86CB61977284800B45778 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CB51977284800B45778 /* Photo.m */; };
+		25A86CBF1977284900B45778 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CBE1977284900B45778 /* Event.m */; };
+		25A86CC21977289600B45778 /* Faire+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CC11977289600B45778 /* Faire+methods.m */; };
+		25A86CC519772B0500B45778 /* Event+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CC419772B0500B45778 /* Event+methods.m */; };
+		25A86CC819772B1F00B45778 /* Maker+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CC719772B1F00B45778 /* Maker+methods.m */; };
+		25A86CCB19786DD000B45778 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CCA19786DD000B45778 /* DataManager.m */; };
+		25A86CCE19787B5600B45778 /* Faire.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CCD19787B5600B45778 /* Faire.m */; };
+		25A86CD1197893AA00B45778 /* Maker.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CD0197893AA00B45778 /* Maker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +68,29 @@
 		11937F9A1976307D00D587F8 /* Maker Faire OrlandoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Maker Faire OrlandoTests-Info.plist"; sourceTree = "<group>"; };
 		11937F9C1976307D00D587F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		11937F9E1976307D00D587F8 /* Maker_Faire_OrlandoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Maker_Faire_OrlandoTests.m; sourceTree = "<group>"; };
+		251FD1621978A56A0021F750 /* makerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = makerTableViewCell.h; sourceTree = "<group>"; };
+		251FD1631978A56A0021F750 /* makerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = makerTableViewCell.m; sourceTree = "<group>"; };
+		2559B5051979BE500039C17F /* NSManagedObject+methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+methods.h"; sourceTree = "<group>"; };
+		2559B5061979BE500039C17F /* NSManagedObject+methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+methods.m"; sourceTree = "<group>"; };
+		25A7AC43197D80E200C193FC /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
+		25A7AC44197D80E300C193FC /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
+		25A86CB1197721EB00B45778 /* MakerFaire.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MakerFaire.xcdatamodel; sourceTree = "<group>"; };
+		25A86CB41977284800B45778 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		25A86CB51977284800B45778 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		25A86CBD1977284900B45778 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		25A86CBE1977284900B45778 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		25A86CC01977289600B45778 /* Faire+methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Faire+methods.h"; sourceTree = "<group>"; };
+		25A86CC11977289600B45778 /* Faire+methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Faire+methods.m"; sourceTree = "<group>"; };
+		25A86CC319772B0500B45778 /* Event+methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+methods.h"; sourceTree = "<group>"; };
+		25A86CC419772B0500B45778 /* Event+methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+methods.m"; sourceTree = "<group>"; };
+		25A86CC619772B1F00B45778 /* Maker+methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Maker+methods.h"; sourceTree = "<group>"; };
+		25A86CC719772B1F00B45778 /* Maker+methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Maker+methods.m"; sourceTree = "<group>"; };
+		25A86CC919786DD000B45778 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		25A86CCA19786DD000B45778 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		25A86CCC19787B5600B45778 /* Faire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faire.h; sourceTree = "<group>"; };
+		25A86CCD19787B5600B45778 /* Faire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faire.m; sourceTree = "<group>"; };
+		25A86CCF197893AA00B45778 /* Maker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maker.h; sourceTree = "<group>"; };
+		25A86CD0197893AA00B45778 /* Maker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Maker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,15 +150,25 @@
 		11937F761976307D00D587F8 /* Maker Faire Orlando */ = {
 			isa = PBXGroup;
 			children = (
+				2559B5051979BE500039C17F /* NSManagedObject+methods.h */,
+				2559B5061979BE500039C17F /* NSManagedObject+methods.m */,
+				25A86CB31977282B00B45778 /* Models */,
 				11937F7F1976307D00D587F8 /* AppDelegate.h */,
 				11937F801976307D00D587F8 /* AppDelegate.m */,
 				11937F821976307D00D587F8 /* Main.storyboard */,
+				251FD1621978A56A0021F750 /* makerTableViewCell.h */,
+				251FD1631978A56A0021F750 /* makerTableViewCell.m */,
 				11937F851976307D00D587F8 /* MakerViewController.h */,
 				11937F861976307D00D587F8 /* MakerViewController.m */,
 				11937F881976307D00D587F8 /* EventViewController.h */,
 				11937F891976307D00D587F8 /* EventViewController.m */,
+				25A7AC43197D80E200C193FC /* EventTableViewCell.h */,
+				25A7AC44197D80E300C193FC /* EventTableViewCell.m */,
 				11937F8B1976307D00D587F8 /* Images.xcassets */,
 				11937F771976307D00D587F8 /* Supporting Files */,
+				25A86CB0197721EB00B45778 /* MakerFaire.xcdatamodeld */,
+				25A86CC919786DD000B45778 /* DataManager.h */,
+				25A86CCA19786DD000B45778 /* DataManager.m */,
 			);
 			path = "Maker Faire Orlando";
 			sourceTree = "<group>";
@@ -155,6 +200,27 @@
 				11937F9B1976307D00D587F8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25A86CB31977282B00B45778 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				25A86CCF197893AA00B45778 /* Maker.h */,
+				25A86CD0197893AA00B45778 /* Maker.m */,
+				25A86CCC19787B5600B45778 /* Faire.h */,
+				25A86CCD19787B5600B45778 /* Faire.m */,
+				25A86CBD1977284900B45778 /* Event.h */,
+				25A86CC319772B0500B45778 /* Event+methods.h */,
+				25A86CC419772B0500B45778 /* Event+methods.m */,
+				25A86CBE1977284900B45778 /* Event.m */,
+				25A86CC619772B1F00B45778 /* Maker+methods.h */,
+				25A86CC719772B1F00B45778 /* Maker+methods.m */,
+				25A86CC01977289600B45778 /* Faire+methods.h */,
+				25A86CC11977289600B45778 /* Faire+methods.m */,
+				25A86CB41977284800B45778 /* Photo.h */,
+				25A86CB51977284800B45778 /* Photo.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,8 +320,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25A86CC519772B0500B45778 /* Event+methods.m in Sources */,
+				25A86CB61977284800B45778 /* Photo.m in Sources */,
 				11937F8A1976307D00D587F8 /* EventViewController.m in Sources */,
+				25A86CBF1977284900B45778 /* Event.m in Sources */,
+				25A7AC45197D80E300C193FC /* EventTableViewCell.m in Sources */,
+				251FD1641978A56A0021F750 /* makerTableViewCell.m in Sources */,
+				25A86CCE19787B5600B45778 /* Faire.m in Sources */,
+				25A86CD1197893AA00B45778 /* Maker.m in Sources */,
+				25A86CC21977289600B45778 /* Faire+methods.m in Sources */,
+				25A86CCB19786DD000B45778 /* DataManager.m in Sources */,
+				25A86CB2197721EB00B45778 /* MakerFaire.xcdatamodeld in Sources */,
 				11937F811976307D00D587F8 /* AppDelegate.m in Sources */,
+				25A86CC819772B1F00B45778 /* Maker+methods.m in Sources */,
+				2559B5071979BE500039C17F /* NSManagedObject+methods.m in Sources */,
 				11937F871976307D00D587F8 /* MakerViewController.m in Sources */,
 				11937F7D1976307D00D587F8 /* main.m in Sources */,
 			);
@@ -462,6 +540,7 @@
 				11937FA41976307D00D587F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		11937FA51976307D00D587F8 /* Build configuration list for PBXNativeTarget "Maker Faire OrlandoTests" */ = {
 			isa = XCConfigurationList;
@@ -470,8 +549,22 @@
 				11937FA71976307D00D587F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		25A86CB0197721EB00B45778 /* MakerFaire.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				25A86CB1197721EB00B45778 /* MakerFaire.xcdatamodel */,
+			);
+			currentVersion = 25A86CB1197721EB00B45778 /* MakerFaire.xcdatamodel */;
+			path = MakerFaire.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 11937F651976307D00D587F8 /* Project object */;
 }

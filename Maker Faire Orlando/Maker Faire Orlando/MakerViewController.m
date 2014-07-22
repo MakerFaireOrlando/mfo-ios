@@ -7,24 +7,94 @@
 //
 
 #import "MakerViewController.h"
+#import "AppDelegate.h"
+#import "Faire+methods.h"
+#import "Maker+methods.h"
+#import "makerTableViewCell.h"
 
 @interface MakerViewController ()
+@property (strong, nonatomic) IBOutlet UITableView *tableview;
 
+@property (strong, nonatomic) NSArray *makers;
+
+@property (weak, nonatomic) NSManagedObjectContext *context;
 @end
 
 @implementation MakerViewController
 
+@synthesize tableview = _tableview;
+@synthesize makers = _makers;
+@synthesize context = _context;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(finishRefresh)
+                                                     name:kMakersArrived
+                                                   object:nil];
+    
+    AppDelegate *del = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    _context = [del managedObjectContext];
+	
+    [self attemptRefresh];
+    
+    _makers = nil;
+    
+    [self fillMakers];
+}
+
+- (void)fillMakers
+{
+    NSFetchRequest *makersFetch = [[NSFetchRequest alloc] initWithEntityName:@"Maker"];
+    
+    NSSortDescriptor *sortByName = [[NSSortDescriptor alloc] initWithKey:@"title"
+                                                               ascending:YES];
+    [makersFetch setSortDescriptors:@[sortByName]];
+    
+    NSError *fetchError = nil;
+    
+    _makers = [_context executeFetchRequest:makersFetch error:&fetchError];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)attemptRefresh
+{
+    [Faire updateFaire];
+}
+
+- (void)finishRefresh
+{
+    [self fillMakers];
+    [_tableview reloadData];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _makers.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    makerTableViewCell *cell = (makerTableViewCell *)[_tableview dequeueReusableCellWithIdentifier:@"tempMakerCell"];
+    
+    Maker *cellMaker = [_makers objectAtIndex:indexPath.item];
+    
+    [cell.tempLabel setText:cellMaker.projectName];
+    
+    return cell;
 }
 
 @end
