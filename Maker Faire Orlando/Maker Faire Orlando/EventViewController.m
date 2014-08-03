@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Event+methods.h"
 #import "EventTableViewCell.h"
+#import "EventDetailViewController.h"
 
 @interface EventViewController ()
 
@@ -86,9 +87,18 @@
     
     Event *event = [_events objectAtIndex:indexPath.item];
     
-    [cell.tempLabel setText:event.summary];
+    [cell.textLabel setText:event.summary];
+    [cell.detailTextLabel setText:event.location];
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    int index = [[_tableView indexPathForSelectedRow] row];
+    EventDetailViewController *detailViewController = (EventDetailViewController*)[segue destinationViewController];
+    Event *event = [_events objectAtIndex:index];
+    [detailViewController setEvent:event];
 }
 
 @end

@@ -11,6 +11,7 @@
 #import "Faire+methods.h"
 #import "Maker+methods.h"
 #import "makerTableViewCell.h"
+#import "MakerDetailViewController.h"
 
 @interface MakerViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
@@ -92,9 +93,22 @@
     
     Maker *cellMaker = [_makers objectAtIndex:indexPath.item];
     
-    [cell.tempLabel setText:cellMaker.projectName];
+    [cell.textLabel setText:cellMaker.projectName];
+    [cell.detailTextLabel setText:cellMaker.location];
+    
     
     return cell;
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    int index = [[_tableview indexPathForSelectedRow] row];
+    MakerDetailViewController *detailViewController = (MakerDetailViewController*)[segue destinationViewController];
+    NSLog(@"Count: %@", [_makers[index] projectName]);
+    Maker *maker = [_makers objectAtIndex:index];
+    [detailViewController setMaker:maker];
+}
+
 
 @end
