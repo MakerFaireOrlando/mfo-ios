@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1145C1EF198752AA00AE013D /* MakerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1145C1EE198752AA00AE013D /* MakerDetailViewController.m */; };
+		115475361987735300620F0F /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115475351987735300620F0F /* EventDetailViewController.m */; };
 		11937F711976307D00D587F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F701976307D00D587F8 /* Foundation.framework */; };
 		11937F731976307D00D587F8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F721976307D00D587F8 /* CoreGraphics.framework */; };
 		11937F751976307D00D587F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F741976307D00D587F8 /* UIKit.framework */; };
@@ -47,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1145C1ED198752AA00AE013D /* MakerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakerDetailViewController.h; sourceTree = "<group>"; };
+		1145C1EE198752AA00AE013D /* MakerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakerDetailViewController.m; sourceTree = "<group>"; };
+		115475341987735300620F0F /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
+		115475351987735300620F0F /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
 		11937F6D1976307D00D587F8 /* Maker Faire Orlando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Maker Faire Orlando.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11937F701976307D00D587F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		11937F721976307D00D587F8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -169,6 +175,10 @@
 				25A86CB0197721EB00B45778 /* MakerFaire.xcdatamodeld */,
 				25A86CC919786DD000B45778 /* DataManager.h */,
 				25A86CCA19786DD000B45778 /* DataManager.m */,
+				1145C1ED198752AA00AE013D /* MakerDetailViewController.h */,
+				1145C1EE198752AA00AE013D /* MakerDetailViewController.m */,
+				115475341987735300620F0F /* EventDetailViewController.h */,
+				115475351987735300620F0F /* EventDetailViewController.m */,
 			);
 			path = "Maker Faire Orlando";
 			sourceTree = "<group>";
@@ -320,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				115475361987735300620F0F /* EventDetailViewController.m in Sources */,
 				25A86CC519772B0500B45778 /* Event+methods.m in Sources */,
 				25A86CB61977284800B45778 /* Photo.m in Sources */,
 				11937F8A1976307D00D587F8 /* EventViewController.m in Sources */,
@@ -328,6 +339,7 @@
 				251FD1641978A56A0021F750 /* makerTableViewCell.m in Sources */,
 				25A86CCE19787B5600B45778 /* Faire.m in Sources */,
 				25A86CD1197893AA00B45778 /* Maker.m in Sources */,
+				1145C1EF198752AA00AE013D /* MakerDetailViewController.m in Sources */,
 				25A86CC21977289600B45778 /* Faire+methods.m in Sources */,
 				25A86CCB19786DD000B45778 /* DataManager.m in Sources */,
 				25A86CB2197721EB00B45778 /* MakerFaire.xcdatamodeld in Sources */,

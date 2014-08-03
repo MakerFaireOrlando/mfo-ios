@@ -18,5 +18,6 @@
 @dynamic summary;
 @dynamic location;
 @dynamic faire;
+@dynamic descript;
 
 @end

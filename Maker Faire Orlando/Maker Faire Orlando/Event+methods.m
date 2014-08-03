@@ -110,6 +110,14 @@ void (^eventsDownloadResponse)(NSData *, NSURLResponse *, NSError *) = ^(NSData 
         {
             [newEvent setSummary:summary];
         }
+        
+    
+        NSString *descript = [event objectForKey:@"description"];
+        if(descript != nil && ![descript isEqualToString:@""])
+        {
+            [newEvent setDescript:descript];
+        }
+       
     }
     [context save:nil];
 }

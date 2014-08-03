@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="14A283o" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="14A298i" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="descript" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="duration" optional="YES" transient="YES" attributeType="Integer 64" minValueString="0" defaultValueString="0" syncable="YES"/>
         <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
@@ -38,9 +39,9 @@
         <relationship name="maker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Maker" inverseName="photos" inverseEntity="Maker" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Maker" positionX="-63" positionY="-18" width="128" height="223"/>
-        <element name="Event" positionX="-54" positionY="-9" width="128" height="133"/>
+        <element name="Event" positionX="-54" positionY="-9" width="128" height="148"/>
         <element name="Faire" positionX="-36" positionY="9" width="128" height="163"/>
+        <element name="Maker" positionX="-63" positionY="-18" width="128" height="223"/>
         <element name="Photo" positionX="-9" positionY="90" width="128" height="88"/>
     </elements>
 </model>
