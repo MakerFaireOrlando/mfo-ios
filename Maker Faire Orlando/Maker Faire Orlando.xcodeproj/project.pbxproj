@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112CE7B8198F11E900BE0BC5 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115475351987735300620F0F /* EventDetailViewController.m */; };
 		1145C1EF198752AA00AE013D /* MakerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1145C1EE198752AA00AE013D /* MakerDetailViewController.m */; };
-		115475361987735300620F0F /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115475351987735300620F0F /* EventDetailViewController.m */; };
 		11937F711976307D00D587F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F701976307D00D587F8 /* Foundation.framework */; };
 		11937F731976307D00D587F8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F721976307D00D587F8 /* CoreGraphics.framework */; };
 		11937F751976307D00D587F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F741976307D00D587F8 /* UIKit.framework */; };
@@ -330,7 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				115475361987735300620F0F /* EventDetailViewController.m in Sources */,
+				112CE7B8198F11E900BE0BC5 /* EventDetailViewController.m in Sources */,
 				25A86CC519772B0500B45778 /* Event+methods.m in Sources */,
 				25A86CB61977284800B45778 /* Photo.m in Sources */,
 				11937F8A1976307D00D587F8 /* EventViewController.m in Sources */,

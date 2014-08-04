@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *eventTitle;
 @property (weak, nonatomic) IBOutlet UILabel *eventLocation;
 @property (weak, nonatomic) IBOutlet UITextView *eventDescription;
+@property (weak, nonatomic) IBOutlet UILabel *eventStartTime;
+@property (weak, nonatomic) IBOutlet UILabel *eventEndTime;
 
 @end
 
@@ -24,6 +26,18 @@
     [_eventTitle setText:[_event summary]];
     [_eventLocation setText:[_event location]];
     [_eventDescription setText:[_event descript]];
+    
+    NSLocale *locale = [NSLocale currentLocale];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSString *dateFormat = [NSDateFormatter dateFormatFromTemplate:@"MM-dd HH:mm" options:0 locale:locale];
+    [formatter setDateFormat:dateFormat];
+    [formatter setLocale:locale];
+    
+    NSString *start = [formatter stringFromDate:_event.startTime];
+    NSString *end = [formatter stringFromDate:_event.endTime];
+    
+    [_eventStartTime setText:start];
+    [_eventEndTime setText:end];
 }
 
 - (void)viewDidLoad
