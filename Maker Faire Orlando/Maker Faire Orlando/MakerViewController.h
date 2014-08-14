@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MakerViewController : UITableViewController
-
-
+@interface MakerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
