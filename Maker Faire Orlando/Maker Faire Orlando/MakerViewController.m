@@ -103,7 +103,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    int index = [[_tableview indexPathForSelectedRow] row];
+    NSInteger index = [[_tableview indexPathForSelectedRow] row];
     MakerDetailViewController *detailViewController = (MakerDetailViewController*)[segue destinationViewController];
     NSLog(@"Count: %@", [_makers[index] projectName]);
     Maker *maker = [_makers objectAtIndex:index];

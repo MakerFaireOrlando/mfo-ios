@@ -96,7 +96,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    int index = [[_tableView indexPathForSelectedRow] row];
+    NSInteger index = [[_tableView indexPathForSelectedRow] row];
     EventDetailViewController *detailViewController = (EventDetailViewController*)[segue destinationViewController];
     Event *event = [_events objectAtIndex:index];
     [detailViewController setEvent:event];
