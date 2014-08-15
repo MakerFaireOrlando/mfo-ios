@@ -17,6 +17,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 
 @property (strong, nonatomic) NSArray *makers;
+@property (strong, nonatomic) NSMutableArray *filteredMakers;
+@property (weak, nonatomic) IBOutlet UISearchBar *makerSearchBar;
 
 @property (weak, nonatomic) NSManagedObjectContext *context;
 @end
@@ -83,7 +85,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _makers.count;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [_filteredMakers count];
+    } else {
+        return [_makers count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -91,7 +97,13 @@
 {
     makerTableViewCell *cell = (makerTableViewCell *)[_tableview dequeueReusableCellWithIdentifier:@"tempMakerCell"];
     
-    Maker *cellMaker = [_makers objectAtIndex:indexPath.item];
+    Maker *cellMaker;
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        cellMaker = [_filteredMakers objectAtIndex:indexPath.row];
+    } else {
+        cellMaker = [_makers objectAtIndex:indexPath.row];
+    }
     
     [cell.textLabel setText:cellMaker.projectName];
     [cell.detailTextLabel setText:cellMaker.location];
@@ -103,11 +115,45 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSInteger index = [[_tableview indexPathForSelectedRow] row];
     MakerDetailViewController *detailViewController = (MakerDetailViewController*)[segue destinationViewController];
-    NSLog(@"Count: %@", [_makers[index] projectName]);
-    Maker *maker = [_makers objectAtIndex:index];
+    
+    Maker *maker = nil;
+    if(self.searchDisplayController.active) {
+        NSInteger row = [[self.searchDisplayController.searchResultsTableView indexPathForSelectedRow] row];
+        maker = [_filteredMakers objectAtIndex:row];
+    }
+    else {
+        NSInteger row = [[_tableview indexPathForSelectedRow] row];
+        maker = [_makers objectAtIndex:row];
+    }
+    
     [detailViewController setMaker:maker];
+}
+
+#pragma mark Content Filtering
+-(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
+    // clear filter array
+    [_filteredMakers removeAllObjects];
+    // Filter the array
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.projectName contains[c] %@",searchText];
+    _filteredMakers = [NSMutableArray arrayWithArray:[_makers filteredArrayUsingPredicate:predicate]];
+}
+
+#pragma mark - UISearchDisplayController Delegate Methods
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    // should reload on change
+    [self filterContentForSearchText:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    // Return YES to reload table view
+    return YES;
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+    // Tells the table data source to reload when text changes
+    [self filterContentForSearchText:self.searchDisplayController.searchBar.text scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    // Return YES to reload table view
+    return YES;
 }
 
 
