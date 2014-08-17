@@ -51,7 +51,7 @@
     NSLog(@"stores: %@", stores);
     
     
-    (XCTAssertGreaterThan([stores count], 0));
+    XCTAssertTrue(([stores count] > 0), @"No Persistent Store found.");
     
     _storeCoord = storeCoord;
 }
