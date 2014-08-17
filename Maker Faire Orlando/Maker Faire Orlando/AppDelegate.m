@@ -16,9 +16,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self.window setTintColor:[UIColor redColor]];
-    
+//    [self.window setTintColor:[UIColor redColor]];
+    [self setupAppearance];
     return YES;
+}
+
+- (void)setupAppearance
+{
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent
+                                                animated:YES];
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor makerBlue]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
+    [[UITabBar appearance] setBarTintColor:[UIColor makerBlue]];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    //TODO: Uncomment when iOS8 launches
+//    [[UITabBar appearance] setTranslucent:YES];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor makerRed]}
+                                             forState:UIControlStateDisabled];
+    
+    [[UITableView appearance] setBackgroundColor:[UIColor lightTextColor]];
+
+    [[UILabel appearance] setTintColor:[UIColor makerRed]];
+    
+    //[self.window setTintColor:[UIColor makerRed]];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

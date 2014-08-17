@@ -35,10 +35,10 @@
 {
     [super viewDidLoad];
     
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(finishRefresh)
-                                                     name:kMakersArrived
-                                                   object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(finishRefresh)
+                                                 name:kMakersArrived
+                                               object:nil];
     
     AppDelegate *del = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     _context = [del managedObjectContext];
@@ -84,6 +84,11 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     [_refreshControl scrollViewDidEndDragging];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)attemptRefresh

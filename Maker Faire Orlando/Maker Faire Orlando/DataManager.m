@@ -39,7 +39,7 @@
     [_sessionConfig setHTTPAdditionalHeaders:@{@"Accept":@"application/json"}];
     
     _sessionConfig.timeoutIntervalForRequest = 20.0f;
-    _sessionConfig.timeoutIntervalForResource = 40.0f;
+    _sessionConfig.timeoutIntervalForResource = 20.0f;
     _sessionConfig.HTTPMaximumConnectionsPerHost = 4;
     
     _session = [NSURLSession sessionWithConfiguration:_sessionConfig delegate:self delegateQueue:nil];
