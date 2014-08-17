@@ -33,8 +33,6 @@
 
 void (^eventsDownloadResponse)(NSData *, NSURLResponse *, NSError *) = ^(NSData *data, NSURLResponse *response, NSError *error)
 {
-    NSLog(@"events response: %@", response.description);
-    
     NSString *notif = nil;
 
     if (error)

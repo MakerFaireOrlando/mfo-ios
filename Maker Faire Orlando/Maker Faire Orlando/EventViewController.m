@@ -11,12 +11,15 @@
 #import "Event+methods.h"
 #import "EventTableViewCell.h"
 #import "EventDetailViewController.h"
+#import "BOZPongRefreshControl.h"
 
 @interface EventViewController ()
 
 @property (weak, nonatomic) NSManagedObjectContext *context;
 @property (strong, nonatomic) NSArray *events;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) BOZPongRefreshControl *refreshControl;
 
 @end
 
@@ -25,6 +28,7 @@
 @synthesize context = _context;
 @synthesize events = _events;
 @synthesize tableView = _tableView;
+@synthesize refreshControl = _refreshControl;
 
 - (void)viewDidLoad
 {
@@ -44,6 +48,13 @@
     [self fillEvents];
 }
 
+- (void)viewDidLayoutSubviews
+{
+    _refreshControl = [BOZPongRefreshControl attachToTableView:_tableView
+                                             withRefreshTarget:self
+                                              andRefreshAction:@selector(fillEvents)];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -55,8 +66,19 @@
     [Event updateEvents];
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [_refreshControl scrollViewDidScroll];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [_refreshControl scrollViewDidEndDragging];
+}
+
 - (void)eventsArrived
 {
+    
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Event"];
     NSSortDescriptor *sortByStartTime = [[NSSortDescriptor alloc] initWithKey:@"startTime"
                                                                     ascending:YES];
@@ -67,6 +89,7 @@
     _events = returnedEvents;
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        [_refreshControl finishedLoading];
         [_tableView reloadData];
     });
     //TODO: End refreshing

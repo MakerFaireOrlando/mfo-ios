@@ -40,7 +40,6 @@
 
 void (^makersDownloadResponse)(NSData *, NSURLResponse*, NSError*) = ^(NSData *data,NSURLResponse *response, NSError *error)
 {
-    NSLog(@"makers response: %@", response.description);
     NSString *notif = nil;
     if (error)
     {

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EventViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface EventViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
 @end

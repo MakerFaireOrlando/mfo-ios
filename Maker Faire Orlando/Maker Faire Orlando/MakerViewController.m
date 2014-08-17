@@ -12,6 +12,7 @@
 #import "Maker+methods.h"
 #import "makerTableViewCell.h"
 #import "MakerDetailViewController.h"
+#import "BOZPongRefreshControl.h"
 
 @interface MakerViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
@@ -19,6 +20,7 @@
 @property (strong, nonatomic) NSArray *makers;
 @property (strong, nonatomic) NSMutableArray *filteredMakers;
 @property (weak, nonatomic) IBOutlet UISearchBar *makerSearchBar;
+@property (weak, nonatomic) BOZPongRefreshControl *refreshControl;
 
 @property (weak, nonatomic) NSManagedObjectContext *context;
 @end
@@ -48,6 +50,13 @@
     [self fillMakers];
 }
 
+- (void)viewDidLayoutSubviews
+{
+    _refreshControl = [BOZPongRefreshControl attachToTableView:_tableview
+                                             withRefreshTarget:self
+                                              andRefreshAction:@selector(attemptRefresh)];
+}
+
 - (void)fillMakers
 {
     NSFetchRequest *makersFetch = [[NSFetchRequest alloc] initWithEntityName:@"Maker"];
@@ -67,6 +76,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [_refreshControl scrollViewDidScroll];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [_refreshControl scrollViewDidEndDragging];
+}
+
 - (void)attemptRefresh
 {
     [Faire updateFaire];
@@ -75,7 +94,11 @@
 - (void)finishRefresh
 {
     [self fillMakers];
-    [_tableview reloadData];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_refreshControl finishedLoading];
+        [_tableview reloadData];
+    });
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

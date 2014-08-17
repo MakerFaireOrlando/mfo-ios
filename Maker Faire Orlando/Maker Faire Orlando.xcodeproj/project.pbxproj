@@ -26,6 +26,7 @@
 		11937F9F1976307D00D587F8 /* Maker_Faire_OrlandoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11937F9E1976307D00D587F8 /* Maker_Faire_OrlandoTests.m */; };
 		251FD1641978A56A0021F750 /* makerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 251FD1631978A56A0021F750 /* makerTableViewCell.m */; };
 		2559B5071979BE500039C17F /* NSManagedObject+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559B5061979BE500039C17F /* NSManagedObject+methods.m */; };
+		259E9E0A19A1589300B2E37E /* BOZPongRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 259E9E0919A1589300B2E37E /* BOZPongRefreshControl.m */; };
 		25A7AC45197D80E300C193FC /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A7AC44197D80E300C193FC /* EventTableViewCell.m */; };
 		25A86CB2197721EB00B45778 /* MakerFaire.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CB0197721EB00B45778 /* MakerFaire.xcdatamodeld */; };
 		25A86CB61977284800B45778 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CB51977284800B45778 /* Photo.m */; };
@@ -79,6 +80,8 @@
 		251FD1631978A56A0021F750 /* makerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = makerTableViewCell.m; sourceTree = "<group>"; };
 		2559B5051979BE500039C17F /* NSManagedObject+methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+methods.h"; sourceTree = "<group>"; };
 		2559B5061979BE500039C17F /* NSManagedObject+methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+methods.m"; sourceTree = "<group>"; };
+		259E9E0819A1589300B2E37E /* BOZPongRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOZPongRefreshControl.h; sourceTree = "<group>"; };
+		259E9E0919A1589300B2E37E /* BOZPongRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOZPongRefreshControl.m; sourceTree = "<group>"; };
 		25A7AC43197D80E200C193FC /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
 		25A7AC44197D80E300C193FC /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
 		25A86CB1197721EB00B45778 /* MakerFaire.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MakerFaire.xcdatamodel; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 		11937F761976307D00D587F8 /* Maker Faire Orlando */ = {
 			isa = PBXGroup;
 			children = (
+				259E9E0719A1583800B2E37E /* Custom Controls */,
 				2559B5051979BE500039C17F /* NSManagedObject+methods.h */,
 				2559B5061979BE500039C17F /* NSManagedObject+methods.m */,
 				25A86CB31977282B00B45778 /* Models */,
@@ -213,6 +217,15 @@
 				11937F9B1976307D00D587F8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		259E9E0719A1583800B2E37E /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				259E9E0819A1589300B2E37E /* BOZPongRefreshControl.h */,
+				259E9E0919A1589300B2E37E /* BOZPongRefreshControl.m */,
+			);
+			name = "Custom Controls";
 			sourceTree = "<group>";
 		};
 		25A86CB31977282B00B45778 /* Models */ = {
@@ -337,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				259E9E0A19A1589300B2E37E /* BOZPongRefreshControl.m in Sources */,
 				112CE7B8198F11E900BE0BC5 /* EventDetailViewController.m in Sources */,
 				25A86CC519772B0500B45778 /* Event+methods.m in Sources */,
 				25A86CB61977284800B45778 /* Photo.m in Sources */,

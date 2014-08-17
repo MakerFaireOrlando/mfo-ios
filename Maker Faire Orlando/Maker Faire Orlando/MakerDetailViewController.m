@@ -62,7 +62,7 @@
                                 NSError *error) {
                 photo.image = data;
                 UIImage* image = [UIImage imageWithData:data];
-                NSLog(@"Got the image");
+                
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.makerImage setImage:image];
                 });
