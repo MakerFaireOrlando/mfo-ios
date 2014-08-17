@@ -15,6 +15,7 @@
 
 + (void)updateEvents;
 + (void)murderEvents;
-+ (void)parseEventsWithArray:(NSArray *)events;
++ (Event *)parseEventWithDictionary:(NSDictionary *)event;
++ (void)parseEventsWithDictionary:(NSDictionary *)events;
 
 @end

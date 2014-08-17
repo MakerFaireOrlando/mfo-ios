@@ -55,7 +55,7 @@ void (^eventsDownloadResponse)(NSData *, NSURLResponse *, NSError *) = ^(NSData 
         if (eventsArray.count > 0)
         {
             [Event murderEvents];
-            [Event parseEventsWithArray:eventsArray];
+            [Event parseEventsWithDictionary:dict];
         }
     }
     
@@ -67,57 +67,63 @@ void (^eventsDownloadResponse)(NSData *, NSURLResponse *, NSError *) = ^(NSData 
     [NSManagedObject murderTableWithEntityName:[[self class] description]];
 }
 
-+ (void)parseEventsWithArray:(NSArray *)events
++ (Event *)parseEventWithDictionary:(NSDictionary *)event
 {
+    
+    Event *newEvent = [NSEntityDescription insertNewObjectForEntityForName:@"Event"
+                                                    inManagedObjectContext:[Event defaultContext]];
+    
+    [newEvent setFaire:[Faire currentFaire]];
+    
+    NSString *startDateString = [[event objectForKey:@"start"] objectForKey:@"dateTime"];
+    NSString *endDateString = [[event objectForKey:@"end"] objectForKey:@"dateTime"];
+    NSMutableString *startDateMutable = [startDateString mutableCopy];
+    NSMutableString *endDateMutable = [endDateString mutableCopy];
+    
+    [startDateMutable deleteCharactersInRange:NSMakeRange(startDateMutable.length - 3, 1)];
+    [endDateMutable deleteCharactersInRange:NSMakeRange(endDateMutable.length - 3, 1)];
+    
+    NSDateFormatter *dateConverter = [[NSDateFormatter alloc] init];
+    [dateConverter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+    
+    NSDate *startDate = [dateConverter dateFromString:startDateMutable];
+    NSDate *endDate = [dateConverter dateFromString:endDateMutable];
+    
+    [newEvent setStartTime:startDate];
+    [newEvent setEndTime:endDate];
+    
+    NSString *location = [event objectForKey:@"location"];
+    if (location != nil && ![location isEqualToString:@""])
+    {
+        [newEvent setLocation:location];
+    }
+    
+    NSString *summary = [event objectForKey:@"summary"];
+    if (summary != nil && ![summary isEqualToString:@""])
+    {
+        [newEvent setSummary:summary];
+    }
+    
+    
+    NSString *descript = [event objectForKey:@"description"];
+    if(descript != nil && ![descript isEqualToString:@""])
+    {
+        [newEvent setDescript:descript];
+    }
+    
+    return newEvent;
+}
+
++ (void)parseEventsWithDictionary:(NSDictionary *)events
+{
+    NSArray *eventsArray = [events objectForKey:@"items"];
+    
     NSManagedObjectContext *context = [Event defaultContext];
     Faire *currentFaire = [Faire currentFaire];
     
-    for (NSDictionary *event in events)
+    for (NSDictionary *event in eventsArray)
     {
-        Event *newEvent = [NSEntityDescription insertNewObjectForEntityForName:@"Event"
-                                                        inManagedObjectContext:context];
-        
-        [newEvent setFaire:currentFaire];
-        [currentFaire addEventsObject:newEvent];
-        NSLog(@"event.start: %@", [event objectForKey:@"start"]);
-        NSLog(@"dateTime = %@", [[[event objectForKey:@"start"] objectForKey:@"dateTime"] class]);
-        
-        NSString *startDateString = [[event objectForKey:@"start"] objectForKey:@"dateTime"];
-        NSString *endDateString = [[event objectForKey:@"end"] objectForKey:@"dateTime"];
-        NSMutableString *startDateMutable = [startDateString mutableCopy];
-        NSMutableString *endDateMutable = [endDateString mutableCopy];
-        
-        [startDateMutable deleteCharactersInRange:NSMakeRange(startDateMutable.length - 3, 1)];
-        [endDateMutable deleteCharactersInRange:NSMakeRange(endDateMutable.length - 3, 1)];
-        
-        NSDateFormatter *dateConverter = [[NSDateFormatter alloc] init];
-        [dateConverter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
-        
-        NSDate *startDate = [dateConverter dateFromString:startDateMutable];
-        NSDate *endDate = [dateConverter dateFromString:endDateMutable];
-        
-        [newEvent setStartTime:startDate];
-        [newEvent setEndTime:endDate];
-        
-        NSString *location = [event objectForKey:@"location"];
-        if (location != nil && ![location isEqualToString:@""])
-        {
-            [newEvent setLocation:location];
-        }
-        
-        NSString *summary = [event objectForKey:@"summary"];
-        if (summary != nil && ![summary isEqualToString:@""])
-        {
-            [newEvent setSummary:summary];
-        }
-        
-    
-        NSString *descript = [event objectForKey:@"description"];
-        if(descript != nil && ![descript isEqualToString:@""])
-        {
-            [newEvent setDescript:descript];
-        }
-       
+        [currentFaire addEventsObject:[self parseEventWithDictionary:event]];
     }
     [context save:nil];
 }

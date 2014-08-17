@@ -1,0 +1,706 @@
+{
+    "summary": "Orlando Mini Maker Faire Event Calendar",
+    "updated": "2014-08-16T00:09:15.166Z",
+    "timeZone": "America/New_York",
+    "items": [{
+        "id": "pgtaptc0udk5ji5mamnae7ip3s",
+        "start": {
+            "dateTime": "2013-10-05T10:00:00-04:00"
+        },
+        "etag": "\"2760788962098000\"",
+        "sequence": 0,
+        "updated": "2013-09-28T18:54:41.049Z",
+        "iCalUID": "pgtaptc0udk5ji5mamnae7ip3s@google.com",
+        "summary": "Orlando Mini Maker Faire - The Fun Begins!!",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-09-18T01:22:05.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=cGd0YXB0YzB1ZGs1amk1bWFtbmFlN2lwM3Mgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "end": {
+            "dateTime": "2013-10-05T10:00:00-04:00"
+        },
+        "status": "confirmed",
+        "kind": "calendar#event"
+    }, {
+        "id": "o9dnq2kskrj5gi03epcn5llbl4",
+        "start": {
+            "dateTime": "2013-10-05T17:00:00-04:00"
+        },
+        "etag": "\"2760790990760000\"",
+        "sequence": 0,
+        "updated": "2013-09-28T19:11:35.380Z",
+        "iCalUID": "o9dnq2kskrj5gi03epcn5llbl4@google.com",
+        "summary": "Orlando Mini Maker Faire ends :(",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-09-28T19:11:23.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=bzlkbnEya3Nrcmo1Z2kwM2VwY241bGxibDQgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "end": {
+            "dateTime": "2013-10-05T17:00:00-04:00"
+        },
+        "status": "confirmed",
+        "kind": "calendar#event"
+    }, {
+        "id": "nqdokc79rnrbilfj5kmm2d7638",
+        "description": "David Sikes and Lance Vick discuss a future where humans augment their bodies with technology.",
+        "start": {
+            "dateTime": "2013-10-05T11:00:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T11:30:00-04:00"
+        },
+        "updated": "2013-09-28T20:20:39.074Z",
+        "sequence": 0,
+        "iCalUID": "nqdokc79rnrbilfj5kmm2d7638@google.com",
+        "summary": "Talk: Cyborg - Augmented Humans",
+        "location": "Level 2 - Imagination Classroom",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-09-28T18:48:47.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=bnFkb2tjNzlybnJiaWxmajVrbW0yZDc2Mzggb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2760799278148000\""
+    }, {
+        "id": "958p03iuq4cbivr5ok0jt2vaeo",
+        "description": "Want to know more about how Orlando Mini Maker Faire is produced? Want to start a Mini Maker Faire in your town? Come talk to some of the Orlando Mini Maker Faire team to learn more.",
+        "start": {
+            "dateTime": "2013-10-05T16:00:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T17:00:00-04:00"
+        },
+        "updated": "2013-09-28T20:24:12.928Z",
+        "sequence": 0,
+        "iCalUID": "958p03iuq4cbivr5ok0jt2vaeo@google.com",
+        "summary": "Panel: How to Make a Maker Faire",
+        "location": "Level 2 - Imagination Classroom",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-09-28T19:08:46.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=OTU4cDAzaXVxNGNiaXZyNW9rMGp0MnZhZW8gb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2760799705856000\""
+    }, {
+        "id": "evlpcmgn07imf0tct4pasj90f4",
+        "description": "Any combat robot that is still functioning at this time is placed back into the arena until there is only one!",
+        "start": {
+            "dateTime": "2013-10-05T15:00:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T15:00:00-04:00"
+        },
+        "updated": "2013-09-28T20:26:07.823Z",
+        "sequence": 0,
+        "iCalUID": "evlpcmgn07imf0tct4pasj90f4@google.com",
+        "summary": "Combat Robots - Final Brawl Begins",
+        "location": "Level 2 - Creativity Classroom",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-09-28T19:07:28.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=ZXZscGNtZ24wN2ltZjB0Y3Q0cGFzajkwZjQgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2760799935646000\""
+    }, {
+        "id": "54a1mh5kp96lillb0ga03gre2o",
+        "description": "FIRST K-12 robotics helps make Young Makers!  Founded by inventor, entrepreneur and STEM advocate,  Dean Kamen, to help young people discover the excitement and rewards of science and technology, FIRST K-12 programs serve over 300,000 youth through the efforts of more than 100,000 Mentors. In Florida,  nearly 10,000 youth are involved in the programs, which, at the high school level, offer over $16 million in scholarships.  By making robots to compete in head to head challenges, kids also build self-sufficiency, innovative ways of thinking and creating, and develop the character and spirit to keep being Makers - of their futures and ours.  It's the hardest fun they'll ever have! Join us to see how your family can be part of this fun, rewarding and successful program",
+        "start": {
+            "dateTime": "2013-10-05T13:00:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T13:30:00-04:00"
+        },
+        "updated": "2013-09-28T22:22:18.573Z",
+        "sequence": 0,
+        "iCalUID": "54a1mh5kp96lillb0ga03gre2o@google.com",
+        "summary": "Talk: FIRST Robotics",
+        "location": "Level 2 - Imagination Classroom",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-09-28T18:54:58.000Z",
+        "visibility": "public",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NTRhMW1oNWtwOTZsaWxsYjBnYTAzZ3JlMm8gb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2760813877146000\""
+    }, {
+        "id": "ngdnmg18e79tkkkd8bnc37v0f4",
+        "description": "Hear crowdfunding success stories and tips from local Makers that have raised hundreds of thousands of dollars for their projects.",
+        "start": {
+            "dateTime": "2013-10-05T14:00:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T15:00:00-04:00"
+        },
+        "updated": "2013-10-03T11:08:25.727Z",
+        "sequence": 0,
+        "iCalUID": "ngdnmg18e79tkkkd8bnc37v0f4@google.com",
+        "summary": "Panel: Makers Making Money (Crowdfunding)",
+        "location": "Level 2 - Imagination Classroom",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-09-28T19:03:18.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=bmdkbm1nMThlNzl0a2trZDhibmMzN3YwZjQgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761597011454000\""
+    }, {
+        "id": "4dag75mjcfrbv20res53qj0640",
+        "description": "Shows and Times are subject to change without notice. Tickets required, may be picked up at the Admissions desk on Level 2",
+        "start": {
+            "dateTime": "2013-10-05T17:10:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T19:00:00-04:00"
+        },
+        "updated": "2013-10-03T11:10:56.612Z",
+        "sequence": 1,
+        "iCalUID": "4dag75mjcfrbv20res53qj0640@google.com",
+        "summary": "Monsters University 3D",
+        "location": "Level 2 - Digital Adventure Theater",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-10-03T11:09:26.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NGRhZzc1bWpjZnJidjIwcmVzNTNxajA2NDAgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761597313224000\""
+    }, {
+        "id": "029f2oocoe20lfcfmfgsk1ak3c",
+        "description": "Seating is very limited. Sign up outside Dr. Dare's Laboratory.",
+        "start": {
+            "dateTime": "2013-10-05T12:00:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T13:00:00-04:00"
+        },
+        "updated": "2013-10-03T11:17:00.459Z",
+        "sequence": 0,
+        "iCalUID": "029f2oocoe20lfcfmfgsk1ak3c@google.com",
+        "summary": "Workshop: Introduction to Arduino",
+        "location": "Level 4 - Dr. Dare's Laboratory",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-10-03T11:17:00.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MDI5ZjJvb2NvZTIwbGZjZm1mZ3NrMWFrM2Mgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761598040918000\""
+    }, {
+        "id": "efrkf7a6neka7t7e0tpptqctf4",
+        "description": "Seating is very limited. Sign up outside Dr. Dare's Laboratory.",
+        "start": {
+            "dateTime": "2013-10-05T14:00:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T15:00:00-04:00"
+        },
+        "updated": "2013-10-03T11:17:33.622Z",
+        "sequence": 0,
+        "iCalUID": "efrkf7a6neka7t7e0tpptqctf4@google.com",
+        "summary": "Workshop: Introduction to Arduino",
+        "location": "Dr. Dare's Laboratory",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-10-03T11:17:33.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=ZWZya2Y3YTZuZWthN3Q3ZTB0cHB0cWN0ZjQgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761598107244000\""
+    }, {
+        "id": "9vhki6qdd5es9d3hc3d9g86f1g",
+        "description": "Seating is very limited. Sign up outside Dr. Dare's Laboratory.",
+        "start": {
+            "dateTime": "2013-10-05T15:30:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T16:30:00-04:00"
+        },
+        "updated": "2013-10-03T11:18:07.452Z",
+        "sequence": 0,
+        "iCalUID": "9vhki6qdd5es9d3hc3d9g86f1g@google.com",
+        "summary": "Workshop: Introduction to Arduino",
+        "location": "Dr. Dare's Laboratory",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-10-03T11:17:59.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=OXZoa2k2cWRkNWVzOWQzaGMzZDlnODZmMWcgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761598174904000\""
+    }, {
+        "id": "epajmc1mo2p2mm9bqpikckcg80",
+        "description": "Hear about the amazing adventures of Astronaut Dr. Story Musgrave",
+        "start": {
+            "dateTime": "2013-10-05T12:00:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T12:30:00-04:00"
+        },
+        "updated": "2013-10-03T11:20:26.587Z",
+        "sequence": 0,
+        "iCalUID": "epajmc1mo2p2mm9bqpikckcg80@google.com",
+        "summary": "Talk: Astronaut Dr. Story Musgrave",
+        "location": "Level 2 - Imagination Classroom",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-09-28T18:53:05.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=ZXBham1jMW1vMnAybW05YnFwaWtja2NnODAgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761598453174000\""
+    }, {
+        "id": "k6l2k6bio75ljuofuvkdvgqdqo",
+        "description": "Come see OSC's Tesla Coils in action, stay for a \"behind-the-scenes\" talk about how OSC's Tesla Coils were created!",
+        "start": {
+            "dateTime": "2013-10-05T11:15:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T12:00:00-04:00"
+        },
+        "updated": "2013-10-03T11:21:12.188Z",
+        "sequence": 1,
+        "iCalUID": "k6l2k6bio75ljuofuvkdvgqdqo@google.com",
+        "summary": "Show: High Voltage",
+        "location": "Level 2 - Digital Adventure Theater",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-10-03T11:20:08.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=azZsMms2YmlvNzVsanVvZnV2a2R2Z3FkcW8gb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761598544376000\""
+    }, {
+        "id": "ror3r83vqn43iirug2ruflmtqg",
+        "description": "Come see OSC's Tesla Coils in action, stay for a \"behind-the-scenes\" talk about how OSC's Tesla Coils were created!",
+        "start": {
+            "dateTime": "2013-10-05T13:15:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T14:00:00-04:00"
+        },
+        "updated": "2013-10-03T11:21:55.652Z",
+        "sequence": 1,
+        "iCalUID": "ror3r83vqn43iirug2ruflmtqg@google.com",
+        "summary": "Show: High Voltage",
+        "location": "Level 2 - Digital Adventure Theater",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-10-03T11:21:30.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=cm9yM3I4M3ZxbjQzaWlydWcycnVmbG10cWcgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761598631304000\""
+    }, {
+        "id": "lnml9l684b8sr4oil9f0tfnfpo",
+        "description": "Come see OSC's Tesla Coils in action, stay for a \"behind-the-scenes\" talk about how OSC's Tesla Coils were created!",
+        "start": {
+            "dateTime": "2013-10-05T15:15:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T16:00:00-04:00"
+        },
+        "updated": "2013-10-03T11:22:38.204Z",
+        "sequence": 0,
+        "iCalUID": "lnml9l684b8sr4oil9f0tfnfpo@google.com",
+        "summary": "Show: High Voltage",
+        "location": "Level 2 - Digital Adventure Theater",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-10-03T11:22:38.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=bG5tbDlsNjg0YjhzcjRvaWw5ZjB0Zm5mcG8gb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761598716408000\""
+    }, {
+        "id": "frplg0le2m2r6sstrmgdkkor80",
+        "description": "Seating is very limited. Sign up outside Dr. Dare's Laboratory.",
+        "start": {
+            "dateTime": "2013-10-05T10:30:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T11:30:00-04:00"
+        },
+        "updated": "2013-10-03T11:23:26.091Z",
+        "sequence": 1,
+        "iCalUID": "frplg0le2m2r6sstrmgdkkor80@google.com",
+        "summary": "Workshop: Introduction to Arduino",
+        "location": "Level 4 - Dr. Dare's Laboratory",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-10-03T11:16:07.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=ZnJwbGcwbGUybTJyNnNzdHJtZ2Rra29yODAgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761598812182000\""
+    }, {
+        "id": "t7n3pc7lpf0ncvi8nfb728dsas",
+        "description": "If you have a Young Maker and want to hear more about Young Maker programs in Central Florida, please join us for this information session and discussion.",
+        "start": {
+            "dateTime": "2013-10-05T15:00:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T16:00:00-04:00"
+        },
+        "updated": "2013-10-04T02:23:30.665Z",
+        "sequence": 1,
+        "iCalUID": "t7n3pc7lpf0ncvi8nfb728dsas@google.com",
+        "summary": "Panel: Young Maker Dialog",
+        "location": "Level 2 - Imagination Classroom",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-09-28T19:01:22.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=dDduM3BjN2xwZjBuY3ZpOG5mYjcyOGRzYXMgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761706821330000\""
+    }, {
+        "id": "i3fna1gf61fenlp7eottqeoa5s",
+        "description": "Shows and Times are subject to change without notice. Tickets required for Dr. Phillips Cinedome - tickets may be picked up at the Admissions Desk on Level 2.",
+        "start": {
+            "dateTime": "2013-10-05T11:00:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T11:45:00-04:00"
+        },
+        "updated": "2013-10-04T18:05:24.636Z",
+        "sequence": 0,
+        "iCalUID": "i3fna1gf61fenlp7eottqeoa5s@google.com",
+        "summary": "Cinedome: Coral Reef Adventure",
+        "location": "Level 1 - Dr. Phillips CineDome",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-10-03T11:12:30.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=aTNmbmExZ2Y2MWZlbmxwN2VvdHRxZW9hNXMgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761819849272000\""
+    }, {
+        "id": "lgf5lnv9c11odolk72auca9qp8",
+        "description": "Shows and Times are subject to change without notice. Tickets required for Dr. Phillips Cinedome - tickets may be picked up at the Admissions Desk on Level 2.",
+        "start": {
+            "dateTime": "2013-10-05T15:45:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T16:30:00-04:00"
+        },
+        "updated": "2013-10-05T14:40:56.813Z",
+        "sequence": 0,
+        "iCalUID": "lgf5lnv9c11odolk72auca9qp8@google.com",
+        "summary": "Cinedome: Titans of the Ice Age",
+        "location": "Level 1 - Dr. Phillips CineDome",
+        "creator": {
+            "displayName": "Conner Brooks",
+            "email": "connerbrooks@gmail.com"
+        },
+        "created": "2013-10-05T14:40:56.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=bGdmNWxudjljMTFvZG9sazcyYXVjYTlxcDggb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761968113626000\""
+    }, {
+        "id": "2cija2lrg09vlm2flk9dnd62u8",
+        "description": "Shows and Times are subject to change without notice. Tickets required for Dr. Phillips Cinedome - tickets may be picked up at the Admissions Desk on Level 2.",
+        "start": {
+            "dateTime": "2013-10-05T12:00:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T12:45:00-04:00"
+        },
+        "updated": "2013-10-05T14:41:11.156Z",
+        "sequence": 1,
+        "iCalUID": "2cija2lrg09vlm2flk9dnd62u8@google.com",
+        "summary": "Cinedome: Titans of the Ice Age",
+        "location": "Level 1 - Dr. Phillips CineDome",
+        "creator": {
+            "displayName": "Conner Brooks",
+            "email": "connerbrooks@gmail.com"
+        },
+        "created": "2013-10-05T14:36:19.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MmNpamEybHJnMDl2bG0yZmxrOWRuZDYydTggb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761968142312000\""
+    }, {
+        "id": "t3dqskbvvbtqa62mjq8362hpd0",
+        "description": "Shows and Times are subject to change without notice. Tickets required for Dr. Phillips Cinedome - tickets may be picked up at the Admissions Desk on Level 2.",
+        "start": {
+            "dateTime": "2013-10-05T16:45:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T17:30:00-04:00"
+        },
+        "updated": "2013-10-05T14:42:35.979Z",
+        "sequence": 0,
+        "iCalUID": "t3dqskbvvbtqa62mjq8362hpd0@google.com",
+        "summary": "Cinedome: Tornado Alley",
+        "location": "Level 1 - Dr. Phillips CineDome",
+        "creator": {
+            "displayName": "Conner Brooks",
+            "email": "connerbrooks@gmail.com"
+        },
+        "created": "2013-10-05T14:42:35.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=dDNkcXNrYnZ2YnRxYTYybWpxODM2MmhwZDAgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761968311958000\""
+    }, {
+        "id": "ika8ldhgdbfs58vtcefsnkn0dc",
+        "description": "Shows and Times are subject to change without notice. Tickets required for Dr. Phillips Cinedome - tickets may be picked up at the Admissions Desk on Level 2.",
+        "start": {
+            "dateTime": "2013-10-05T13:00:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T13:45:00-04:00"
+        },
+        "updated": "2013-10-05T14:43:35.147Z",
+        "sequence": 1,
+        "iCalUID": "ika8ldhgdbfs58vtcefsnkn0dc@google.com",
+        "summary": "Cinedome: The Alps",
+        "location": "Level 1 - Dr. Phillips CineDome",
+        "creator": {
+            "displayName": "Conner Brooks",
+            "email": "connerbrooks@gmail.com"
+        },
+        "created": "2013-10-05T14:31:40.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=aWthOGxkaGdkYmZzNTh2dGNlZnNua24wZGMgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761968430294000\""
+    }, {
+        "id": "vh8opqivpd05cijsk6n4uj6q2k",
+        "description": "Shows and Times are subject to change without notice. Tickets required for Dr. Phillips Cinedome - tickets may be picked up at the Admissions Desk on Level 2.",
+        "start": {
+            "dateTime": "2013-10-05T14:45:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T15:30:00-04:00"
+        },
+        "updated": "2013-10-05T14:43:47.875Z",
+        "sequence": 1,
+        "iCalUID": "vh8opqivpd05cijsk6n4uj6q2k@google.com",
+        "summary": "Cinedome: Sea Monsters",
+        "location": "Level 1 - Dr. Phillips CineDome",
+        "creator": {
+            "displayName": "Conner Brooks",
+            "email": "connerbrooks@gmail.com"
+        },
+        "created": "2013-10-05T14:38:14.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=dmg4b3BxaXZwZDA1Y2lqc2s2bjR1ajZxMmsgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761968455750000\""
+    }, {
+        "id": "rpmj3g6lsp5081ssetka3omeo0",
+        "description": "Event full.",
+        "start": {
+            "dateTime": "2013-10-05T11:30:00-04:00"
+        },
+        "end": {
+            "dateTime": "2013-10-05T11:50:00-04:00"
+        },
+        "updated": "2013-10-05T15:38:15.524Z",
+        "sequence": 0,
+        "iCalUID": "rpmj3g6lsp5081ssetka3omeo0@google.com",
+        "summary": "Talk: Google Glass",
+        "location": "Level 2 - Imagination Classroom",
+        "creator": {
+            "displayName": "Ian Cole",
+            "email": "webmaster@orlandominimakerfaire.com"
+        },
+        "created": "2013-10-01T15:01:57.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=cnBtajNnNmxzcDUwODFzc2V0a2Ezb21lbzAgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "kind": "calendar#event",
+        "status": "confirmed",
+        "etag": "\"2761974991048000\""
+    }, {
+        "id": "vq82fi44rghr1q0lstrl03t8fk",
+        "start": {
+            "dateTime": "2014-09-13T13:00:00-04:00"
+        },
+        "etag": "\"2816284532816000\"",
+        "sequence": 0,
+        "updated": "2014-08-15T22:37:46.408Z",
+        "iCalUID": "vq82fi44rghr1q0lstrl03t8fk@google.com",
+        "summary": "Maker Faire Orlando Begins",
+        "creator": {
+            "displayName": "Conner Brooks",
+            "email": "connerbrooks@gmail.com"
+        },
+        "created": "2014-08-15T22:36:10.000Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=dnE4MmZpNDRyZ2hyMXEwbHN0cmwwM3Q4Zmsgb3JsYW5kb21pbmltYWtlcmZhaXJlLmNvbV92ZmZocDJiNm9pM2tpdTN0cm5vbzE1MDJoZ0Bn",
+        "organizer": {
+            "displayName": "Orlando Mini Maker Faire Event Calendar",
+            "email": "orlandominimakerfaire.com_vffhp2b6oi3kiu3trnoo1502hg@group.calendar.google.com",
+            "self": true
+        },
+        "end": {
+            "dateTime": "2014-09-13T13:00:00-04:00"
+        },
+        "status": "confirmed",
+        "kind": "calendar#event"
+    }],
+    "accessRole": "reader",
+    "kind": "calendar#events",
+    "description": "",
+    "nextSyncToken": "CLDS85W_lsACEAAYAQ==",
+    "etag": "\"1408147755166000\""
+}

@@ -36,6 +36,7 @@
 		25A86CCB19786DD000B45778 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CCA19786DD000B45778 /* DataManager.m */; };
 		25A86CCE19787B5600B45778 /* Faire.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CCD19787B5600B45778 /* Faire.m */; };
 		25A86CD1197893AA00B45778 /* Maker.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CD0197893AA00B45778 /* Maker.m */; };
+		25FA709A19A0725A00F90E04 /* eventsTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 25FA709919A0725A00F90E04 /* eventsTest.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		25A86CCD19787B5600B45778 /* Faire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faire.m; sourceTree = "<group>"; };
 		25A86CCF197893AA00B45778 /* Maker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maker.h; sourceTree = "<group>"; };
 		25A86CD0197893AA00B45778 /* Maker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Maker.m; sourceTree = "<group>"; };
+		25FA709919A0725A00F90E04 /* eventsTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = eventsTest.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 		11937F991976307D00D587F8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				25FA709919A0725A00F90E04 /* eventsTest.json */,
 				11937F9A1976307D00D587F8 /* Maker Faire OrlandoTests-Info.plist */,
 				11937F9B1976307D00D587F8 /* InfoPlist.strings */,
 			);
@@ -322,6 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25FA709A19A0725A00F90E04 /* eventsTest.json in Resources */,
 				11937F9D1976307D00D587F8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
