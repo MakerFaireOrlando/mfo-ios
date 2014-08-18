@@ -63,6 +63,7 @@
 
 - (void)fillEvents
 {
+    [_tableView setUserInteractionEnabled:NO];
     [Event updateEvents];
 }
 
@@ -91,6 +92,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [_refreshControl finishedLoading];
         [_tableView reloadData];
+        [_tableView setUserInteractionEnabled:YES];
     });
     //TODO: End refreshing
 }

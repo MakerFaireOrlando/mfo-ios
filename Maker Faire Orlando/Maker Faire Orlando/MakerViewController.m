@@ -93,6 +93,7 @@
 
 - (void)attemptRefresh
 {
+    [_tableview setUserInteractionEnabled:NO];
     [Faire updateFaire];
 }
 
@@ -103,6 +104,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [_refreshControl finishedLoading];
         [_tableview reloadData];
+        [_tableview setUserInteractionEnabled:YES];
     });
 }
 
