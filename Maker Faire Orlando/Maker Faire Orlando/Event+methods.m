@@ -28,6 +28,8 @@
     
     NSURLSessionDataTask *eventsDownloadTask = [session dataTaskWithURL:eventsURL completionHandler:eventsDownloadResponse];
     
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
     [eventsDownloadTask resume];
 }
 
@@ -57,7 +59,10 @@ void (^eventsDownloadResponse)(NSData *, NSURLResponse *, NSError *) = ^(NSData 
         }
     }
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:notif object:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        [[NSNotificationCenter defaultCenter] postNotificationName:notif object:nil];
+    });
 };
 
 + (void)murderEvents

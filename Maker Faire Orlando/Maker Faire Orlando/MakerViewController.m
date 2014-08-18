@@ -115,7 +115,7 @@
 
 - (void)attemptRefresh
 {
-    [Faire updateFaire];
+    [Maker updateMakers];
 }
 
 - (void)finishRefresh

@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) BOZPongRefreshControl *refreshControl;
+@property (strong, nonatomic) UILabel *failView;
 
 @end
 
@@ -39,6 +40,11 @@
                                                  name:kEventsArrived
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshFailure)
+                                                 name:kEventsFailed
+                                               object:nil];
+    
     AppDelegate *del = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     _context = [del managedObjectContext];
@@ -46,13 +52,27 @@
     _events = nil;
     
     [self fillEvents];
+    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+        [Event updateEvents];
+//    });
 }
 
 - (void)viewDidLayoutSubviews
 {
     _refreshControl = [BOZPongRefreshControl attachToTableView:_tableView
                                              withRefreshTarget:self
-                                              andRefreshAction:@selector(fillEvents)];
+                                              andRefreshAction:@selector(refreshEvents)];
+
+    __block UILabel *failView = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 40.0, 11.0, 80.0, 65.0)];
+    [failView setText:@"FAIL"];
+    [failView setTextAlignment:NSTextAlignmentCenter];
+    [failView setFont:[UIFont boldSystemFontOfSize:35.0]];
+    [failView setTextColor:[UIColor whiteColor]];
+    [failView setHidden:YES];
+    [failView setAlpha:0.0];
+    
+    _failView = failView;
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,12 +84,52 @@
 - (void)refreshEvents
 {
     [_tableView setUserInteractionEnabled:NO];
-    [self fillEvents];
+    [Event updateEvents];
 }
 
 - (void)fillEvents
 {
-    [Event updateEvents];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Event"];
+    NSSortDescriptor *sortByStartTime = [[NSSortDescriptor alloc] initWithKey:@"startTime"
+                                                                    ascending:YES];
+    [request setSortDescriptors:@[sortByStartTime]];
+    
+    NSArray *returnedEvents = [_context executeFetchRequest:request error:nil];
+    
+    _events = returnedEvents;
+}
+
+- (void)refreshFailure
+{
+    // The refresh timed-out, failed for some reason, etc
+    
+    __weak EventViewController *weakSelf = self;
+    __weak UILabel *weakFailView = _failView;
+    
+    [_refreshControl setBackgroundColor:[UIColor blackColor]];
+    [_failView setAlpha:0.0];
+    [_failView setHidden:YES];
+    [_refreshControl addSubview:_failView];
+    
+    [UIView animateWithDuration:1.0 animations:^(void)
+     {
+         
+         [weakFailView setAlpha:1.0];
+         [weakFailView setHidden:NO];
+         
+         [weakSelf.refreshControl setBackgroundColor:[UIColor makerRed]];
+         
+     } completion:^(BOOL finished)
+     {
+         [UIView animateWithDuration:0.5 animations:^(void)
+          {
+              [weakFailView removeFromSuperview];
+              [weakSelf.refreshControl setBackgroundColor:[UIColor blackColor]];
+              
+              [weakSelf.refreshControl finishedLoading];
+              [weakSelf.tableView setUserInteractionEnabled:YES];
+          }];
+     }];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -89,16 +149,7 @@
 
 - (void)eventsArrived
 {
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Event"];
-    NSSortDescriptor *sortByStartTime = [[NSSortDescriptor alloc] initWithKey:@"startTime"
-                                                                    ascending:YES];
-    [request setSortDescriptors:@[sortByStartTime]];
-    
-    NSArray *returnedEvents = [_context executeFetchRequest:request error:nil];
-    
-    _events = returnedEvents;
-    
+    [self fillEvents];
     dispatch_async(dispatch_get_main_queue(), ^{
         [_refreshControl finishedLoading];
         [_tableView reloadData];
