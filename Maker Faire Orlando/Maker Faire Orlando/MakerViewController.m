@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSMutableArray *filteredMakers;
 @property (weak, nonatomic) IBOutlet UISearchBar *makerSearchBar;
 @property (weak, nonatomic) BOZPongRefreshControl *refreshControl;
+@property (strong, nonatomic) UILabel *failView;
 
 @property (weak, nonatomic) NSManagedObjectContext *context;
 @end
@@ -30,6 +31,7 @@
 @synthesize tableview = _tableview;
 @synthesize makers = _makers;
 @synthesize context = _context;
+@synthesize failView = _failView;
 
 - (void)viewDidLoad
 {
@@ -38,6 +40,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(finishRefresh)
                                                  name:kMakersArrived
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshFailure)
+                                                 name:kMakersFailed
                                                object:nil];
     
     AppDelegate *del = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -55,6 +62,15 @@
     _refreshControl = [BOZPongRefreshControl attachToTableView:_tableview
                                              withRefreshTarget:self
                                               andRefreshAction:@selector(disableForRefresh)];
+    __block UILabel *failView = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 40.0, 11.0, 80.0, 65.0)];
+    [failView setText:@"FAIL"];
+    [failView setTextAlignment:NSTextAlignmentCenter];
+    [failView setFont:[UIFont boldSystemFontOfSize:35.0]];
+    [failView setTextColor:[UIColor whiteColor]];
+    [failView setHidden:YES];
+    [failView setAlpha:0.0];
+
+    _failView = failView;
 }
 
 - (void)fillMakers
@@ -111,6 +127,39 @@
         [_tableview reloadData];
         [_tableview setUserInteractionEnabled:YES];
     });
+}
+
+- (void)refreshFailure
+{
+    // The refresh timed-out, failed for some reason, etc
+    
+    __weak MakerViewController *weakSelf = self;
+    __weak UILabel *weakFailView = _failView;
+    
+    [_refreshControl setBackgroundColor:[UIColor blackColor]];
+    [_failView setAlpha:0.0];
+    [_failView setHidden:YES];
+    [_refreshControl addSubview:_failView];
+    
+    [UIView animateWithDuration:1.0 animations:^(void)
+    {
+        
+        [weakFailView setAlpha:1.0];
+        [weakFailView setHidden:NO];
+        
+        [weakSelf.refreshControl setBackgroundColor:[UIColor makerRed]];
+        
+    } completion:^(BOOL finished)
+    {
+        [UIView animateWithDuration:0.5 animations:^(void)
+         {
+             [weakFailView removeFromSuperview];
+             [weakSelf.refreshControl setBackgroundColor:[UIColor blackColor]];
+             
+             [weakSelf.refreshControl finishedLoading];
+             [weakSelf.tableview setUserInteractionEnabled:YES];
+         }];
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
