@@ -54,7 +54,7 @@
 {
     _refreshControl = [BOZPongRefreshControl attachToTableView:_tableview
                                              withRefreshTarget:self
-                                              andRefreshAction:@selector(attemptRefresh)];
+                                              andRefreshAction:@selector(disableForRefresh)];
 }
 
 - (void)fillMakers
@@ -91,9 +91,14 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)attemptRefresh
+- (void)disableForRefresh
 {
     [_tableview setUserInteractionEnabled:NO];
+    [self attemptRefresh];
+}
+
+- (void)attemptRefresh
+{
     [Faire updateFaire];
 }
 

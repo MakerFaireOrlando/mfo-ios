@@ -61,9 +61,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)fillEvents
+- (void)refreshEvents
 {
     [_tableView setUserInteractionEnabled:NO];
+    [self fillEvents];
+}
+
+- (void)fillEvents
+{
     [Event updateEvents];
 }
 
