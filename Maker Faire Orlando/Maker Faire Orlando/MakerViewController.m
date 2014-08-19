@@ -13,6 +13,7 @@
 #import "makerTableViewCell.h"
 #import "MakerDetailViewController.h"
 #import "BOZPongRefreshControl.h"
+#import "CategoryTransitionAnimator.h"
 
 @interface MakerViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
@@ -201,19 +202,48 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    MakerDetailViewController *detailViewController = (MakerDetailViewController*)[segue destinationViewController];
+    [super prepareForSegue:segue sender:sender];
     
-    Maker *maker = nil;
-    if(self.searchDisplayController.active) {
-        NSInteger row = [[self.searchDisplayController.searchResultsTableView indexPathForSelectedRow] row];
-        maker = [_filteredMakers objectAtIndex:row];
+    if ([[segue identifier] isEqualToString:@"showCategories"])
+    {
+        NSLog(@"showCategories");
+        
+        [segue.destinationViewController setTransitioningDelegate:self];
+        [segue.destinationViewController setModalPresentationStyle:UIModalPresentationCustom];
     }
-    else {
-        NSInteger row = [[_tableview indexPathForSelectedRow] row];
-        maker = [_makers objectAtIndex:row];
+    else
+    {
+        MakerDetailViewController *detailViewController = (MakerDetailViewController*)[segue destinationViewController];
+        
+        Maker *maker = nil;
+        if(self.searchDisplayController.active) {
+            NSInteger row = [[self.searchDisplayController.searchResultsTableView indexPathForSelectedRow] row];
+            maker = [_filteredMakers objectAtIndex:row];
+        }
+        else {
+            NSInteger row = [[_tableview indexPathForSelectedRow] row];
+            maker = [_makers objectAtIndex:row];
+        }
+        
+        [detailViewController setMaker:maker];
     }
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source
+{
+    CategoryTransitionAnimator *animator = [[CategoryTransitionAnimator alloc] init];
+    [animator setPresenting:YES];
     
-    [detailViewController setMaker:maker];
+    return animator;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    CategoryTransitionAnimator *animator = [[CategoryTransitionAnimator alloc] init];
+    
+    return animator;
 }
 
 #pragma mark Content Filtering

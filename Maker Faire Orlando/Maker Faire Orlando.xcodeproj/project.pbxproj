@@ -40,6 +40,7 @@
 		25A86CC819772B1F00B45778 /* Maker+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CC719772B1F00B45778 /* Maker+methods.m */; };
 		25A86CCB19786DD000B45778 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CCA19786DD000B45778 /* DataManager.m */; };
 		25A86CD1197893AA00B45778 /* Maker.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CD0197893AA00B45778 /* Maker.m */; };
+		25B5170F19A2F5E400AA7C0C /* CategoryTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5170E19A2F5E400AA7C0C /* CategoryTransitionAnimator.m */; };
 		25BDBD8019A1637D00EAB077 /* UIColor+MakerColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BDBD7F19A1637D00EAB077 /* UIColor+MakerColors.m */; };
 		25FA709A19A0725A00F90E04 /* eventsTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 25FA709919A0725A00F90E04 /* eventsTest.json */; };
 /* End PBXBuildFile section */
@@ -111,6 +112,8 @@
 		25A86CCA19786DD000B45778 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		25A86CCF197893AA00B45778 /* Maker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maker.h; sourceTree = "<group>"; };
 		25A86CD0197893AA00B45778 /* Maker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Maker.m; sourceTree = "<group>"; };
+		25B5170D19A2F5E400AA7C0C /* CategoryTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTransitionAnimator.h; sourceTree = "<group>"; };
+		25B5170E19A2F5E400AA7C0C /* CategoryTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTransitionAnimator.m; sourceTree = "<group>"; };
 		25BDBD7E19A1637D00EAB077 /* UIColor+MakerColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MakerColors.h"; sourceTree = "<group>"; };
 		25BDBD7F19A1637D00EAB077 /* UIColor+MakerColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MakerColors.m"; sourceTree = "<group>"; };
 		25FA709919A0725A00F90E04 /* eventsTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = eventsTest.json; sourceTree = "<group>"; };
@@ -190,6 +193,8 @@
 				11937F771976307D00D587F8 /* Supporting Files */,
 				25BDBD7E19A1637D00EAB077 /* UIColor+MakerColors.h */,
 				25BDBD7F19A1637D00EAB077 /* UIColor+MakerColors.m */,
+				25B5170D19A2F5E400AA7C0C /* CategoryTransitionAnimator.h */,
+				25B5170E19A2F5E400AA7C0C /* CategoryTransitionAnimator.m */,
 			);
 			path = "Maker Faire Orlando";
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 				25A86CB2197721EB00B45778 /* MakerFaire.xcdatamodeld in Sources */,
 				11937F811976307D00D587F8 /* AppDelegate.m in Sources */,
 				25A86CC819772B1F00B45778 /* Maker+methods.m in Sources */,
+				25B5170F19A2F5E400AA7C0C /* CategoryTransitionAnimator.m in Sources */,
 				2559B5071979BE500039C17F /* NSManagedObject+methods.m in Sources */,
 				11937F871976307D00D587F8 /* MakerViewController.m in Sources */,
 				11937F7D1976307D00D587F8 /* main.m in Sources */,

@@ -56,7 +56,13 @@
                             <outlet property="delegate" destination="MhQ-ub-eBd" id="ndW-ks-x4u"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Makers" id="hKE-iP-AHl"/>
+                    <navigationItem key="navigationItem" title="Makers" id="hKE-iP-AHl">
+                        <barButtonItem key="rightBarButtonItem" title="Categories" id="NBv-5Z-HvL">
+                            <connections>
+                                <segue destination="628-o3-wS7" kind="modal" identifier="showCategories" id="5qs-Af-85o"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="makerSearchBar" destination="Pgw-eG-7sz" id="YXh-yc-iOz"/>
                         <outlet property="searchDisplayController" destination="btd-64-wMW" id="VuH-zH-jGJ"/>
@@ -273,8 +279,8 @@
             </objects>
             <point key="canvasLocation" x="660" y="-526"/>
         </scene>
-        <!--Map Page View Controller - Map-->
-        <scene sceneID="2fq-aA-9BI">
+        <!--View Controller - Map-->
+        <scene sceneID="44x-jx-gAT">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="g8R-YH-BHm" customClass="MapPageViewController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
@@ -316,41 +322,23 @@
             </objects>
             <point key="canvasLocation" x="1625" y="863"/>
         </scene>
-        <!--Map Image View Controller-->
-        <scene sceneID="2Gj-8o-JM8">
+        <!--View Controller-->
+        <scene sceneID="aAT-j2-C8R">
             <objects>
-                <viewController storyboardIdentifier="MapImageViewController" hidesBottomBarWhenPushed="YES" id="29K-N0-Ywg" customClass="MapImageViewController" sceneMemberID="viewController">
+                <viewController id="628-o3-wS7" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="52y-OW-ta0"/>
-                        <viewControllerLayoutGuide type="bottom" id="gOs-4M-Z4n"/>
+                        <viewControllerLayoutGuide type="top" id="rh1-iN-8B7"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZNS-Wh-lM9"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1mu-Fh-bqV">
+                    <view key="view" contentMode="scaleToFill" id="WXl-fg-FuO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <scrollView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" maximumZoomScale="6" translatesAutoresizingMaskIntoConstraints="NO" id="Oid-ao-1qN">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mxn-0W-3Cn">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="482"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <connections>
-                                    <outlet property="delegate" destination="29K-N0-Ywg" id="kS6-Zh-TUn"/>
-                                </connections>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="mapImageView" destination="mxn-0W-3Cn" id="dMz-og-vB1"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OvJ-Cd-eu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lhn-TO-IGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2005" y="863"/>
+            <point key="canvasLocation" x="1515" y="-1207"/>
         </scene>
         <!--Navigation Controller - Events-->
         <scene sceneID="Q0t-DA-nwT">
