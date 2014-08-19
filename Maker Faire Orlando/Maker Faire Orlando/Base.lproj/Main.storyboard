@@ -276,6 +276,7 @@
         <scene sceneID="2fq-aA-9BI">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="g8R-YH-BHm" customClass="MapPageViewController" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Map" image="map" id="CUo-hC-FPR"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wb-cT-G6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,18 +295,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Viw-8k-v1C">
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Viw-8k-v1C">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mnl-J4-foD" appends="YES" id="G96-Wk-N2l"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="mapImage" destination="Viw-8k-v1C" id="LmY-9q-mUn"/>
+                        <outlet property="mapImageView" destination="Viw-8k-v1C" id="Z6c-8G-8aX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4Z-3x-eG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="mnl-J4-foD"/>
             </objects>
             <point key="canvasLocation" x="1099" y="863"/>
         </scene>

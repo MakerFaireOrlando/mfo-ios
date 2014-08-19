@@ -41,6 +41,11 @@
 
     [[UILabel appearance] setTintColor:[UIColor makerRed]];
     
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor makerBlue];
+    pageControl.backgroundColor = [UIColor makerRed];
+    
     //[self.window setTintColor:[UIColor makerRed]];
 }
 							

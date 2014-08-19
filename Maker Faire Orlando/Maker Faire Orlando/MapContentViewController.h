@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Photo.h"
+#import "Faire+methods.h"
 
-@interface MapContentViewController : UIViewController
+@interface MapContentViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
 
+
 @property NSUInteger pageIndex;
-@property NSData *mapData;
+@property Photo *mapPhoto;
+
 
 @end

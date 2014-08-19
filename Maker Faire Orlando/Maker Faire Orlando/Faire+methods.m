@@ -32,7 +32,7 @@
 {
     [Maker updateMakers];
     [Event updateEvents];
-    [self updateMaps];
+    //[self updateMaps];
 }
 
 + (void)updateMaps
