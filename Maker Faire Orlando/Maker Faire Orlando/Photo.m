@@ -2,17 +2,20 @@
 //  Photo.m
 //  Maker Faire Orlando
 //
-//  Created by Jeffrey Klarfeld on 7/16/14.
+//  Created by Conner Brooks on 8/18/14.
 //  Copyright (c) 2014 Conner Brooks. All rights reserved.
 //
 
 #import "Photo.h"
+#import "Faire.h"
+#import "Maker.h"
 
 
 @implementation Photo
 
-@dynamic sourceURL;
 @dynamic image;
+@dynamic sourceURL;
 @dynamic maker;
+@dynamic faire;
 
 @end

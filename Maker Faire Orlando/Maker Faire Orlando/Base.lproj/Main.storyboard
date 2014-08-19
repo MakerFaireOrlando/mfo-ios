@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Makers-->
+        <!--Maker View Controller - Makers-->
         <scene sceneID="bJs-xr-z1Q">
             <objects>
                 <tableViewController id="MhQ-ub-eBd" customClass="MakerViewController" sceneMemberID="viewController">
@@ -124,7 +124,7 @@
             </objects>
             <point key="canvasLocation" x="1467" y="-526"/>
         </scene>
-        <!--Events-->
+        <!--Event View Controller - Events-->
         <scene sceneID="2vq-py-9Zb">
             <objects>
                 <tableViewController id="Htc-id-Azd" customClass="EventViewController" sceneMemberID="viewController">
@@ -246,14 +246,14 @@
                     <connections>
                         <segue destination="UDI-N5-Mg8" kind="relationship" relationship="viewControllers" id="5r9-5M-Luf"/>
                         <segue destination="1Hb-su-MAp" kind="relationship" relationship="viewControllers" id="OjF-mq-IYd"/>
-                        <segue destination="q2l-Jn-b9K" kind="relationship" relationship="viewControllers" id="RmW-ps-Anv"/>
+                        <segue destination="g8R-YH-BHm" kind="relationship" relationship="viewControllers" id="TUy-nm-89w"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
-        <!--Makers-->
+        <!--Navigation Controller - Makers-->
         <scene sceneID="0kY-w2-bMO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UDI-N5-Mg8" sceneMemberID="viewController">
@@ -272,38 +272,44 @@
             </objects>
             <point key="canvasLocation" x="660" y="-526"/>
         </scene>
-        <!--Map-->
-        <scene sceneID="44x-jx-gAT">
+        <!--Map Page View Controller - Map-->
+        <scene sceneID="2fq-aA-9BI">
             <objects>
-                <viewController id="q2l-Jn-b9K" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="g8R-YH-BHm" customClass="MapPageViewController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="map" id="CUo-hC-FPR"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5wb-cT-G6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="660" y="869"/>
+        </scene>
+        <!--Map Content View Controller-->
+        <scene sceneID="gUg-aN-m96">
+            <objects>
+                <viewController storyboardIdentifier="MapContentViewController" id="9lE-Qb-FBi" customClass="MapContentViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="s2D-Y9-0oC"/>
-                        <viewControllerLayoutGuide type="bottom" id="MZq-58-tPF"/>
+                        <viewControllerLayoutGuide type="top" id="3G9-LX-1Ag"/>
+                        <viewControllerLayoutGuide type="bottom" id="uVD-FJ-YxB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="By7-N8-OFd">
+                    <view key="view" contentMode="scaleToFill" id="0Ju-fu-nXV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map Coming Soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6E-j1-o9A">
-                                <rect key="frame" x="88" y="134" width="144" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Viw-8k-v1C">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="F6E-j1-o9A" firstAttribute="top" secondItem="s2D-Y9-0oC" secondAttribute="bottom" constant="114" id="SkY-Ys-ILi"/>
-                            <constraint firstItem="F6E-j1-o9A" firstAttribute="centerX" secondItem="By7-N8-OFd" secondAttribute="centerX" id="wUj-bG-GfN"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="map" id="jJz-LY-zWL"/>
+                    <connections>
+                        <outlet property="mapImage" destination="Viw-8k-v1C" id="LmY-9q-mUn"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x6m-ZZ-Dhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4Z-3x-eG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="660" y="847"/>
+            <point key="canvasLocation" x="1099" y="863"/>
         </scene>
-        <!--Events-->
+        <!--Navigation Controller - Events-->
         <scene sceneID="Q0t-DA-nwT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Hb-su-MAp" sceneMemberID="viewController">
@@ -328,13 +334,10 @@
         <image name="makers" width="17" height="27"/>
         <image name="map" width="27" height="22"/>
     </resources>
+    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
