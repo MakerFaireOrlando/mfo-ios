@@ -9,6 +9,8 @@
 #import "MapPageViewController.h"
 #import "Faire+methods.h"
 #import "MapContentViewController.h"
+#import "Photo.h"
+#import "NSManagedObject+methods.h"
 
 @implementation MapPageViewController
 
@@ -17,10 +19,15 @@
 {
     [super viewDidLoad];
 
-    Faire *currentFaire = [Faire currentFaire];
-    _pageImages = [[currentFaire maps] allObjects];
-    
     self.dataSource = self;
+    self.view.backgroundColor = [UIColor makerBlue];
+    
+    Faire *currentFaire = [Faire currentFaire];
+    
+    if ([currentFaire maps] != nil)
+    {
+        _pageImages = [[currentFaire maps] allObjects];
+    }
     
     MapContentViewController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
@@ -28,13 +35,6 @@
     
     // Change the size of page view controller
     self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
-    
-    //[self addChildViewController:_pageViewController];
-    //[self.view addSubview:_pageViewController.view];
-    //[self didMoveToParentViewController:self];
-    
-    
-    
 }
 
 #pragma mark - Page View Controller Data Source
@@ -60,7 +60,7 @@
     }
     
     index++;
-    if (index == [self.pageImages count]) {
+    if (index == numPictures) {
         return nil;
     }
     return [self viewControllerAtIndex:index];
@@ -68,13 +68,27 @@
 
 - (MapContentViewController *)viewControllerAtIndex:(NSUInteger)index
 {
-    if (([self.pageImages count] == 0) || (index >= [self.pageImages count])) {
+    if ((numPictures == 0) || (index >= numPictures)) {
         return nil;
     }
     
     // Create a new view controller and pass suitable data.
     MapContentViewController *mapContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MapContentViewController"];
-    mapContentViewController.mapPhoto = self.pageImages[index];
+
+    // If core data has the images and they are available use those
+    // TODO: add a way to refresh pictures
+    if(_pageImages != nil)
+    {
+        for (Photo *photo in _pageImages)
+        {
+            NSString *stringMapUrl = [NSString stringWithFormat:@"http://makerfaireorlando.com/images/MFO_OSC_Level%d.jpg", index + 1];
+            if ([photo.sourceURL isEqualToString:stringMapUrl])
+            {
+                mapContentViewController.mapPhoto = photo;
+            }
+        }
+    }
+    
     mapContentViewController.pageIndex = index;
     
     return mapContentViewController;

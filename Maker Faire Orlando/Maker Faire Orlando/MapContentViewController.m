@@ -7,6 +7,7 @@
 //
 
 #import "MapContentViewController.h"
+#import "NSManagedObject+methods.h"
 
 
 @implementation MapContentViewController
@@ -14,46 +15,62 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // retreive image based on index then cache it in orm
-    //NSManagedObjectContext *context = [Faire defaultContext];
+    _tapped = false;
     
     _mapImageView.userInteractionEnabled = YES;
-    UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc]
+    
+    _pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc]
                                     initWithTarget:self action:@selector(pinchGestureDetected:)];
-    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc]
+    _panGestureRecognizer = [[UIPanGestureRecognizer alloc]
                                     initWithTarget:self action:@selector(panGestureDetected:)];
-    [panGestureRecognizer setDelegate:self];
+    _singleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
     
-    pinchGestureRecognizer.delegate = self;
-    [_mapImageView addGestureRecognizer:pinchGestureRecognizer];
-    [_mapImageView addGestureRecognizer:panGestureRecognizer];
+    _singleTapRecognizer.numberOfTapsRequired = 1;
     
-    /*
-     How this should work is when we load this view check and see if the photo at the index is already in the maps set on the 
-     current faire then if it is load that version otherwise dowload it and add it to the faire. We need to be able to access images
-     by index 1-4.
-     */
+    [_panGestureRecognizer setDelegate:self];
+    _pinchGestureRecognizer.delegate = self;
+    
+    
+    [_mapImageView addGestureRecognizer:_singleTapRecognizer];
+    
+    
+    
+    Faire *currentFaire = [Faire currentFaire];
+    
+    NSManagedObjectContext *context = [Faire defaultContext];
+    
+    dispatch_queue_t imageQueue = dispatch_queue_create("com.makerfaireorlando.FaireImageQueue",NULL);
     
     NSString *stringMapUrl = [NSString stringWithFormat:@"http://makerfaireorlando.com/images/MFO_OSC_Level%d.jpg", _pageIndex + 1];
     NSURL *mapURL = [NSURL URLWithString:stringMapUrl];
-        
-    dispatch_async(dispatch_get_main_queue(), ^(void)
+    
+    if (_mapPhoto == nil)
     {
-        NSData *mapData = [NSData dataWithContentsOfURL:mapURL];
-                           
-        //Photo *photo = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:context];
-        //[photo setSourceURL:stringMapUrl];
-        //[photo setImage:mapData];
-                           
-        //[currentFaire addMapsObject:photo];
-                           
-        //[context save:nil];
-        dispatch_async(dispatch_get_main_queue(), ^(void) {
-            // Back to the main thread for UI updates, etc.
-            self.mapImageView.image = [UIImage imageWithData:mapData];
+        dispatch_async(imageQueue, ^(void)
+        {
+                       
+            NSData *mapData = [NSData dataWithContentsOfURL:mapURL];
+                       
+            Photo *photo = [NSEntityDescription insertNewObjectForEntityForName:@"Photo"
+                                                                    inManagedObjectContext:context];
+                       
+            [photo setSourceURL:stringMapUrl];
+            [photo setImage:mapData];
+                       
+            [currentFaire addMapsObject:photo];
+                       
+            [context save:nil];
+                       
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.mapImageView.image = [UIImage imageWithData:mapData];
+                self.mapPhoto = photo;
+            });
         });
-    });
+    }
+    else
+    {
+        _mapImageView.image = [UIImage imageWithData:_mapPhoto.image];
+    }
 }
 
 - (void)pinchGestureDetected:(UIPinchGestureRecognizer *)recognizer
@@ -77,6 +94,23 @@
         CGPoint translation = [recognizer translationInView:recognizer.view];
         [recognizer.view setTransform:CGAffineTransformTranslate(recognizer.view.transform, translation.x, translation.y)];
         [recognizer setTranslation:CGPointZero inView:recognizer.view];
+    }
+}
+
+
+// Tap the picture in order to pin and pan
+// so that the pageview will work
+-(void)tapDetected{
+    _tapped = !_tapped;
+    
+    if (_tapped)
+    {
+        [_mapImageView addGestureRecognizer:_pinchGestureRecognizer];
+        [_mapImageView addGestureRecognizer:_panGestureRecognizer];
+    }
+    else{
+        [_mapImageView removeGestureRecognizer:_pinchGestureRecognizer];
+        [_mapImageView removeGestureRecognizer:_panGestureRecognizer];
     }
 }
 

@@ -10,6 +10,8 @@
 
 @interface MapPageViewController : UIPageViewController <UIPageViewControllerDataSource>
 
+#define numPictures 4
+
 @property (strong, nonatomic) NSArray *pageImages;
 
 @end

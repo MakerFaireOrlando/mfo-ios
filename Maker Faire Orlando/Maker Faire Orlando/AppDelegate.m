@@ -35,7 +35,7 @@
 //    [[UITabBar appearance] setTranslucent:YES];
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor makerRed]}
-                                             forState:UIControlStateDisabled];
+                                             forState:UIControlStateSelected];
     
     [[UITableView appearance] setBackgroundColor:[UIColor lightTextColor]];
 
@@ -45,6 +45,10 @@
     pageControl.pageIndicatorTintColor = [UIColor whiteColor];
     pageControl.currentPageIndicatorTintColor = [UIColor makerBlue];
     pageControl.backgroundColor = [UIColor makerRed];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
+                                                        NSForegroundColorAttributeName : [UIColor whiteColor]
+                                                        } forState:UIControlStateNormal];
     
     //[self.window setTintColor:[UIColor makerRed]];
 }
