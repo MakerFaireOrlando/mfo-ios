@@ -28,6 +28,7 @@
 		11937F9F1976307D00D587F8 /* Maker_Faire_OrlandoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11937F9E1976307D00D587F8 /* Maker_Faire_OrlandoTests.m */; };
 		119A273819A182320004D335 /* MapPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119A273719A182320004D335 /* MapPageViewController.m */; };
 		119A273B19A183720004D335 /* MapContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119A273A19A183720004D335 /* MapContentViewController.m */; };
+		11C2FDB519A6576000067A3B /* MapImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C2FDB419A6576000067A3B /* MapImageViewController.m */; };
 		251FD1641978A56A0021F750 /* makerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 251FD1631978A56A0021F750 /* makerTableViewCell.m */; };
 		2559B5071979BE500039C17F /* NSManagedObject+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559B5061979BE500039C17F /* NSManagedObject+methods.m */; };
 		259E9E0A19A1589300B2E37E /* BOZPongRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 259E9E0919A1589300B2E37E /* BOZPongRefreshControl.m */; };
@@ -87,6 +88,8 @@
 		119A273719A182320004D335 /* MapPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPageViewController.m; sourceTree = "<group>"; };
 		119A273919A183720004D335 /* MapContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapContentViewController.h; sourceTree = "<group>"; };
 		119A273A19A183720004D335 /* MapContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapContentViewController.m; sourceTree = "<group>"; };
+		11C2FDB319A6576000067A3B /* MapImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapImageViewController.h; sourceTree = "<group>"; };
+		11C2FDB419A6576000067A3B /* MapImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapImageViewController.m; sourceTree = "<group>"; };
 		251FD1621978A56A0021F750 /* makerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = makerTableViewCell.h; sourceTree = "<group>"; };
 		251FD1631978A56A0021F750 /* makerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = makerTableViewCell.m; sourceTree = "<group>"; };
 		2559B5051979BE500039C17F /* NSManagedObject+methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+methods.h"; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 				119A273719A182320004D335 /* MapPageViewController.m */,
 				119A273919A183720004D335 /* MapContentViewController.h */,
 				119A273A19A183720004D335 /* MapContentViewController.m */,
+				11C2FDB319A6576000067A3B /* MapImageViewController.h */,
+				11C2FDB419A6576000067A3B /* MapImageViewController.m */,
 			);
 			path = "Maker Faire Orlando";
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 				1145C1EF198752AA00AE013D /* MakerDetailViewController.m in Sources */,
 				25A86CC21977289600B45778 /* Faire+methods.m in Sources */,
 				25A86CCB19786DD000B45778 /* DataManager.m in Sources */,
+				11C2FDB519A6576000067A3B /* MapImageViewController.m in Sources */,
 				119A273819A182320004D335 /* MapPageViewController.m in Sources */,
 				25A86CB2197721EB00B45778 /* MakerFaire.xcdatamodeld in Sources */,
 				11937F811976307D00D587F8 /* AppDelegate.m in Sources */,

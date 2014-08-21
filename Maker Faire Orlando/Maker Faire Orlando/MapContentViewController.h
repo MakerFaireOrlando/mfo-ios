@@ -19,8 +19,7 @@
 @property Photo *mapPhoto;
 @property BOOL tapped;
 
-@property UIPinchGestureRecognizer *pinchGestureRecognizer;
-@property UIPanGestureRecognizer *panGestureRecognizer;
+
 @property UITapGestureRecognizer *singleTapRecognizer;
 
 
