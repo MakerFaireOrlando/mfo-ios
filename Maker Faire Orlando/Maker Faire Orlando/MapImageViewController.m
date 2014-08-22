@@ -26,8 +26,8 @@
     [_panGestureRecognizer setDelegate:self];
     _pinchGestureRecognizer.delegate = self;
     
-    [_mapImageView addGestureRecognizer:_pinchGestureRecognizer];
-    [_mapImageView addGestureRecognizer:_panGestureRecognizer];
+    //[_mapImageView addGestureRecognizer:_pinchGestureRecognizer];
+    //[_mapImageView addGestureRecognizer:_panGestureRecognizer];
     
     self.view.backgroundColor = [UIColor blackColor];
 }
@@ -63,6 +63,11 @@
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return YES;
+}
+
+-(UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.mapImageView;
 }
 
 @end

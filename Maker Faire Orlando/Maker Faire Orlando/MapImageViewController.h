@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Photo.h"
 
-@interface MapImageViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface MapImageViewController : UIViewController <UIGestureRecognizerDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
 
