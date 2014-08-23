@@ -14,6 +14,7 @@
 #import "MakerDetailViewController.h"
 #import "BOZPongRefreshControl.h"
 #import "CategoryTransitionAnimator.h"
+#import "CategoriesViewController.h"
 
 @interface MakerViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
@@ -25,6 +26,8 @@
 @property (strong, nonatomic) UILabel *failView;
 
 @property (weak, nonatomic) NSManagedObjectContext *context;
+
+@property (strong, nonatomic) CategoryTransitionAnimator *animator;
 @end
 
 @implementation MakerViewController
@@ -33,10 +36,13 @@
 @synthesize makers = _makers;
 @synthesize context = _context;
 @synthesize failView = _failView;
+@synthesize animator = _animator;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _animator = [[CategoryTransitionAnimator alloc] init];
     
     _makerSearchBar.barTintColor = [UIColor makerRed];
     
@@ -208,8 +214,11 @@
     {
         NSLog(@"showCategories");
         
-        [segue.destinationViewController setTransitioningDelegate:self];
-        [segue.destinationViewController setModalPresentationStyle:UIModalPresentationCustom];
+        CategoriesViewController *destController = (CategoriesViewController *)segue.destinationViewController;
+        
+        [destController setTransitioningDelegate:self];
+        [destController setModalPresentationStyle:UIModalPresentationCustom];
+        
     }
     else
     {
@@ -233,17 +242,15 @@
                                                                   presentingController:(UIViewController *)presenting
                                                                       sourceController:(UIViewController *)source
 {
-    CategoryTransitionAnimator *animator = [[CategoryTransitionAnimator alloc] init];
-    [animator setPresenting:YES];
+    [_animator setPresenting:YES];
     
-    return animator;
+    return _animator;
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
 {
-    CategoryTransitionAnimator *animator = [[CategoryTransitionAnimator alloc] init];
-    
-    return animator;
+    [_animator setPresenting:NO];
+    return _animator;
 }
 
 #pragma mark Content Filtering

@@ -20,11 +20,18 @@
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    MakerViewController *fromViewController = (MakerViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *fromViewController = (UIViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
+    float offsetWidth = 250.0f;
+    float screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    float screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    
 //    CGRect endFrame = CGRectMake(80, 280, 160, 100);
-    CGRect endFrame = CGRectMake(fromViewController.view.frame.size.width-250.0, 0, 250.0, fromViewController.view.frame.size.height);
+    CGRect endFrame = CGRectMake(0,
+                                 0,
+                                 offsetWidth,
+                                 screenHeight);
     
     if (_presenting)
     {
@@ -32,19 +39,57 @@
         [transitionContext.containerView addSubview:toViewController.view];
         
         CGRect startFrame = endFrame;
-        startFrame.origin.x = fromViewController.view.frame.size.width;
+        startFrame.origin.x = screenWidth;
         
         toViewController.view.frame = startFrame;
         
-        [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
+        [UIView animateWithDuration:[self transitionDuration:transitionContext]
+                              delay:0.0f
+             usingSpringWithDamping:0.5f
+              initialSpringVelocity:0.05f
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^
+        {
             fromViewController.view.tintAdjustmentMode = UIViewTintAdjustmentModeDimmed;
+            [fromViewController.view setUserInteractionEnabled:NO];
             toViewController.view.frame = endFrame;
-        } completion:^(BOOL finished) {
+        }
+                         completion:^(BOOL finished)
+        {
             [transitionContext completeTransition:YES];
         }];
     }
     else
     {
+        endFrame.origin.x += screenWidth;
+        
+        [UIView animateWithDuration:[self transitionDuration:transitionContext]
+                              delay:0.0f
+             usingSpringWithDamping:0.5f
+              initialSpringVelocity:0.05f
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^
+        {
+            toViewController.view.tintAdjustmentMode = UIViewTintAdjustmentModeAutomatic;
+            [fromViewController.view setFrame:endFrame];
+        }
+                         completion:^(BOOL finished)
+        {
+            [toViewController.view setUserInteractionEnabled:YES];
+            [transitionContext completeTransition:YES];
+        }];
+        
+//        [UIView animateWithDuration:[self transitionDuration:transitionContext]
+//                         animations:^
+//        {
+//            toViewController.view.tintAdjustmentMode = UIViewTintAdjustmentModeAutomatic;
+//            [fromViewController.view setFrame:endFrame];
+//        }
+//                         completion:^(BOOL finished)
+//        {
+//            [transitionContext completeTransition:YES];
+//        }];
+        
         
     }
 }

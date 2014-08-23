@@ -15,15 +15,20 @@
 
 + (Faire *)currentFaire
 {
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Faire"];
+    static Faire *currentFaire = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^
+    {
+        NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Faire"];
+        
+        NSPredicate *currentPredicate = [NSPredicate predicateWithFormat:@"current == YES"];
+        
+        [request setPredicate:currentPredicate];
+        
+        currentFaire = [[[Faire defaultContext] executeFetchRequest:request error:nil] firstObject];
+    });
     
-    NSPredicate *currentPredicate = [NSPredicate predicateWithFormat:@"current == YES"];
-    
-    [request setPredicate:currentPredicate];
-    
-    Faire *current = [[[Faire defaultContext] executeFetchRequest:request error:nil] firstObject];
-    
-    return current;
+    return currentFaire;
 }
 
 + (void)updateFaire
