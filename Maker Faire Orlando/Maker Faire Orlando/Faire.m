@@ -2,24 +2,26 @@
 //  Faire.m
 //  Maker Faire Orlando
 //
-//  Created by Jeffrey Klarfeld on 7/17/14.
+//  Created by Conner Brooks on 8/18/14.
 //  Copyright (c) 2014 Conner Brooks. All rights reserved.
 //
 
 #import "Faire.h"
 #import "Event.h"
 #import "Maker.h"
+#import "Photo.h"
 
 
 @implementation Faire
 
-@dynamic title;
 @dynamic aboutURL;
-@dynamic volunteerURL;
 @dynamic attendURL;
-@dynamic sponsorURL;
 @dynamic current;
-@dynamic makers;
+@dynamic sponsorURL;
+@dynamic title;
+@dynamic volunteerURL;
 @dynamic events;
+@dynamic makers;
+@dynamic maps;
 
 @end

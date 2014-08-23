@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		112CE7B8198F11E900BE0BC5 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115475351987735300620F0F /* EventDetailViewController.m */; };
 		1145C1EF198752AA00AE013D /* MakerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1145C1EE198752AA00AE013D /* MakerDetailViewController.m */; };
+		11650B4F19A2FDF0002AAD0C /* Faire.m in Sources */ = {isa = PBXBuildFile; fileRef = 11650B4E19A2FDF0002AAD0C /* Faire.m */; };
+		11650B5219A2FDF1002AAD0C /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 11650B5119A2FDF1002AAD0C /* Photo.m */; };
 		11937F711976307D00D587F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F701976307D00D587F8 /* Foundation.framework */; };
 		11937F731976307D00D587F8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F721976307D00D587F8 /* CoreGraphics.framework */; };
 		11937F751976307D00D587F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F741976307D00D587F8 /* UIKit.framework */; };
@@ -24,18 +26,19 @@
 		11937F951976307D00D587F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F741976307D00D587F8 /* UIKit.framework */; };
 		11937F9D1976307D00D587F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11937F9B1976307D00D587F8 /* InfoPlist.strings */; };
 		11937F9F1976307D00D587F8 /* Maker_Faire_OrlandoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11937F9E1976307D00D587F8 /* Maker_Faire_OrlandoTests.m */; };
+		119A273819A182320004D335 /* MapPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119A273719A182320004D335 /* MapPageViewController.m */; };
+		119A273B19A183720004D335 /* MapContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119A273A19A183720004D335 /* MapContentViewController.m */; };
+		11C2FDB519A6576000067A3B /* MapImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C2FDB419A6576000067A3B /* MapImageViewController.m */; };
 		251FD1641978A56A0021F750 /* makerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 251FD1631978A56A0021F750 /* makerTableViewCell.m */; };
 		2559B5071979BE500039C17F /* NSManagedObject+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559B5061979BE500039C17F /* NSManagedObject+methods.m */; };
 		259E9E0A19A1589300B2E37E /* BOZPongRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 259E9E0919A1589300B2E37E /* BOZPongRefreshControl.m */; };
 		25A7AC45197D80E300C193FC /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A7AC44197D80E300C193FC /* EventTableViewCell.m */; };
 		25A86CB2197721EB00B45778 /* MakerFaire.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CB0197721EB00B45778 /* MakerFaire.xcdatamodeld */; };
-		25A86CB61977284800B45778 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CB51977284800B45778 /* Photo.m */; };
 		25A86CBF1977284900B45778 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CBE1977284900B45778 /* Event.m */; };
 		25A86CC21977289600B45778 /* Faire+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CC11977289600B45778 /* Faire+methods.m */; };
 		25A86CC519772B0500B45778 /* Event+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CC419772B0500B45778 /* Event+methods.m */; };
 		25A86CC819772B1F00B45778 /* Maker+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CC719772B1F00B45778 /* Maker+methods.m */; };
 		25A86CCB19786DD000B45778 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CCA19786DD000B45778 /* DataManager.m */; };
-		25A86CCE19787B5600B45778 /* Faire.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CCD19787B5600B45778 /* Faire.m */; };
 		25A86CD1197893AA00B45778 /* Maker.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CD0197893AA00B45778 /* Maker.m */; };
 		25BDBD8019A1637D00EAB077 /* UIColor+MakerColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BDBD7F19A1637D00EAB077 /* UIColor+MakerColors.m */; };
 		25FA709A19A0725A00F90E04 /* eventsTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 25FA709919A0725A00F90E04 /* eventsTest.json */; };
@@ -56,6 +59,10 @@
 		1145C1EE198752AA00AE013D /* MakerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakerDetailViewController.m; sourceTree = "<group>"; };
 		115475341987735300620F0F /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
 		115475351987735300620F0F /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
+		11650B4D19A2FDF0002AAD0C /* Faire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faire.h; sourceTree = "<group>"; };
+		11650B4E19A2FDF0002AAD0C /* Faire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faire.m; sourceTree = "<group>"; };
+		11650B5019A2FDF1002AAD0C /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		11650B5119A2FDF1002AAD0C /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		11937F6D1976307D00D587F8 /* Maker Faire Orlando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Maker Faire Orlando.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11937F701976307D00D587F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		11937F721976307D00D587F8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -77,6 +84,12 @@
 		11937F9A1976307D00D587F8 /* Maker Faire OrlandoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Maker Faire OrlandoTests-Info.plist"; sourceTree = "<group>"; };
 		11937F9C1976307D00D587F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		11937F9E1976307D00D587F8 /* Maker_Faire_OrlandoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Maker_Faire_OrlandoTests.m; sourceTree = "<group>"; };
+		119A273619A182320004D335 /* MapPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPageViewController.h; sourceTree = "<group>"; };
+		119A273719A182320004D335 /* MapPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPageViewController.m; sourceTree = "<group>"; };
+		119A273919A183720004D335 /* MapContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapContentViewController.h; sourceTree = "<group>"; };
+		119A273A19A183720004D335 /* MapContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapContentViewController.m; sourceTree = "<group>"; };
+		11C2FDB319A6576000067A3B /* MapImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapImageViewController.h; sourceTree = "<group>"; };
+		11C2FDB419A6576000067A3B /* MapImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapImageViewController.m; sourceTree = "<group>"; };
 		251FD1621978A56A0021F750 /* makerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = makerTableViewCell.h; sourceTree = "<group>"; };
 		251FD1631978A56A0021F750 /* makerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = makerTableViewCell.m; sourceTree = "<group>"; };
 		2559B5051979BE500039C17F /* NSManagedObject+methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+methods.h"; sourceTree = "<group>"; };
@@ -86,8 +99,6 @@
 		25A7AC43197D80E200C193FC /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
 		25A7AC44197D80E300C193FC /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
 		25A86CB1197721EB00B45778 /* MakerFaire.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MakerFaire.xcdatamodel; sourceTree = "<group>"; };
-		25A86CB41977284800B45778 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
-		25A86CB51977284800B45778 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		25A86CBD1977284900B45778 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		25A86CBE1977284900B45778 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		25A86CC01977289600B45778 /* Faire+methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Faire+methods.h"; sourceTree = "<group>"; };
@@ -98,8 +109,6 @@
 		25A86CC719772B1F00B45778 /* Maker+methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Maker+methods.m"; sourceTree = "<group>"; };
 		25A86CC919786DD000B45778 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		25A86CCA19786DD000B45778 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		25A86CCC19787B5600B45778 /* Faire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faire.h; sourceTree = "<group>"; };
-		25A86CCD19787B5600B45778 /* Faire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faire.m; sourceTree = "<group>"; };
 		25A86CCF197893AA00B45778 /* Maker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maker.h; sourceTree = "<group>"; };
 		25A86CD0197893AA00B45778 /* Maker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Maker.m; sourceTree = "<group>"; };
 		25BDBD7E19A1637D00EAB077 /* UIColor+MakerColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MakerColors.h"; sourceTree = "<group>"; };
@@ -164,30 +173,21 @@
 		11937F761976307D00D587F8 /* Maker Faire Orlando */ = {
 			isa = PBXGroup;
 			children = (
-				259E9E0719A1583800B2E37E /* Custom Controls */,
-				2559B5051979BE500039C17F /* NSManagedObject+methods.h */,
-				2559B5061979BE500039C17F /* NSManagedObject+methods.m */,
-				25A86CB31977282B00B45778 /* Models */,
 				11937F7F1976307D00D587F8 /* AppDelegate.h */,
 				11937F801976307D00D587F8 /* AppDelegate.m */,
-				11937F821976307D00D587F8 /* Main.storyboard */,
-				251FD1621978A56A0021F750 /* makerTableViewCell.h */,
-				251FD1631978A56A0021F750 /* makerTableViewCell.m */,
-				11937F851976307D00D587F8 /* MakerViewController.h */,
-				11937F861976307D00D587F8 /* MakerViewController.m */,
-				11937F881976307D00D587F8 /* EventViewController.h */,
-				11937F891976307D00D587F8 /* EventViewController.m */,
-				25A7AC43197D80E200C193FC /* EventTableViewCell.h */,
-				25A7AC44197D80E300C193FC /* EventTableViewCell.m */,
-				11937F8B1976307D00D587F8 /* Images.xcassets */,
-				11937F771976307D00D587F8 /* Supporting Files */,
-				25A86CB0197721EB00B45778 /* MakerFaire.xcdatamodeld */,
+				259E9E0719A1583800B2E37E /* Custom Controls */,
 				25A86CC919786DD000B45778 /* DataManager.h */,
 				25A86CCA19786DD000B45778 /* DataManager.m */,
-				1145C1ED198752AA00AE013D /* MakerDetailViewController.h */,
-				1145C1EE198752AA00AE013D /* MakerDetailViewController.m */,
-				115475341987735300620F0F /* EventDetailViewController.h */,
-				115475351987735300620F0F /* EventDetailViewController.m */,
+				25A169D119A834C300A3D833 /* Event Controllers */,
+				11937F8B1976307D00D587F8 /* Images.xcassets */,
+				11937F821976307D00D587F8 /* Main.storyboard */,
+				25A169D219A834D500A3D833 /* Maker Controllers */,
+				25A86CB0197721EB00B45778 /* MakerFaire.xcdatamodeld */,
+				25A169D019A834A800A3D833 /* Map Controllers */,
+				25A86CB31977282B00B45778 /* Models */,
+				2559B5051979BE500039C17F /* NSManagedObject+methods.h */,
+				2559B5061979BE500039C17F /* NSManagedObject+methods.m */,
+				11937F771976307D00D587F8 /* Supporting Files */,
 				25BDBD7E19A1637D00EAB077 /* UIColor+MakerColors.h */,
 				25BDBD7F19A1637D00EAB077 /* UIColor+MakerColors.m */,
 			);
@@ -233,13 +233,54 @@
 			name = "Custom Controls";
 			sourceTree = "<group>";
 		};
+		25A169D019A834A800A3D833 /* Map Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				119A273619A182320004D335 /* MapPageViewController.h */,
+				119A273719A182320004D335 /* MapPageViewController.m */,
+				119A273919A183720004D335 /* MapContentViewController.h */,
+				119A273A19A183720004D335 /* MapContentViewController.m */,
+				11C2FDB319A6576000067A3B /* MapImageViewController.h */,
+				11C2FDB419A6576000067A3B /* MapImageViewController.m */,
+			);
+			name = "Map Controllers";
+			sourceTree = "<group>";
+		};
+		25A169D119A834C300A3D833 /* Event Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11937F881976307D00D587F8 /* EventViewController.h */,
+				11937F891976307D00D587F8 /* EventViewController.m */,
+				25A7AC43197D80E200C193FC /* EventTableViewCell.h */,
+				25A7AC44197D80E300C193FC /* EventTableViewCell.m */,
+				115475341987735300620F0F /* EventDetailViewController.h */,
+				115475351987735300620F0F /* EventDetailViewController.m */,
+			);
+			name = "Event Controllers";
+			sourceTree = "<group>";
+		};
+		25A169D219A834D500A3D833 /* Maker Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				251FD1621978A56A0021F750 /* makerTableViewCell.h */,
+				251FD1631978A56A0021F750 /* makerTableViewCell.m */,
+				11937F851976307D00D587F8 /* MakerViewController.h */,
+				11937F861976307D00D587F8 /* MakerViewController.m */,
+				1145C1ED198752AA00AE013D /* MakerDetailViewController.h */,
+				1145C1EE198752AA00AE013D /* MakerDetailViewController.m */,
+			);
+			name = "Maker Controllers";
+			sourceTree = "<group>";
+		};
 		25A86CB31977282B00B45778 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				11650B5019A2FDF1002AAD0C /* Photo.h */,
+				11650B5119A2FDF1002AAD0C /* Photo.m */,
+				11650B4D19A2FDF0002AAD0C /* Faire.h */,
+				11650B4E19A2FDF0002AAD0C /* Faire.m */,
 				25A86CCF197893AA00B45778 /* Maker.h */,
 				25A86CD0197893AA00B45778 /* Maker.m */,
-				25A86CCC19787B5600B45778 /* Faire.h */,
-				25A86CCD19787B5600B45778 /* Faire.m */,
 				25A86CBD1977284900B45778 /* Event.h */,
 				25A86CC319772B0500B45778 /* Event+methods.h */,
 				25A86CC419772B0500B45778 /* Event+methods.m */,
@@ -248,8 +289,6 @@
 				25A86CC719772B1F00B45778 /* Maker+methods.m */,
 				25A86CC01977289600B45778 /* Faire+methods.h */,
 				25A86CC11977289600B45778 /* Faire+methods.m */,
-				25A86CB41977284800B45778 /* Photo.h */,
-				25A86CB51977284800B45778 /* Photo.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -359,16 +398,19 @@
 				112CE7B8198F11E900BE0BC5 /* EventDetailViewController.m in Sources */,
 				25BDBD8019A1637D00EAB077 /* UIColor+MakerColors.m in Sources */,
 				25A86CC519772B0500B45778 /* Event+methods.m in Sources */,
-				25A86CB61977284800B45778 /* Photo.m in Sources */,
+				119A273B19A183720004D335 /* MapContentViewController.m in Sources */,
 				11937F8A1976307D00D587F8 /* EventViewController.m in Sources */,
 				25A86CBF1977284900B45778 /* Event.m in Sources */,
 				25A7AC45197D80E300C193FC /* EventTableViewCell.m in Sources */,
+				11650B5219A2FDF1002AAD0C /* Photo.m in Sources */,
 				251FD1641978A56A0021F750 /* makerTableViewCell.m in Sources */,
-				25A86CCE19787B5600B45778 /* Faire.m in Sources */,
+				11650B4F19A2FDF0002AAD0C /* Faire.m in Sources */,
 				25A86CD1197893AA00B45778 /* Maker.m in Sources */,
 				1145C1EF198752AA00AE013D /* MakerDetailViewController.m in Sources */,
 				25A86CC21977289600B45778 /* Faire+methods.m in Sources */,
 				25A86CCB19786DD000B45778 /* DataManager.m in Sources */,
+				11C2FDB519A6576000067A3B /* MapImageViewController.m in Sources */,
+				119A273819A182320004D335 /* MapPageViewController.m in Sources */,
 				25A86CB2197721EB00B45778 /* MakerFaire.xcdatamodeld in Sources */,
 				11937F811976307D00D587F8 /* AppDelegate.m in Sources */,
 				25A86CC819772B1F00B45778 /* Maker+methods.m in Sources */,

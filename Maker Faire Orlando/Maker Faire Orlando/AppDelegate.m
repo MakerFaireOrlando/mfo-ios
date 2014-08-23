@@ -29,18 +29,30 @@
     [[UINavigationBar appearance] setBarTintColor:[UIColor makerBlue]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
     [[UITabBar appearance] setBarTintColor:[UIColor makerBlue]];
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     //TODO: Uncomment when iOS8 launches
 //    [[UITabBar appearance] setTranslucent:YES];
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor makerRed]}
-                                             forState:UIControlStateDisabled];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}
+                                             forState:UIControlStateSelected];
     
     [[UITableView appearance] setBackgroundColor:[UIColor lightTextColor]];
 
     [[UILabel appearance] setTintColor:[UIColor makerRed]];
     
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor makerBlue];
+    pageControl.backgroundColor = [UIColor makerRed];
+    
+    /*
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
+                                                        NSForegroundColorAttributeName : [UIColor whiteColor]
+                                                        } forState:UIControlStateNormal];
+    */
     //[self.window setTintColor:[UIColor makerRed]];
 }
 							

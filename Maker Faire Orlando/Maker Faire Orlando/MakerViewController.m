@@ -37,6 +37,8 @@
 {
     [super viewDidLoad];
     
+    _makerSearchBar.barTintColor = [UIColor makerRed];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(finishRefresh)
                                                  name:kMakersArrived
