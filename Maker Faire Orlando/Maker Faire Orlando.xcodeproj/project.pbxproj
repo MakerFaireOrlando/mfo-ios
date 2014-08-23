@@ -173,38 +173,23 @@
 		11937F761976307D00D587F8 /* Maker Faire Orlando */ = {
 			isa = PBXGroup;
 			children = (
-				259E9E0719A1583800B2E37E /* Custom Controls */,
-				2559B5051979BE500039C17F /* NSManagedObject+methods.h */,
-				2559B5061979BE500039C17F /* NSManagedObject+methods.m */,
-				25A86CB31977282B00B45778 /* Models */,
 				11937F7F1976307D00D587F8 /* AppDelegate.h */,
 				11937F801976307D00D587F8 /* AppDelegate.m */,
-				11937F821976307D00D587F8 /* Main.storyboard */,
-				251FD1621978A56A0021F750 /* makerTableViewCell.h */,
-				251FD1631978A56A0021F750 /* makerTableViewCell.m */,
-				11937F851976307D00D587F8 /* MakerViewController.h */,
-				11937F861976307D00D587F8 /* MakerViewController.m */,
-				11937F881976307D00D587F8 /* EventViewController.h */,
-				11937F891976307D00D587F8 /* EventViewController.m */,
-				25A7AC43197D80E200C193FC /* EventTableViewCell.h */,
-				25A7AC44197D80E300C193FC /* EventTableViewCell.m */,
-				11937F8B1976307D00D587F8 /* Images.xcassets */,
-				11937F771976307D00D587F8 /* Supporting Files */,
-				25A86CB0197721EB00B45778 /* MakerFaire.xcdatamodeld */,
+				259E9E0719A1583800B2E37E /* Custom Controls */,
 				25A86CC919786DD000B45778 /* DataManager.h */,
 				25A86CCA19786DD000B45778 /* DataManager.m */,
-				1145C1ED198752AA00AE013D /* MakerDetailViewController.h */,
-				1145C1EE198752AA00AE013D /* MakerDetailViewController.m */,
-				115475341987735300620F0F /* EventDetailViewController.h */,
-				115475351987735300620F0F /* EventDetailViewController.m */,
+				25A169D119A834C300A3D833 /* Event Controllers */,
+				11937F8B1976307D00D587F8 /* Images.xcassets */,
+				11937F821976307D00D587F8 /* Main.storyboard */,
+				25A169D219A834D500A3D833 /* Maker Controllers */,
+				25A86CB0197721EB00B45778 /* MakerFaire.xcdatamodeld */,
+				25A169D019A834A800A3D833 /* Map Controllers */,
+				25A86CB31977282B00B45778 /* Models */,
+				2559B5051979BE500039C17F /* NSManagedObject+methods.h */,
+				2559B5061979BE500039C17F /* NSManagedObject+methods.m */,
+				11937F771976307D00D587F8 /* Supporting Files */,
 				25BDBD7E19A1637D00EAB077 /* UIColor+MakerColors.h */,
 				25BDBD7F19A1637D00EAB077 /* UIColor+MakerColors.m */,
-				119A273619A182320004D335 /* MapPageViewController.h */,
-				119A273719A182320004D335 /* MapPageViewController.m */,
-				119A273919A183720004D335 /* MapContentViewController.h */,
-				119A273A19A183720004D335 /* MapContentViewController.m */,
-				11C2FDB319A6576000067A3B /* MapImageViewController.h */,
-				11C2FDB419A6576000067A3B /* MapImageViewController.m */,
 			);
 			path = "Maker Faire Orlando";
 			sourceTree = "<group>";
@@ -246,6 +231,45 @@
 				259E9E0919A1589300B2E37E /* BOZPongRefreshControl.m */,
 			);
 			name = "Custom Controls";
+			sourceTree = "<group>";
+		};
+		25A169D019A834A800A3D833 /* Map Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				119A273619A182320004D335 /* MapPageViewController.h */,
+				119A273719A182320004D335 /* MapPageViewController.m */,
+				119A273919A183720004D335 /* MapContentViewController.h */,
+				119A273A19A183720004D335 /* MapContentViewController.m */,
+				11C2FDB319A6576000067A3B /* MapImageViewController.h */,
+				11C2FDB419A6576000067A3B /* MapImageViewController.m */,
+			);
+			name = "Map Controllers";
+			sourceTree = "<group>";
+		};
+		25A169D119A834C300A3D833 /* Event Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11937F881976307D00D587F8 /* EventViewController.h */,
+				11937F891976307D00D587F8 /* EventViewController.m */,
+				25A7AC43197D80E200C193FC /* EventTableViewCell.h */,
+				25A7AC44197D80E300C193FC /* EventTableViewCell.m */,
+				115475341987735300620F0F /* EventDetailViewController.h */,
+				115475351987735300620F0F /* EventDetailViewController.m */,
+			);
+			name = "Event Controllers";
+			sourceTree = "<group>";
+		};
+		25A169D219A834D500A3D833 /* Maker Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				251FD1621978A56A0021F750 /* makerTableViewCell.h */,
+				251FD1631978A56A0021F750 /* makerTableViewCell.m */,
+				11937F851976307D00D587F8 /* MakerViewController.h */,
+				11937F861976307D00D587F8 /* MakerViewController.m */,
+				1145C1ED198752AA00AE013D /* MakerDetailViewController.h */,
+				1145C1EE198752AA00AE013D /* MakerDetailViewController.m */,
+			);
+			name = "Maker Controllers";
 			sourceTree = "<group>";
 		};
 		25A86CB31977282B00B45778 /* Models */ = {
