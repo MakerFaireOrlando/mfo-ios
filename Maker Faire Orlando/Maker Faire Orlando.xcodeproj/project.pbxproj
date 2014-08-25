@@ -41,6 +41,7 @@
 		25A86CC819772B1F00B45778 /* Maker+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CC719772B1F00B45778 /* Maker+methods.m */; };
 		25A86CCB19786DD000B45778 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CCA19786DD000B45778 /* DataManager.m */; };
 		25A86CD1197893AA00B45778 /* Maker.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CD0197893AA00B45778 /* Maker.m */; };
+		25B2622219ABC6860095E4AA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B2622119ABC6860095E4AA /* Crashlytics.framework */; };
 		25B5170F19A2F5E400AA7C0C /* CategoryTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5170E19A2F5E400AA7C0C /* CategoryTransitionAnimator.m */; };
 		25BDBD8019A1637D00EAB077 /* UIColor+MakerColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BDBD7F19A1637D00EAB077 /* UIColor+MakerColors.m */; };
 		25CD898F19A85F83008849ED /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CD898E19A85F83008849ED /* CategoryTableViewCell.m */; };
@@ -116,6 +117,7 @@
 		25A86CCA19786DD000B45778 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		25A86CCF197893AA00B45778 /* Maker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maker.h; sourceTree = "<group>"; };
 		25A86CD0197893AA00B45778 /* Maker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Maker.m; sourceTree = "<group>"; };
+		25B2622119ABC6860095E4AA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		25B5170D19A2F5E400AA7C0C /* CategoryTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTransitionAnimator.h; sourceTree = "<group>"; };
 		25B5170E19A2F5E400AA7C0C /* CategoryTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTransitionAnimator.m; sourceTree = "<group>"; };
 		25BDBD7E19A1637D00EAB077 /* UIColor+MakerColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MakerColors.h"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			files = (
 				11937F731976307D00D587F8 /* CoreGraphics.framework in Frameworks */,
 				11937F751976307D00D587F8 /* UIKit.framework in Frameworks */,
+				25B2622219ABC6860095E4AA /* Crashlytics.framework in Frameworks */,
 				11937F711976307D00D587F8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +212,7 @@
 		11937F771976307D00D587F8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				25B2622119ABC6860095E4AA /* Crashlytics.framework */,
 				11937F781976307D00D587F8 /* Maker Faire Orlando-Info.plist */,
 				11937F791976307D00D587F8 /* InfoPlist.strings */,
 				11937F7C1976307D00D587F8 /* main.m */,
@@ -326,6 +330,7 @@
 				11937F691976307D00D587F8 /* Sources */,
 				11937F6A1976307D00D587F8 /* Frameworks */,
 				11937F6B1976307D00D587F8 /* Resources */,
+				25B2622019ABC65D0095E4AA /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -411,6 +416,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25B2622019ABC65D0095E4AA /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 429e7433a85ac099498619d27e007b0313c7e3cd 714dde87afa8de3a406dc9fc25e6da07107c709fab61bc58b01af761c020641c";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		11937F691976307D00D587F8 /* Sources */ = {
@@ -569,6 +591,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Maker",
+					Faire,
+					Orlando,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Maker Faire Orlando/Maker Faire Orlando-Prefix.pch";
 				INFOPLIST_FILE = "Maker Faire Orlando/Maker Faire Orlando-Info.plist";
@@ -586,6 +614,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Maker",
+					Faire,
+					Orlando,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Maker Faire Orlando/Maker Faire Orlando-Prefix.pch";
 				INFOPLIST_FILE = "Maker Faire Orlando/Maker Faire Orlando-Info.plist";
