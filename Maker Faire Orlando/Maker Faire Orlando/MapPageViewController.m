@@ -18,6 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tabBarController.view.backgroundColor = [UIColor whiteColor];
 
     self.dataSource = self;
     self.view.backgroundColor = [UIColor makerBlue];

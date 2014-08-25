@@ -36,8 +36,8 @@
     NSString *start = [formatter stringFromDate:_event.startTime];
     NSString *end = [formatter stringFromDate:_event.endTime];
     
-    [_eventStartTime setText:start];
-    [_eventEndTime setText:end];
+    [_eventStartTime setText:[NSString stringWithFormat:@"Start:\t%@", start]];
+    [_eventEndTime setText:[NSString stringWithFormat:@"End:\t%@", end]];
 }
 
 - (void)viewDidLoad
