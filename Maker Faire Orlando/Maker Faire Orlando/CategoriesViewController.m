@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     
-    [self.view setBackgroundColor:[UIColor clearColor]];
+    [self.view setBackgroundColor:[UIColor clearColor]];    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -138,7 +138,6 @@
 - (IBAction)viewTapped:(UITapGestureRecognizer *)sender
 {
     [self dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"dismissed");
     }];
 }
 @end

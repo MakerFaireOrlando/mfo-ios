@@ -42,6 +42,8 @@
         startFrame.origin.x = screenWidth;
         
         toViewController.view.frame = startFrame;
+        __block UIView *mask = [toViewController.view viewWithTag:42];
+        [mask setAlpha:0.0f];
         
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
                               delay:0.0f
@@ -52,7 +54,11 @@
         {
             fromViewController.view.tintAdjustmentMode = UIViewTintAdjustmentModeDimmed;
             [fromViewController.view setUserInteractionEnabled:NO];
+            
+            [mask setAlpha:1.0f];
+            
             toViewController.view.frame = endFrame;
+            
         }
                          completion:^(BOOL finished)
         {
