@@ -34,7 +34,7 @@
     
     dispatch_queue_t imageQueue = dispatch_queue_create("com.makerfaireorlando.FaireImageQueue",NULL);
     
-    NSString *stringMapUrl = [NSString stringWithFormat:@"http://makerfaireorlando.com/images/MFO_OSC_Level%lu.jpg", _pageIndex + 1];
+    NSString *stringMapUrl = [NSString stringWithFormat:@"http://makerfaireorlando.com/images/MFO_OSC_Level%u.jpg", _pageIndex + 1];
     NSURL *mapURL = [NSURL URLWithString:stringMapUrl];
     
     if (_mapPhoto == nil)
