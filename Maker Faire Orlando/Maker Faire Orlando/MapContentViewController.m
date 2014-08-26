@@ -41,7 +41,8 @@
     {
         dispatch_async(imageQueue, ^(void)
         {
-                       
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+            
             NSData *mapData = [NSData dataWithContentsOfURL:mapURL];
                        
             Photo *photo = [NSEntityDescription insertNewObjectForEntityForName:@"Photo"
@@ -57,6 +58,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.mapImageView.image = [UIImage imageWithData:mapData];
                 self.mapPhoto = photo;
+                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
             });
         });
     }

@@ -21,6 +21,7 @@
 
     self.dataSource = self;
     self.view.backgroundColor = [UIColor makerBlue];
+    self.tabBarController.view.backgroundColor = [UIColor whiteColor];
     
     Faire *currentFaire = [Faire currentFaire];
     
