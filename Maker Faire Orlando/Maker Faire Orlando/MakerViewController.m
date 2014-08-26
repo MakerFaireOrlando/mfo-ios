@@ -13,17 +13,23 @@
 #import "makerTableViewCell.h"
 #import "MakerDetailViewController.h"
 #import "BOZPongRefreshControl.h"
+#import "CategoryTransitionAnimator.h"
+#import "CategoriesViewController.h"
 
-@interface MakerViewController ()
+@interface MakerViewController () <CategoryDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 
 @property (strong, nonatomic) NSArray *makers;
 @property (strong, nonatomic) NSMutableArray *filteredMakers;
+@property (strong, nonatomic) NSArray *categoriesPicked;
+
 @property (weak, nonatomic) IBOutlet UISearchBar *makerSearchBar;
 @property (weak, nonatomic) BOZPongRefreshControl *refreshControl;
 @property (strong, nonatomic) UILabel *failView;
 
 @property (weak, nonatomic) NSManagedObjectContext *context;
+
+@property (strong, nonatomic) CategoryTransitionAnimator *animator;
 @end
 
 @implementation MakerViewController
@@ -32,10 +38,13 @@
 @synthesize makers = _makers;
 @synthesize context = _context;
 @synthesize failView = _failView;
+@synthesize animator = _animator;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _animator = [[CategoryTransitionAnimator alloc] init];
     
     _makerSearchBar.barTintColor = [UIColor makerRed];
     
@@ -171,7 +180,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
+    if (tableView == self.searchDisplayController.searchResultsTableView || (_categoriesPicked != nil && _categoriesPicked.count > 0))
+    {
         return [_filteredMakers count];
     } else {
         return [_makers count];
@@ -185,10 +195,12 @@
     
     Maker *cellMaker;
     
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        cellMaker = [_filteredMakers objectAtIndex:indexPath.row];
+    if (tableView == self.searchDisplayController.searchResultsTableView || (_categoriesPicked != nil && _categoriesPicked.count > 0))
+    {
+        NSLog(@"indexPath: %d", indexPath.item);
+        cellMaker = [_filteredMakers objectAtIndex:indexPath.item];
     } else {
-        cellMaker = [_makers objectAtIndex:indexPath.row];
+        cellMaker = [_makers objectAtIndex:indexPath.item];
     }
     
     [cell.textLabel setText:cellMaker.projectName];
@@ -201,19 +213,53 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    MakerDetailViewController *detailViewController = (MakerDetailViewController*)[segue destinationViewController];
+    [super prepareForSegue:segue sender:sender];
     
-    Maker *maker = nil;
-    if(self.searchDisplayController.active) {
-        NSInteger row = [[self.searchDisplayController.searchResultsTableView indexPathForSelectedRow] row];
-        maker = [_filteredMakers objectAtIndex:row];
+    if ([[segue identifier] isEqualToString:@"showCategories"])
+    {
+        NSLog(@"showCategories");
+        
+        CategoriesViewController *destController = (CategoriesViewController *)segue.destinationViewController;
+        
+        [destController setSelectedCategories:_categoriesPicked];
+        
+        [destController setDelegate:self];
+        
+        [destController setTransitioningDelegate:self];
+        [destController setModalPresentationStyle:UIModalPresentationCustom];
+        
     }
-    else {
-        NSInteger row = [[_tableview indexPathForSelectedRow] row];
-        maker = [_makers objectAtIndex:row];
+    else
+    {
+        MakerDetailViewController *detailViewController = (MakerDetailViewController*)[segue destinationViewController];
+        
+        Maker *maker = nil;
+        if(self.searchDisplayController.active) {
+            NSInteger row = [[self.searchDisplayController.searchResultsTableView indexPathForSelectedRow] row];
+            maker = [_filteredMakers objectAtIndex:row];
+        }
+        else {
+            NSInteger row = [[_tableview indexPathForSelectedRow] row];
+            maker = [_makers objectAtIndex:row];
+        }
+        
+        [detailViewController setMaker:maker];
     }
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source
+{
+    [_animator setPresenting:YES];
     
-    [detailViewController setMaker:maker];
+    return _animator;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    [_animator setPresenting:NO];
+    return _animator;
 }
 
 #pragma mark Content Filtering
@@ -223,6 +269,34 @@
     // Filter the array
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.projectName contains[c] %@",searchText];
     _filteredMakers = [NSMutableArray arrayWithArray:[_makers filteredArrayUsingPredicate:predicate]];
+}
+
+- (void)selectionUpdatedWithCats:(NSArray *)categories
+{
+    _categoriesPicked = categories;
+    
+    NSMutableArray *catPredicates = [NSMutableArray arrayWithCapacity:[_categoriesPicked count]];
+    
+    for (NSString *cat in _categoriesPicked)
+    {
+        NSPredicate *currentPartPredicate = [NSPredicate predicateWithFormat:@"SELF.categories contains[c] %@", cat];
+        [catPredicates addObject:currentPartPredicate];
+    }
+    
+    NSPredicate *fullPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:catPredicates];
+
+    _filteredMakers = [NSMutableArray arrayWithArray:[_makers filteredArrayUsingPredicate:fullPredicate]];
+    
+    [_tableview reloadData];
+}
+
+- (void)clearCategories
+{
+    NSLog(@"clear categories");
+    
+    _categoriesPicked = nil;
+    
+    [_tableview reloadData];
 }
 
 #pragma mark - UISearchDisplayController Delegate Methods
