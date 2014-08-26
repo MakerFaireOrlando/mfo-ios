@@ -41,6 +41,7 @@
 		25A86CC819772B1F00B45778 /* Maker+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CC719772B1F00B45778 /* Maker+methods.m */; };
 		25A86CCB19786DD000B45778 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CCA19786DD000B45778 /* DataManager.m */; };
 		25A86CD1197893AA00B45778 /* Maker.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CD0197893AA00B45778 /* Maker.m */; };
+		25AD612219AD4C7B004FD727 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25AD612119AD4C7B004FD727 /* AudioToolbox.framework */; };
 		25B2622219ABC6860095E4AA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B2622119ABC6860095E4AA /* Crashlytics.framework */; };
 		25B5170F19A2F5E400AA7C0C /* CategoryTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5170E19A2F5E400AA7C0C /* CategoryTransitionAnimator.m */; };
 		25BDBD8019A1637D00EAB077 /* UIColor+MakerColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BDBD7F19A1637D00EAB077 /* UIColor+MakerColors.m */; };
@@ -117,6 +118,7 @@
 		25A86CCA19786DD000B45778 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		25A86CCF197893AA00B45778 /* Maker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maker.h; sourceTree = "<group>"; };
 		25A86CD0197893AA00B45778 /* Maker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Maker.m; sourceTree = "<group>"; };
+		25AD612119AD4C7B004FD727 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		25B2622119ABC6860095E4AA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		25B5170D19A2F5E400AA7C0C /* CategoryTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTransitionAnimator.h; sourceTree = "<group>"; };
 		25B5170E19A2F5E400AA7C0C /* CategoryTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTransitionAnimator.m; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25AD612219AD4C7B004FD727 /* AudioToolbox.framework in Frameworks */,
 				11937F731976307D00D587F8 /* CoreGraphics.framework in Frameworks */,
 				11937F751976307D00D587F8 /* UIKit.framework in Frameworks */,
 				25B2622219ABC6860095E4AA /* Crashlytics.framework in Frameworks */,
@@ -174,6 +177,7 @@
 		11937F6F1976307D00D587F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25AD612119AD4C7B004FD727 /* AudioToolbox.framework */,
 				11937F701976307D00D587F8 /* Foundation.framework */,
 				11937F721976307D00D587F8 /* CoreGraphics.framework */,
 				11937F741976307D00D587F8 /* UIKit.framework */,
