@@ -16,11 +16,13 @@
 #import "CategoryTransitionAnimator.h"
 #import "CategoriesViewController.h"
 
-@interface MakerViewController ()
+@interface MakerViewController () <CategoryDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 
 @property (strong, nonatomic) NSArray *makers;
 @property (strong, nonatomic) NSMutableArray *filteredMakers;
+@property (strong, nonatomic) NSArray *categoriesPicked;
+
 @property (weak, nonatomic) IBOutlet UISearchBar *makerSearchBar;
 @property (weak, nonatomic) BOZPongRefreshControl *refreshControl;
 @property (strong, nonatomic) UILabel *failView;
@@ -178,7 +180,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
+    if (tableView == self.searchDisplayController.searchResultsTableView || (_categoriesPicked != nil && _categoriesPicked.count > 0))
+    {
         return [_filteredMakers count];
     } else {
         return [_makers count];
@@ -192,10 +195,12 @@
     
     Maker *cellMaker;
     
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        cellMaker = [_filteredMakers objectAtIndex:indexPath.row];
+    if (tableView == self.searchDisplayController.searchResultsTableView || (_categoriesPicked != nil && _categoriesPicked.count > 0))
+    {
+        NSLog(@"indexPath: %d", indexPath.item);
+        cellMaker = [_filteredMakers objectAtIndex:indexPath.item];
     } else {
-        cellMaker = [_makers objectAtIndex:indexPath.row];
+        cellMaker = [_makers objectAtIndex:indexPath.item];
     }
     
     [cell.textLabel setText:cellMaker.projectName];
@@ -215,6 +220,10 @@
         NSLog(@"showCategories");
         
         CategoriesViewController *destController = (CategoriesViewController *)segue.destinationViewController;
+        
+        [destController setSelectedCategories:_categoriesPicked];
+        
+        [destController setDelegate:self];
         
         [destController setTransitioningDelegate:self];
         [destController setModalPresentationStyle:UIModalPresentationCustom];
@@ -260,6 +269,34 @@
     // Filter the array
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.projectName contains[c] %@",searchText];
     _filteredMakers = [NSMutableArray arrayWithArray:[_makers filteredArrayUsingPredicate:predicate]];
+}
+
+- (void)selectionUpdatedWithCats:(NSArray *)categories
+{
+    _categoriesPicked = categories;
+    
+    NSMutableArray *catPredicates = [NSMutableArray arrayWithCapacity:[_categoriesPicked count]];
+    
+    for (NSString *cat in _categoriesPicked)
+    {
+        NSPredicate *currentPartPredicate = [NSPredicate predicateWithFormat:@"SELF.categories contains[c] %@", cat];
+        [catPredicates addObject:currentPartPredicate];
+    }
+    
+    NSPredicate *fullPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:catPredicates];
+
+    _filteredMakers = [NSMutableArray arrayWithArray:[_makers filteredArrayUsingPredicate:fullPredicate]];
+    
+    [_tableview reloadData];
+}
+
+- (void)clearCategories
+{
+    NSLog(@"clear categories");
+    
+    _categoriesPicked = nil;
+    
+    [_tableview reloadData];
 }
 
 #pragma mark - UISearchDisplayController Delegate Methods

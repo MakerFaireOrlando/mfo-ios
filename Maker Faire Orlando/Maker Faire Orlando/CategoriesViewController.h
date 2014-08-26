@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CategoryDelegate <NSObject>
+
+@required
+
+- (void)selectionUpdatedWithCats:(NSArray *)categories;
+
+- (void)clearCategories;
+
+@end
+
 @interface CategoriesViewController : UIViewController
+
+@property (strong, nonatomic) NSArray *selectedCategories;
+
+@property (weak, nonatomic) id<CategoryDelegate> delegate;
 
 @end

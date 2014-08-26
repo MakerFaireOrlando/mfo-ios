@@ -39,11 +39,20 @@
     }
     else
     {
-
          [self setAccessoryType:UITableViewCellAccessoryNone];
     }
 
     // Configure the view for the selected state
+}
+
+- (void)reselect
+{
+    [self setAccessoryType:UITableViewCellAccessoryCheckmark];
+}
+
+- (void)deselect
+{
+    [self setAccessoryType:UITableViewCellAccessoryNone];
 }
 
 @end

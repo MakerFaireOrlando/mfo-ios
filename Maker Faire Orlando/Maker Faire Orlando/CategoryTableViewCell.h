@@ -12,4 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *label;
 
+- (void)reselect;
+
+- (void)deselect;
 @end

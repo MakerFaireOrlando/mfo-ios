@@ -11,6 +11,7 @@
 #import "NSManagedObject+methods.h"
 #import "Maker.h"
 
+
 @interface CategoriesViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -21,6 +22,9 @@
 @end
 
 @implementation CategoriesViewController
+
+@synthesize delegate = _delegate;
+@synthesize selectedCategories = _selectedCategories;
 
 - (void)viewDidLoad
 {
@@ -74,7 +78,32 @@
         }
     }
     
-    return middle;
+    return [middle sortedArrayUsingSelector:@selector(compare:)];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self selectedCats];
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self selectedCats];
+}
+
+- (void)selectedCats
+{
+    NSArray *selectedRows = [_tableView indexPathsForSelectedRows];
+    
+    NSMutableArray *categories = [[NSMutableArray alloc] initWithCapacity:selectedRows.count];
+    
+    for (NSUInteger i=0; i < selectedRows.count; i++)
+    {
+        NSIndexPath *indexPath = [selectedRows objectAtIndex:i];
+        [categories addObject:[_categories objectAtIndex:indexPath.item]];
+    }
+    
+    [_delegate selectionUpdatedWithCats:categories];
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,9 +122,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CategoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryCell"];
+    [cell setTintColor:[UIColor whiteColor]];
     
     NSString *label = [_categories objectAtIndex:indexPath.item];
     [cell.label setText:label];
+    
+    if ([_selectedCategories containsObject:label])
+    {
+        [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    }
     
     return cell;
 }
