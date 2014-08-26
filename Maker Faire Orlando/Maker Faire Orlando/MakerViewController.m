@@ -79,9 +79,9 @@
 {
     NSFetchRequest *makersFetch = [[NSFetchRequest alloc] initWithEntityName:@"Maker"];
     
-    NSSortDescriptor *sortByName = [[NSSortDescriptor alloc] initWithKey:@"title"
+    NSSortDescriptor *sortByLocation = [[NSSortDescriptor alloc] initWithKey:@"location"
                                                                ascending:YES];
-    [makersFetch setSortDescriptors:@[sortByName]];
+    [makersFetch setSortDescriptors:@[sortByLocation]];
     
     NSError *fetchError = nil;
     

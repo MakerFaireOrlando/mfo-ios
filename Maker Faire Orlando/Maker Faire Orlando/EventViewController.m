@@ -93,7 +93,8 @@
     NSSortDescriptor *sortByStartTime = [[NSSortDescriptor alloc] initWithKey:@"startTime"
                                                                     ascending:YES];
     [request setSortDescriptors:@[sortByStartTime]];
-    
+    NSPredicate *filterOldItems = [NSPredicate predicateWithFormat:@"startTime > %@", [NSDate date]];
+    [request setPredicate:filterOldItems];
     NSArray *returnedEvents = [_context executeFetchRequest:request error:nil];
     
     _events = returnedEvents;
