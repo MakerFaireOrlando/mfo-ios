@@ -93,8 +93,16 @@
     NSSortDescriptor *sortByStartTime = [[NSSortDescriptor alloc] initWithKey:@"startTime"
                                                                     ascending:YES];
     [request setSortDescriptors:@[sortByStartTime]];
-    NSPredicate *filterOldItems = [NSPredicate predicateWithFormat:@"startTime > %@", [NSDate date]];
-    [request setPredicate:filterOldItems];
+
+    NSString *startDateString = @"13-Sep-14";
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"dd-MMM-yy";
+    NSDate *startDate = [dateFormatter dateFromString:startDateString];
+    NSString *endDateString = @"15-Sep-14";
+    NSDate *endDate = [dateFormatter dateFromString:endDateString];
+    
+    NSPredicate *filterDate = [NSPredicate predicateWithFormat:@"startTime > %@ AND startTime < %@", startDate, endDate];
+    [request setPredicate:filterDate];
     NSArray *returnedEvents = [_context executeFetchRequest:request error:nil];
     
     _events = returnedEvents;
