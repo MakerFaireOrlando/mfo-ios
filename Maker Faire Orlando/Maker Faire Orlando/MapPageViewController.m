@@ -82,7 +82,7 @@
     {
         for (Photo *photo in _pageImages)
         {
-            NSString *stringMapUrl = [NSString stringWithFormat:@"http://makerfaireorlando.com/images/MFO_OSC_Level%d.jpg", index + 1];
+            NSString *stringMapUrl = [NSString stringWithFormat:@"http://makerfaireorlando.com/images/MFO_OSC_Level%lu.jpg", index + 1];
             if ([photo.sourceURL isEqualToString:stringMapUrl])
             {
                 mapContentViewController.mapPhoto = photo;

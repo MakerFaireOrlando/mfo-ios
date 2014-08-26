@@ -197,7 +197,7 @@
     
     if (tableView == self.searchDisplayController.searchResultsTableView || (_categoriesPicked != nil && _categoriesPicked.count > 0))
     {
-        NSLog(@"indexPath: %d", indexPath.item);
+        NSLog(@"indexPath: %ld", (long)indexPath.item);
         cellMaker = [_filteredMakers objectAtIndex:indexPath.item];
     } else {
         cellMaker = [_makers objectAtIndex:indexPath.item];
