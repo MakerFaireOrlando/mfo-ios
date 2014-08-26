@@ -182,6 +182,9 @@
     EventTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"tempEventCell"];
     
     Event *event = [_events objectAtIndex:indexPath.item];
+    if (event.endTime < [NSDate date]) {
+        cell.backgroundColor = [UIColor grayColor];
+    }
     
     [cell.textLabel setText:event.summary];
     [cell.detailTextLabel setText:event.location];
