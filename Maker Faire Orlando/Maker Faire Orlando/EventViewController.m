@@ -182,7 +182,8 @@
     EventTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"tempEventCell"];
     
     Event *event = [_events objectAtIndex:indexPath.item];
-    if (event.endTime < [NSDate date]) {
+    
+    if ([event.endTime compare:[NSDate date]] == NSOrderedAscending) {
         cell.backgroundColor = [UIColor grayColor];
     }
     
