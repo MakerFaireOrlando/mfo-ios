@@ -25,6 +25,8 @@
     NSURLSessionDataTask *makersDownloadTask = [session dataTaskWithURL:makersURL
                                                       completionHandler:makersDownloadResponse];
     
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
     [makersDownloadTask resume];
 }
 
@@ -116,6 +118,7 @@ void (^makersDownloadResponse)(NSData *, NSURLResponse*, NSError*) = ^(NSData *d
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         [[NSNotificationCenter defaultCenter] postNotificationName:notif object:nil];
     });
 };

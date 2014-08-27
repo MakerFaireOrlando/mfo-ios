@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <Crashlytics/Crashlytics.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @implementation AppDelegate
 
@@ -17,6 +19,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 //    [self.window setTintColor:[UIColor redColor]];
+    
+    [Crashlytics startWithAPIKey:@"429e7433a85ac099498619d27e007b0313c7e3cd"];
+    
+//    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"didRegister"] == nil)
+//    {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert |
+                                                                               UIRemoteNotificationTypeSound)];
+//    }
+    
     [self setupAppearance];
     return YES;
 }
@@ -29,18 +40,30 @@
     [[UINavigationBar appearance] setBarTintColor:[UIColor makerBlue]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
     [[UITabBar appearance] setBarTintColor:[UIColor makerBlue]];
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     //TODO: Uncomment when iOS8 launches
 //    [[UITabBar appearance] setTranslucent:YES];
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor makerRed]}
-                                             forState:UIControlStateDisabled];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}
+                                             forState:UIControlStateSelected];
     
     [[UITableView appearance] setBackgroundColor:[UIColor lightTextColor]];
 
     [[UILabel appearance] setTintColor:[UIColor makerRed]];
     
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor makerBlue];
+    pageControl.backgroundColor = [UIColor makerRed];
+    
+    /*
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
+                                                        NSForegroundColorAttributeName : [UIColor whiteColor]
+                                                        } forState:UIControlStateNormal];
+    */
     //[self.window setTintColor:[UIColor makerRed]];
 }
 							
@@ -69,6 +92,65 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark – Push Notifications
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString *tokenString = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    tokenString = [tokenString stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    
+    NSDictionary *postBody = @{@"id": tokenString};
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://udderweb.com:9999/register/ios"]];
+    
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:postBody options:0 error:nil];
+    
+    [request setHTTPBody:postData];
+    [request setHTTPMethod:@"POST"];
+    [request setAllHTTPHeaderFields:@{@"Content-Type": @"application/json"}];
+    
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:nil
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
+    {
+        NSString *responseBody = [[NSString alloc] initWithData:data
+                                                       encoding:NSUTF8StringEncoding];
+        NSHTTPURLResponse *realResponse = (NSHTTPURLResponse *)response;
+        
+        if ([responseBody isEqualToString:@"OK"] && realResponse.statusCode == 200)
+        {
+            //Horray registration successful!
+            [[NSUserDefaults standardUserDefaults] setObject:@"YES"
+                                                      forKey:@"didRegsiter"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+    }];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    //TODO ask again later?
+    NSLog(@"failedToRegisterForNotifications: %@", error);
+    
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    __weak NSDictionary *weakUser = userInfo;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Broadcast!"
+                                                        message:[weakUser valueForKeyPath:@"aps.alert"]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Okay"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        AudioServicesPlaySystemSound(1007);
+    });
 }
 
 - (void)saveContext
