@@ -22,11 +22,11 @@
     
     [Crashlytics startWithAPIKey:@"429e7433a85ac099498619d27e007b0313c7e3cd"];
     
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"didRegister"] == nil)
-    {
+//    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"didRegister"] == nil)
+//    {
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert |
                                                                                UIRemoteNotificationTypeSound)];
-    }
+//    }
     
     [self setupAppearance];
     return YES;
