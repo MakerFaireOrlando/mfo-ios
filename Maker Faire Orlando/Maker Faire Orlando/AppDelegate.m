@@ -143,7 +143,7 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Broadcast!"
-                                                        message:[weakUser objectForKey:@"alert"]
+                                                        message:[weakUser valueForKeyPath:@"aps.alert"]
                                                        delegate:nil
                                               cancelButtonTitle:@"Okay"
                                               otherButtonTitles:nil];
