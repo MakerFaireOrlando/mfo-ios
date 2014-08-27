@@ -93,7 +93,16 @@
     NSSortDescriptor *sortByStartTime = [[NSSortDescriptor alloc] initWithKey:@"startTime"
                                                                     ascending:YES];
     [request setSortDescriptors:@[sortByStartTime]];
+
+    NSString *startDateString = @"13-Sep-14";
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"dd-MMM-yy";
+    NSDate *startDate = [dateFormatter dateFromString:startDateString];
+    NSString *endDateString = @"15-Sep-14";
+    NSDate *endDate = [dateFormatter dateFromString:endDateString];
     
+    NSPredicate *filterDate = [NSPredicate predicateWithFormat:@"startTime > %@ AND startTime < %@", startDate, endDate];
+    [request setPredicate:filterDate];
     NSArray *returnedEvents = [_context executeFetchRequest:request error:nil];
     
     _events = returnedEvents;
@@ -173,6 +182,10 @@
     EventTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"tempEventCell"];
     
     Event *event = [_events objectAtIndex:indexPath.item];
+    
+    if ([event.endTime compare:[NSDate date]] == NSOrderedAscending) {
+        cell.backgroundColor = [UIColor grayColor];
+    }
     
     [cell.textLabel setText:event.summary];
     [cell.detailTextLabel setText:event.location];
