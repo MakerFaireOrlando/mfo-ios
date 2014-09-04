@@ -175,17 +175,63 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (tableView == self.searchDisplayController.searchResultsTableView || (_categoriesPicked != nil && _categoriesPicked.count > 0))
     {
-        return [_filteredMakers count];
-    } else {
-        return [_makers count];
+        return [[self filterMakersBySection:section
+                                 fromSource:_filteredMakers] count];
+//        return [_filteredMakers count];
+    } else
+    {
+        return [[self filterMakersBySection:section
+                                 fromSource:_makers] count];
+//        return [_makers count];
     }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *title;
+    switch (section)
+    {
+        case 1:
+        {
+            //Level 1
+            title = @"Level 1";
+            break;
+        }
+        case 2:
+        {
+            //Level 2
+            title = @"Level 2";
+            break;
+        }
+        case 3:
+        {
+            //Level 3
+            title = @"Level 3";
+            break;
+        }
+        case 4:
+        {
+            //Level 4
+            title = @"Level 4";
+            break;
+        }
+            
+        default:
+        {
+            //TBD section
+            title = @"";
+            break;
+        }
+    }
+    
+    return title;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -197,17 +243,73 @@
     
     if (tableView == self.searchDisplayController.searchResultsTableView || (_categoriesPicked != nil && _categoriesPicked.count > 0))
     {
-        NSLog(@"indexPath: %ld", (long)indexPath.item);
-        cellMaker = [_filteredMakers objectAtIndex:indexPath.item];
-    } else {
-        cellMaker = [_makers objectAtIndex:indexPath.item];
+        cellMaker = [[self filterMakersBySection:indexPath.section
+                                      fromSource:_filteredMakers] objectAtIndex:indexPath.row];
+    } else
+    {
+        cellMaker = [[self filterMakersBySection:indexPath.section
+                                      fromSource:_makers] objectAtIndex:indexPath.row];
     }
     
     [cell.textLabel setText:cellMaker.projectName];
     [cell.detailTextLabel setText:cellMaker.location];
+    if ([cellMaker.location isEqualToString:@""])
+    {
+        [cell.detailTextLabel setText:@"TBD"];
+    }
     
     
     return cell;
+}
+
+- (NSArray *)filterMakersBySection:(NSInteger)section fromSource:(NSArray *)makers
+{
+    NSString *stringToMatch = nil;
+    switch (section)
+    {
+        case 1:
+        {
+            //Level 1
+            stringToMatch = @"Level 1";
+            break;
+        }
+        case 2:
+        {
+            //Level 2
+            stringToMatch = @"Level 2";
+            break;
+        }
+        case 3:
+        {
+            //Level 3
+            stringToMatch = @"Level 3";
+            break;
+        }
+        case 4:
+        {
+            //Level 4
+            stringToMatch = @"Level 4";
+            break;
+        }
+            
+        default:
+        {
+            //TBD section
+            stringToMatch = @"";
+            break;
+        }
+    }
+    
+    NSPredicate *contains = [NSPredicate predicateWithFormat:@"self.location CONTAINS %@", stringToMatch];
+    
+    if ([stringToMatch isEqualToString:@""])
+    {
+        contains = [NSPredicate predicateWithFormat:@"self.location == nil OR self.location == %@", @""];
+    }
+    
+    NSArray *filtered = [makers filteredArrayUsingPredicate:contains];
+    
+    return filtered;
 }
 
 
