@@ -253,7 +253,7 @@
     
     [cell.textLabel setText:cellMaker.projectName];
     [cell.detailTextLabel setText:cellMaker.location];
-    if ([cellMaker.location isEqualToString:@""])
+    if ([cellMaker.location isEqualToString:@""] || cellMaker.location == nil)
     {
         [cell.detailTextLabel setText:@"TBD"];
     }
@@ -338,11 +338,18 @@
         Maker *maker = nil;
         if(self.searchDisplayController.active) {
             NSInteger row = [[self.searchDisplayController.searchResultsTableView indexPathForSelectedRow] row];
-            maker = [_filteredMakers objectAtIndex:row];
+            NSInteger section = [[self.searchDisplayController.searchResultsTableView indexPathForSelectedRow] section];
+            
+            maker = [[self filterMakersBySection:section
+                                      fromSource:_filteredMakers] objectAtIndex:row];
         }
-        else {
+        else
+        {
             NSInteger row = [[_tableview indexPathForSelectedRow] row];
-            maker = [_makers objectAtIndex:row];
+            NSInteger section = [[_tableview indexPathForSelectedRow] section];
+            
+            maker = [[self filterMakersBySection:section
+                                      fromSource:_makers] objectAtIndex:row];
         }
         
         [detailViewController setMaker:maker];

@@ -23,6 +23,10 @@
 
 -(void)setupView
 {
+    if (_maker.videoURL)
+    {
+        NSLog(@"videoURL: %@", _maker.videoURL);
+    }
     //self.navigationItem.title = [_maker projectName];
     [_makerProjectName setText:[_maker projectName]];
     [_makerLocation setText:[_maker location]];
@@ -45,6 +49,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
     [self setupView];
 }
 
