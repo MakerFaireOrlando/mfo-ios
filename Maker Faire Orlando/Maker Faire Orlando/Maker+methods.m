@@ -12,7 +12,7 @@
 #import "Photo.h"
 #import "NSManagedObject+methods.h"
 
-#define kMakersURL @"http://callformakers.org/orlando2014/default/overviewALL.json/raw"
+#define kMakersURL @"http://www.makerfaireorlando.com/wp-content/themes/minimakerfaire/makerlist/json_backup/makerlist_json"
 
 @implementation Maker (methods)
 
