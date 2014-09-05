@@ -1,0 +1,726 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		112CE7B8198F11E900BE0BC5 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115475351987735300620F0F /* EventDetailViewController.m */; };
+		1145C1EF198752AA00AE013D /* MakerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1145C1EE198752AA00AE013D /* MakerDetailViewController.m */; };
+		11650B4F19A2FDF0002AAD0C /* Faire.m in Sources */ = {isa = PBXBuildFile; fileRef = 11650B4E19A2FDF0002AAD0C /* Faire.m */; };
+		11650B5219A2FDF1002AAD0C /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 11650B5119A2FDF1002AAD0C /* Photo.m */; };
+		11937F711976307D00D587F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F701976307D00D587F8 /* Foundation.framework */; };
+		11937F731976307D00D587F8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F721976307D00D587F8 /* CoreGraphics.framework */; };
+		11937F751976307D00D587F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F741976307D00D587F8 /* UIKit.framework */; };
+		11937F7B1976307D00D587F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11937F791976307D00D587F8 /* InfoPlist.strings */; };
+		11937F7D1976307D00D587F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11937F7C1976307D00D587F8 /* main.m */; };
+		11937F811976307D00D587F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11937F801976307D00D587F8 /* AppDelegate.m */; };
+		11937F841976307D00D587F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11937F821976307D00D587F8 /* Main.storyboard */; };
+		11937F871976307D00D587F8 /* MakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11937F861976307D00D587F8 /* MakerViewController.m */; };
+		11937F8A1976307D00D587F8 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11937F891976307D00D587F8 /* EventViewController.m */; };
+		11937F8C1976307D00D587F8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11937F8B1976307D00D587F8 /* Images.xcassets */; };
+		11937F931976307D00D587F8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F921976307D00D587F8 /* XCTest.framework */; };
+		11937F941976307D00D587F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F701976307D00D587F8 /* Foundation.framework */; };
+		11937F951976307D00D587F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11937F741976307D00D587F8 /* UIKit.framework */; };
+		11937F9D1976307D00D587F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11937F9B1976307D00D587F8 /* InfoPlist.strings */; };
+		11937F9F1976307D00D587F8 /* Maker_Faire_OrlandoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11937F9E1976307D00D587F8 /* Maker_Faire_OrlandoTests.m */; };
+		119A273819A182320004D335 /* MapPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119A273719A182320004D335 /* MapPageViewController.m */; };
+		119A273B19A183720004D335 /* MapContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119A273A19A183720004D335 /* MapContentViewController.m */; };
+		11C2FDB519A6576000067A3B /* MapImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C2FDB419A6576000067A3B /* MapImageViewController.m */; };
+		251FD1641978A56A0021F750 /* makerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 251FD1631978A56A0021F750 /* makerTableViewCell.m */; };
+		253A467719AC4600004D951D /* tempView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 253A467619AC4600004D951D /* tempView.xib */; };
+		2559B5071979BE500039C17F /* NSManagedObject+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559B5061979BE500039C17F /* NSManagedObject+methods.m */; };
+		259E9E0A19A1589300B2E37E /* BOZPongRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 259E9E0919A1589300B2E37E /* BOZPongRefreshControl.m */; };
+		25A169D619A83A2900A3D833 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A169D519A83A2900A3D833 /* CategoriesViewController.m */; };
+		25A7AC45197D80E300C193FC /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A7AC44197D80E300C193FC /* EventTableViewCell.m */; };
+		25A86CB2197721EB00B45778 /* MakerFaire.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CB0197721EB00B45778 /* MakerFaire.xcdatamodeld */; };
+		25A86CBF1977284900B45778 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CBE1977284900B45778 /* Event.m */; };
+		25A86CC21977289600B45778 /* Faire+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CC11977289600B45778 /* Faire+methods.m */; };
+		25A86CC519772B0500B45778 /* Event+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CC419772B0500B45778 /* Event+methods.m */; };
+		25A86CC819772B1F00B45778 /* Maker+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CC719772B1F00B45778 /* Maker+methods.m */; };
+		25A86CCB19786DD000B45778 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CCA19786DD000B45778 /* DataManager.m */; };
+		25A86CD1197893AA00B45778 /* Maker.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A86CD0197893AA00B45778 /* Maker.m */; };
+		25B2622219ABC6860095E4AA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B2622119ABC6860095E4AA /* Crashlytics.framework */; };
+		25B5170F19A2F5E400AA7C0C /* CategoryTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B5170E19A2F5E400AA7C0C /* CategoryTransitionAnimator.m */; };
+		25BDBD8019A1637D00EAB077 /* UIColor+MakerColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BDBD7F19A1637D00EAB077 /* UIColor+MakerColors.m */; };
+		25CD898F19A85F83008849ED /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CD898E19A85F83008849ED /* CategoryTableViewCell.m */; };
+		25FA709A19A0725A00F90E04 /* eventsTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 25FA709919A0725A00F90E04 /* eventsTest.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11937F961976307D00D587F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11937F651976307D00D587F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11937F6C1976307D00D587F8;
+			remoteInfo = "Maker Faire Orlando";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1145C1ED198752AA00AE013D /* MakerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakerDetailViewController.h; sourceTree = "<group>"; };
+		1145C1EE198752AA00AE013D /* MakerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakerDetailViewController.m; sourceTree = "<group>"; };
+		115475341987735300620F0F /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
+		115475351987735300620F0F /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
+		11650B4D19A2FDF0002AAD0C /* Faire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faire.h; sourceTree = "<group>"; };
+		11650B4E19A2FDF0002AAD0C /* Faire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faire.m; sourceTree = "<group>"; };
+		11650B5019A2FDF1002AAD0C /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		11650B5119A2FDF1002AAD0C /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		11937F6D1976307D00D587F8 /* Maker Faire Orlando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Maker Faire Orlando.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11937F701976307D00D587F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		11937F721976307D00D587F8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		11937F741976307D00D587F8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		11937F781976307D00D587F8 /* Maker Faire Orlando-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Maker Faire Orlando-Info.plist"; sourceTree = "<group>"; };
+		11937F7A1976307D00D587F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		11937F7C1976307D00D587F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		11937F7E1976307D00D587F8 /* Maker Faire Orlando-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Maker Faire Orlando-Prefix.pch"; sourceTree = "<group>"; };
+		11937F7F1976307D00D587F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		11937F801976307D00D587F8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		11937F831976307D00D587F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11937F851976307D00D587F8 /* MakerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakerViewController.h; sourceTree = "<group>"; };
+		11937F861976307D00D587F8 /* MakerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakerViewController.m; sourceTree = "<group>"; };
+		11937F881976307D00D587F8 /* EventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		11937F891976307D00D587F8 /* EventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		11937F8B1976307D00D587F8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		11937F911976307D00D587F8 /* Maker Faire OrlandoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Maker Faire OrlandoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11937F921976307D00D587F8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		11937F9A1976307D00D587F8 /* Maker Faire OrlandoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Maker Faire OrlandoTests-Info.plist"; sourceTree = "<group>"; };
+		11937F9C1976307D00D587F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		11937F9E1976307D00D587F8 /* Maker_Faire_OrlandoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Maker_Faire_OrlandoTests.m; sourceTree = "<group>"; };
+		119A273619A182320004D335 /* MapPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPageViewController.h; sourceTree = "<group>"; };
+		119A273719A182320004D335 /* MapPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPageViewController.m; sourceTree = "<group>"; };
+		119A273919A183720004D335 /* MapContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapContentViewController.h; sourceTree = "<group>"; };
+		119A273A19A183720004D335 /* MapContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapContentViewController.m; sourceTree = "<group>"; };
+		11C2FDB319A6576000067A3B /* MapImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapImageViewController.h; sourceTree = "<group>"; };
+		11C2FDB419A6576000067A3B /* MapImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapImageViewController.m; sourceTree = "<group>"; };
+		251FD1621978A56A0021F750 /* makerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = makerTableViewCell.h; sourceTree = "<group>"; };
+		251FD1631978A56A0021F750 /* makerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = makerTableViewCell.m; sourceTree = "<group>"; };
+		253A467619AC4600004D951D /* tempView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tempView.xib; sourceTree = "<group>"; };
+		2559B5051979BE500039C17F /* NSManagedObject+methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+methods.h"; sourceTree = "<group>"; };
+		2559B5061979BE500039C17F /* NSManagedObject+methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+methods.m"; sourceTree = "<group>"; };
+		259E9E0819A1589300B2E37E /* BOZPongRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOZPongRefreshControl.h; sourceTree = "<group>"; };
+		259E9E0919A1589300B2E37E /* BOZPongRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOZPongRefreshControl.m; sourceTree = "<group>"; };
+		25A169D419A83A2900A3D833 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		25A169D519A83A2900A3D833 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		25A7AC43197D80E200C193FC /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
+		25A7AC44197D80E300C193FC /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
+		25A86CB1197721EB00B45778 /* MakerFaire.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MakerFaire.xcdatamodel; sourceTree = "<group>"; };
+		25A86CBD1977284900B45778 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		25A86CBE1977284900B45778 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		25A86CC01977289600B45778 /* Faire+methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Faire+methods.h"; sourceTree = "<group>"; };
+		25A86CC11977289600B45778 /* Faire+methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Faire+methods.m"; sourceTree = "<group>"; };
+		25A86CC319772B0500B45778 /* Event+methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+methods.h"; sourceTree = "<group>"; };
+		25A86CC419772B0500B45778 /* Event+methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+methods.m"; sourceTree = "<group>"; };
+		25A86CC619772B1F00B45778 /* Maker+methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Maker+methods.h"; sourceTree = "<group>"; };
+		25A86CC719772B1F00B45778 /* Maker+methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Maker+methods.m"; sourceTree = "<group>"; };
+		25A86CC919786DD000B45778 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		25A86CCA19786DD000B45778 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		25A86CCF197893AA00B45778 /* Maker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maker.h; sourceTree = "<group>"; };
+		25A86CD0197893AA00B45778 /* Maker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Maker.m; sourceTree = "<group>"; };
+		25B2622119ABC6860095E4AA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		25B5170D19A2F5E400AA7C0C /* CategoryTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTransitionAnimator.h; sourceTree = "<group>"; };
+		25B5170E19A2F5E400AA7C0C /* CategoryTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTransitionAnimator.m; sourceTree = "<group>"; };
+		25BDBD7E19A1637D00EAB077 /* UIColor+MakerColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MakerColors.h"; sourceTree = "<group>"; };
+		25BDBD7F19A1637D00EAB077 /* UIColor+MakerColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MakerColors.m"; sourceTree = "<group>"; };
+		25CD898D19A85F83008849ED /* CategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewCell.h; sourceTree = "<group>"; };
+		25CD898E19A85F83008849ED /* CategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewCell.m; sourceTree = "<group>"; };
+		25FA709919A0725A00F90E04 /* eventsTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = eventsTest.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11937F6A1976307D00D587F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11937F731976307D00D587F8 /* CoreGraphics.framework in Frameworks */,
+				11937F751976307D00D587F8 /* UIKit.framework in Frameworks */,
+				25B2622219ABC6860095E4AA /* Crashlytics.framework in Frameworks */,
+				11937F711976307D00D587F8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11937F8E1976307D00D587F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11937F931976307D00D587F8 /* XCTest.framework in Frameworks */,
+				11937F951976307D00D587F8 /* UIKit.framework in Frameworks */,
+				11937F941976307D00D587F8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11937F641976307D00D587F8 = {
+			isa = PBXGroup;
+			children = (
+				11937F761976307D00D587F8 /* Maker Faire Orlando */,
+				11937F981976307D00D587F8 /* Maker Faire OrlandoTests */,
+				11937F6F1976307D00D587F8 /* Frameworks */,
+				11937F6E1976307D00D587F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		11937F6E1976307D00D587F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11937F6D1976307D00D587F8 /* Maker Faire Orlando.app */,
+				11937F911976307D00D587F8 /* Maker Faire OrlandoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11937F6F1976307D00D587F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11937F701976307D00D587F8 /* Foundation.framework */,
+				11937F721976307D00D587F8 /* CoreGraphics.framework */,
+				11937F741976307D00D587F8 /* UIKit.framework */,
+				11937F921976307D00D587F8 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		11937F761976307D00D587F8 /* Maker Faire Orlando */ = {
+			isa = PBXGroup;
+			children = (
+				25A169D319A83A0500A3D833 /* Categories Controllers */,
+				11937F7F1976307D00D587F8 /* AppDelegate.h */,
+				11937F801976307D00D587F8 /* AppDelegate.m */,
+				259E9E0719A1583800B2E37E /* Custom Controls */,
+				25A86CC919786DD000B45778 /* DataManager.h */,
+				25A86CCA19786DD000B45778 /* DataManager.m */,
+				25A169D119A834C300A3D833 /* Event Controllers */,
+				11937F8B1976307D00D587F8 /* Images.xcassets */,
+				11937F821976307D00D587F8 /* Main.storyboard */,
+				25A169D219A834D500A3D833 /* Maker Controllers */,
+				25A86CB0197721EB00B45778 /* MakerFaire.xcdatamodeld */,
+				25A169D019A834A800A3D833 /* Map Controllers */,
+				25A86CB31977282B00B45778 /* Models */,
+				2559B5051979BE500039C17F /* NSManagedObject+methods.h */,
+				2559B5061979BE500039C17F /* NSManagedObject+methods.m */,
+				11937F771976307D00D587F8 /* Supporting Files */,
+				25BDBD7E19A1637D00EAB077 /* UIColor+MakerColors.h */,
+				25BDBD7F19A1637D00EAB077 /* UIColor+MakerColors.m */,
+<<<<<<< Updated upstream
+				25B5170D19A2F5E400AA7C0C /* CategoryTransitionAnimator.h */,
+				25B5170E19A2F5E400AA7C0C /* CategoryTransitionAnimator.m */,
+=======
+				253A467619AC4600004D951D /* tempView.xib */,
+>>>>>>> Stashed changes
+			);
+			path = "Maker Faire Orlando";
+			sourceTree = "<group>";
+		};
+		11937F771976307D00D587F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25B2622119ABC6860095E4AA /* Crashlytics.framework */,
+				11937F781976307D00D587F8 /* Maker Faire Orlando-Info.plist */,
+				11937F791976307D00D587F8 /* InfoPlist.strings */,
+				11937F7C1976307D00D587F8 /* main.m */,
+				11937F7E1976307D00D587F8 /* Maker Faire Orlando-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11937F981976307D00D587F8 /* Maker Faire OrlandoTests */ = {
+			isa = PBXGroup;
+			children = (
+				11937F9E1976307D00D587F8 /* Maker_Faire_OrlandoTests.m */,
+				11937F991976307D00D587F8 /* Supporting Files */,
+			);
+			path = "Maker Faire OrlandoTests";
+			sourceTree = "<group>";
+		};
+		11937F991976307D00D587F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25FA709919A0725A00F90E04 /* eventsTest.json */,
+				11937F9A1976307D00D587F8 /* Maker Faire OrlandoTests-Info.plist */,
+				11937F9B1976307D00D587F8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		259E9E0719A1583800B2E37E /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				259E9E0819A1589300B2E37E /* BOZPongRefreshControl.h */,
+				259E9E0919A1589300B2E37E /* BOZPongRefreshControl.m */,
+			);
+			name = "Custom Controls";
+			sourceTree = "<group>";
+		};
+		25A169D019A834A800A3D833 /* Map Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				119A273619A182320004D335 /* MapPageViewController.h */,
+				119A273719A182320004D335 /* MapPageViewController.m */,
+				119A273919A183720004D335 /* MapContentViewController.h */,
+				119A273A19A183720004D335 /* MapContentViewController.m */,
+				11C2FDB319A6576000067A3B /* MapImageViewController.h */,
+				11C2FDB419A6576000067A3B /* MapImageViewController.m */,
+			);
+			name = "Map Controllers";
+			sourceTree = "<group>";
+		};
+		25A169D119A834C300A3D833 /* Event Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11937F881976307D00D587F8 /* EventViewController.h */,
+				11937F891976307D00D587F8 /* EventViewController.m */,
+				25A7AC43197D80E200C193FC /* EventTableViewCell.h */,
+				25A7AC44197D80E300C193FC /* EventTableViewCell.m */,
+				115475341987735300620F0F /* EventDetailViewController.h */,
+				115475351987735300620F0F /* EventDetailViewController.m */,
+			);
+			name = "Event Controllers";
+			sourceTree = "<group>";
+		};
+		25A169D219A834D500A3D833 /* Maker Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				251FD1621978A56A0021F750 /* makerTableViewCell.h */,
+				251FD1631978A56A0021F750 /* makerTableViewCell.m */,
+				11937F851976307D00D587F8 /* MakerViewController.h */,
+				11937F861976307D00D587F8 /* MakerViewController.m */,
+				1145C1ED198752AA00AE013D /* MakerDetailViewController.h */,
+				1145C1EE198752AA00AE013D /* MakerDetailViewController.m */,
+			);
+			name = "Maker Controllers";
+			sourceTree = "<group>";
+		};
+		25A169D319A83A0500A3D833 /* Categories Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				25A169D419A83A2900A3D833 /* CategoriesViewController.h */,
+				25A169D519A83A2900A3D833 /* CategoriesViewController.m */,
+				25CD898D19A85F83008849ED /* CategoryTableViewCell.h */,
+				25CD898E19A85F83008849ED /* CategoryTableViewCell.m */,
+			);
+			name = "Categories Controllers";
+			sourceTree = "<group>";
+		};
+		25A86CB31977282B00B45778 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11650B5019A2FDF1002AAD0C /* Photo.h */,
+				11650B5119A2FDF1002AAD0C /* Photo.m */,
+				11650B4D19A2FDF0002AAD0C /* Faire.h */,
+				11650B4E19A2FDF0002AAD0C /* Faire.m */,
+				25A86CCF197893AA00B45778 /* Maker.h */,
+				25A86CD0197893AA00B45778 /* Maker.m */,
+				25A86CBD1977284900B45778 /* Event.h */,
+				25A86CC319772B0500B45778 /* Event+methods.h */,
+				25A86CC419772B0500B45778 /* Event+methods.m */,
+				25A86CBE1977284900B45778 /* Event.m */,
+				25A86CC619772B1F00B45778 /* Maker+methods.h */,
+				25A86CC719772B1F00B45778 /* Maker+methods.m */,
+				25A86CC01977289600B45778 /* Faire+methods.h */,
+				25A86CC11977289600B45778 /* Faire+methods.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11937F6C1976307D00D587F8 /* Maker Faire Orlando */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11937FA21976307D00D587F8 /* Build configuration list for PBXNativeTarget "Maker Faire Orlando" */;
+			buildPhases = (
+				11937F691976307D00D587F8 /* Sources */,
+				11937F6A1976307D00D587F8 /* Frameworks */,
+				11937F6B1976307D00D587F8 /* Resources */,
+				25B2622019ABC65D0095E4AA /* Crashlytics */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Maker Faire Orlando";
+			productName = "Maker Faire Orlando";
+			productReference = 11937F6D1976307D00D587F8 /* Maker Faire Orlando.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11937F901976307D00D587F8 /* Maker Faire OrlandoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11937FA51976307D00D587F8 /* Build configuration list for PBXNativeTarget "Maker Faire OrlandoTests" */;
+			buildPhases = (
+				11937F8D1976307D00D587F8 /* Sources */,
+				11937F8E1976307D00D587F8 /* Frameworks */,
+				11937F8F1976307D00D587F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11937F971976307D00D587F8 /* PBXTargetDependency */,
+			);
+			name = "Maker Faire OrlandoTests";
+			productName = "Maker Faire OrlandoTests";
+			productReference = 11937F911976307D00D587F8 /* Maker Faire OrlandoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11937F651976307D00D587F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Conner Brooks";
+				TargetAttributes = {
+					11937F6C1976307D00D587F8 = {
+						DevelopmentTeam = PW5CL64ZT8;
+					};
+					11937F901976307D00D587F8 = {
+						TestTargetID = 11937F6C1976307D00D587F8;
+					};
+				};
+			};
+			buildConfigurationList = 11937F681976307D00D587F8 /* Build configuration list for PBXProject "Maker Faire Orlando" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11937F641976307D00D587F8;
+			productRefGroup = 11937F6E1976307D00D587F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11937F6C1976307D00D587F8 /* Maker Faire Orlando */,
+				11937F901976307D00D587F8 /* Maker Faire OrlandoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11937F6B1976307D00D587F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11937F8C1976307D00D587F8 /* Images.xcassets in Resources */,
+				11937F7B1976307D00D587F8 /* InfoPlist.strings in Resources */,
+				253A467719AC4600004D951D /* tempView.xib in Resources */,
+				11937F841976307D00D587F8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11937F8F1976307D00D587F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25FA709A19A0725A00F90E04 /* eventsTest.json in Resources */,
+				11937F9D1976307D00D587F8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25B2622019ABC65D0095E4AA /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 429e7433a85ac099498619d27e007b0313c7e3cd 714dde87afa8de3a406dc9fc25e6da07107c709fab61bc58b01af761c020641c";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11937F691976307D00D587F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				259E9E0A19A1589300B2E37E /* BOZPongRefreshControl.m in Sources */,
+				112CE7B8198F11E900BE0BC5 /* EventDetailViewController.m in Sources */,
+				25BDBD8019A1637D00EAB077 /* UIColor+MakerColors.m in Sources */,
+				25A86CC519772B0500B45778 /* Event+methods.m in Sources */,
+				119A273B19A183720004D335 /* MapContentViewController.m in Sources */,
+				11937F8A1976307D00D587F8 /* EventViewController.m in Sources */,
+				25A86CBF1977284900B45778 /* Event.m in Sources */,
+				25A7AC45197D80E300C193FC /* EventTableViewCell.m in Sources */,
+				11650B5219A2FDF1002AAD0C /* Photo.m in Sources */,
+				251FD1641978A56A0021F750 /* makerTableViewCell.m in Sources */,
+				11650B4F19A2FDF0002AAD0C /* Faire.m in Sources */,
+				25A86CD1197893AA00B45778 /* Maker.m in Sources */,
+				1145C1EF198752AA00AE013D /* MakerDetailViewController.m in Sources */,
+				25A86CC21977289600B45778 /* Faire+methods.m in Sources */,
+				25A86CCB19786DD000B45778 /* DataManager.m in Sources */,
+				11C2FDB519A6576000067A3B /* MapImageViewController.m in Sources */,
+				119A273819A182320004D335 /* MapPageViewController.m in Sources */,
+				25A86CB2197721EB00B45778 /* MakerFaire.xcdatamodeld in Sources */,
+				11937F811976307D00D587F8 /* AppDelegate.m in Sources */,
+				25CD898F19A85F83008849ED /* CategoryTableViewCell.m in Sources */,
+				25A86CC819772B1F00B45778 /* Maker+methods.m in Sources */,
+				25B5170F19A2F5E400AA7C0C /* CategoryTransitionAnimator.m in Sources */,
+				2559B5071979BE500039C17F /* NSManagedObject+methods.m in Sources */,
+				11937F871976307D00D587F8 /* MakerViewController.m in Sources */,
+				25A169D619A83A2900A3D833 /* CategoriesViewController.m in Sources */,
+				11937F7D1976307D00D587F8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11937F8D1976307D00D587F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11937F9F1976307D00D587F8 /* Maker_Faire_OrlandoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11937F971976307D00D587F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11937F6C1976307D00D587F8 /* Maker Faire Orlando */;
+			targetProxy = 11937F961976307D00D587F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11937F791976307D00D587F8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11937F7A1976307D00D587F8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		11937F821976307D00D587F8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11937F831976307D00D587F8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11937F9B1976307D00D587F8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11937F9C1976307D00D587F8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11937FA01976307D00D587F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		11937FA11976307D00D587F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11937FA31976307D00D587F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/**",
+					Faire,
+					Orlando,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Maker Faire Orlando/Maker Faire Orlando-Prefix.pch";
+				INFOPLIST_FILE = "Maker Faire Orlando/Maker Faire Orlando-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		11937FA41976307D00D587F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/**",
+					Faire,
+					Orlando,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Maker Faire Orlando/Maker Faire Orlando-Prefix.pch";
+				INFOPLIST_FILE = "Maker Faire Orlando/Maker Faire Orlando-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		11937FA61976307D00D587F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Maker Faire Orlando.app/Maker Faire Orlando";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Maker Faire Orlando/Maker Faire Orlando-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Maker Faire OrlandoTests/Maker Faire OrlandoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		11937FA71976307D00D587F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Maker Faire Orlando.app/Maker Faire Orlando";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Maker Faire Orlando/Maker Faire Orlando-Prefix.pch";
+				INFOPLIST_FILE = "Maker Faire OrlandoTests/Maker Faire OrlandoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11937F681976307D00D587F8 /* Build configuration list for PBXProject "Maker Faire Orlando" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11937FA01976307D00D587F8 /* Debug */,
+				11937FA11976307D00D587F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11937FA21976307D00D587F8 /* Build configuration list for PBXNativeTarget "Maker Faire Orlando" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11937FA31976307D00D587F8 /* Debug */,
+				11937FA41976307D00D587F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11937FA51976307D00D587F8 /* Build configuration list for PBXNativeTarget "Maker Faire OrlandoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11937FA61976307D00D587F8 /* Debug */,
+				11937FA71976307D00D587F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		25A86CB0197721EB00B45778 /* MakerFaire.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				25A86CB1197721EB00B45778 /* MakerFaire.xcdatamodel */,
+			);
+			currentVersion = 25A86CB1197721EB00B45778 /* MakerFaire.xcdatamodel */;
+			path = MakerFaire.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 11937F651976307D00D587F8 /* Project object */;
+}

@@ -12,7 +12,7 @@
 #import "Photo.h"
 #import "NSManagedObject+methods.h"
 
-#define kMakersURL @"http://callformakers.org/orlando2014/default/overviewALL.json/raw"
+#define kMakersURL @"http://www.makerfaireorlando.com/wp-content/themes/minimakerfaire/makerlist/json_backup/makerlist_json"
 
 @implementation Maker (methods)
 
@@ -24,6 +24,8 @@
     
     NSURLSessionDataTask *makersDownloadTask = [session dataTaskWithURL:makersURL
                                                       completionHandler:makersDownloadResponse];
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
     [makersDownloadTask resume];
 }
@@ -116,6 +118,7 @@ void (^makersDownloadResponse)(NSData *, NSURLResponse*, NSError*) = ^(NSData *d
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         [[NSNotificationCenter defaultCenter] postNotificationName:notif object:nil];
     });
 };

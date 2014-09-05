@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MakerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UIScrollViewDelegate>
+@interface MakerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UIScrollViewDelegate, UIViewControllerTransitioningDelegate>
 
 @end
