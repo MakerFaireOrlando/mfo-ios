@@ -50,7 +50,7 @@
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}
                                              forState:UIControlStateSelected];
     
-    [[UITableView appearance] setBackgroundColor:[UIColor lightTextColor]];
+//    [[UITableView appearance] setBackgroundColor:[UIColor lightTextColor]];
 
     [[UILabel appearance] setTintColor:[UIColor makerRed]];
     

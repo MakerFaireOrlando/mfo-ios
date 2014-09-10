@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Maker+methods.h"
+#import "Maker.h"
 
-@interface MakerDetailViewController : UIViewController
+@interface MakerDetailViewController : UITableViewController
 
-@property Maker* maker;
+@property (strong, nonatomic) Maker *maker;
 
 @end

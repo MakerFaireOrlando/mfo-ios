@@ -123,7 +123,7 @@ void (^makersDownloadResponse)(NSData *, NSURLResponse*, NSError*) = ^(NSData *d
                 [newMaker addPhotosObject:newPhoto];
             }
         }
-        dispatch_sync(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             [context save:nil];
         });
     }
