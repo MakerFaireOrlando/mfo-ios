@@ -35,7 +35,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"willAppear");
+    [super viewWillAppear:animated];
     
     [self updateCats];
 }

@@ -55,6 +55,7 @@ void (^makersDownloadResponse)(NSData *, NSURLResponse*, NSError*) = ^(NSData *d
         
         NSManagedObjectContext *context = [Maker defaultContext];
         
+        
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
         Faire *currentFaire = [Faire currentFaire];
@@ -93,8 +94,17 @@ void (^makersDownloadResponse)(NSData *, NSURLResponse*, NSError*) = ^(NSData *d
             
             [newMaker setDescript:          [maker objectForKey:@"description"]];
             [newMaker setCategories:        [maker objectForKey:@"category"]];
-            //                newMaker setMakerName:[maker objectForKey:];
-            [newMaker setLocation:          [maker objectForKey:@"location"]];
+
+            NSString *location = [maker objectForKey:@"location"];
+            if (location == nil || [location isEqualToString:@""])
+            {
+                [newMaker setLocation:@"TBD"];
+            }
+            else
+            {
+                [newMaker setLocation:      [maker objectForKey:@"location"]];
+            }
+            
             [newMaker setOrganization:      [maker objectForKey:@"organization"]];
             [newMaker setProjectName:       [maker objectForKey:@"project_name"]];
             [newMaker setSummary:           [maker objectForKey:@"project_short_summary"]];
@@ -111,10 +121,11 @@ void (^makersDownloadResponse)(NSData *, NSURLResponse*, NSError*) = ^(NSData *d
                 [newPhoto setMaker:newMaker];
                 
                 [newMaker addPhotosObject:newPhoto];
-                
-                [context save:nil];
             }
         }
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [context save:nil];
+        });
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
