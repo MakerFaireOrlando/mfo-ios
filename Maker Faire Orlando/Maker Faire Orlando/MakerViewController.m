@@ -292,19 +292,31 @@
 {
     _categoriesPicked = categories;
     
-    NSMutableArray *catPredicates = [NSMutableArray arrayWithCapacity:[_categoriesPicked count]];
-    
-    for (NSString *cat in _categoriesPicked)
+    if (_categoriesPicked.count == 0)
     {
-        NSPredicate *currentPartPredicate = [NSPredicate predicateWithFormat:@"SELF.categories contains[c] %@", cat];
-        [catPredicates addObject:currentPartPredicate];
+        [_fetchedResultsController.fetchRequest setPredicate:nil];
+    }
+    else
+    {
+        NSMutableArray *catPredicates = [NSMutableArray arrayWithCapacity:[_categoriesPicked count]];
+        
+        for (NSString *cat in _categoriesPicked)
+        {
+            NSPredicate *currentPartPredicate = [NSPredicate predicateWithFormat:@"SELF.categories contains[c] %@", cat];
+            [catPredicates addObject:currentPartPredicate];
+        }
+        
+        NSPredicate *fullPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:catPredicates];
+        
+        [_fetchedResultsController.fetchRequest setPredicate:fullPredicate];
     }
     
-//    NSPredicate *fullPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:catPredicates];
-
+    [_fetchedResultsController performFetch:nil];
+    [_tableview reloadData];
+    
 //    _filteredMakers = [NSMutableArray arrayWithArray:[_makers filteredArrayUsingPredicate:fullPredicate]];
     
-    [_tableview reloadData];
+//    [_tableview reloadData];
 }
 
 - (void)clearCategories
