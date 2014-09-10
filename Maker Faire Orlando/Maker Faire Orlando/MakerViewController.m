@@ -16,11 +16,13 @@
 #import "CategoryTransitionAnimator.h"
 #import "CategoriesViewController.h"
 
-@interface MakerViewController () <CategoryDelegate, NSFetchedResultsControllerDelegate>
+@interface MakerViewController () <CategoryDelegate, NSFetchedResultsControllerDelegate, UIViewControllerAnimatedTransitioning>
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 
-@property (strong, nonatomic) NSArray *makers;
-@property (strong, nonatomic) NSMutableArray *filteredMakers;
+//@property (strong, nonatomic) NSArray *makers;
+//@property (strong, nonatomic) NSMutableArray *filteredMakers;
+@property (strong, nonatomic) NSPredicate *filteringPredicate;
+@property (strong, nonatomic) NSMutableArray *categoriesPredicates;
 @property (strong, nonatomic) NSArray *categoriesPicked;
 
 @property (weak, nonatomic) IBOutlet UISearchBar *makerSearchBar;
@@ -38,10 +40,11 @@
 @implementation MakerViewController
 
 @synthesize tableview = _tableview;
-@synthesize makers = _makers;
 @synthesize context = _context;
 @synthesize failView = _failView;
 @synthesize animator = _animator;
+
+#pragma mark – Init
 
 - (void)viewDidLoad
 {
@@ -73,10 +76,6 @@
                                                object:nil];
 	
     [self attemptRefresh];
-    
-    _makers = nil;
-    
-//    [self fillMakers];
 }
 
 - (void)viewDidLayoutSubviews
@@ -95,25 +94,14 @@
     _failView = failView;
 }
 
-- (void)fillMakers
-{
-    NSFetchRequest *makersFetch = [[NSFetchRequest alloc] initWithEntityName:@"Maker"];
-    
-    NSSortDescriptor *sortByLocation = [[NSSortDescriptor alloc] initWithKey:@"location"
-                                                                   ascending:YES];
-    [makersFetch setSortDescriptors:@[sortByLocation]];
-    
-    NSError *fetchError = nil;
-    
-    _makers = [_context executeFetchRequest:makersFetch error:&fetchError];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     
     _fetchedResultsController = nil;
 }
+
+#pragma mark - ScrollView Protocol
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -125,10 +113,7 @@
     [_refreshControl scrollViewDidEndDragging];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
+#pragma mark - Refresh Methods
 
 - (void)disableForRefresh
 {
@@ -138,14 +123,12 @@
 
 - (void)attemptRefresh
 {
-//    [_tableview beginUpdates];
     [Maker updateMakers];
 }
 
 - (void)finishRefresh
 {
     __weak MakerViewController *weakSelf = self;
-//    [weakSelf.tableview endUpdates];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [weakSelf.refreshControl finishedLoading];
@@ -187,74 +170,27 @@
     }];
 }
 
+#pragma mark - TableView DataSource/Delegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSInteger numSections = [[self.fetchedResultsController sections] count];
-    
-    return numSections;
+    return [[self.fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger rows = [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
-    
-    return rows;
-//    if (tableView == self.searchDisplayController.searchResultsTableView || (_categoriesPicked != nil && _categoriesPicked.count > 0))
-//    {
-//        return [[self filterMakersBySection:section
-//                                 fromSource:_filteredMakers] count];
-////        return [_filteredMakers count];
-//    } else
-//    {
-//        return [[self filterMakersBySection:section
-//                                 fromSource:_makers] count];
-////        return [_makers count];
-//    }
+    return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-    NSString *name = [sectionInfo name];
-    
-    return name;
-//    NSString *title;
-//    switch (section)
-//    {
-//        case 1:
-//        {
-//            //Level 1
-//            title = @"Level 1";
-//            break;
-//        }
-//        case 2:
-//        {
-//            //Level 2
-//            title = @"Level 2";
-//            break;
-//        }
-//        case 3:
-//        {
-//            //Level 3
-//            title = @"Level 3";
-//            break;
-//        }
-//        case 4:
-//        {
-//            //Level 4
-//            title = @"Level 4";
-//            break;
-//        }
-//            
-//        default:
-//        {
-//            //TBD section
-//            title = @"";
-//            break;
-//        }
-//    }
-//    
-//    return title;
+    return [sectionInfo name];
 }
 
 - (void)configureCell:(UITableViewCell *)cell
@@ -274,6 +210,8 @@
     }
 }
 
+#pragma mark - Segues and ViewController animations
+
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -284,57 +222,6 @@
     
     return cell;
 }
-
-- (NSArray *)filterMakersBySection:(NSInteger)section fromSource:(NSArray *)makers
-{
-    NSString *stringToMatch = nil;
-    switch (section)
-    {
-        case 1:
-        {
-            //Level 1
-            stringToMatch = @"Level 1";
-            break;
-        }
-        case 2:
-        {
-            //Level 2
-            stringToMatch = @"Level 2";
-            break;
-        }
-        case 3:
-        {
-            //Level 3
-            stringToMatch = @"Level 3";
-            break;
-        }
-        case 4:
-        {
-            //Level 4
-            stringToMatch = @"Level 4";
-            break;
-        }
-            
-        default:
-        {
-            //TBD section
-            stringToMatch = @"";
-            break;
-        }
-    }
-    
-    NSPredicate *contains = [NSPredicate predicateWithFormat:@"self.location CONTAINS %@", stringToMatch];
-    
-    if ([stringToMatch isEqualToString:@""])
-    {
-        contains = [NSPredicate predicateWithFormat:@"self.location == nil OR self.location == %@", @""];
-    }
-    
-    NSArray *filtered = [makers filteredArrayUsingPredicate:contains];
-    
-    return filtered;
-}
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -379,13 +266,26 @@
     return _animator;
 }
 
-#pragma mark Content Filtering
--(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
-    // clear filter array
-    [_filteredMakers removeAllObjects];
-    // Filter the array
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.projectName contains[c] %@",searchText];
-    _filteredMakers = [NSMutableArray arrayWithArray:[_makers filteredArrayUsingPredicate:predicate]];
+#pragma mark - Content Filtering
+-(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    
+    // clear filter predicate
+    _filteringPredicate = nil;
+
+    // Add the filter
+    
+    _filteringPredicate = [NSPredicate predicateWithFormat:@"SELF.projectName contains[c] %@",searchText];
+    
+    if (_categoriesPredicates != nil && [_categoriesPredicates count] > 0)
+    {
+        NSPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[_categoriesPredicates, _filteringPredicate]];
+        [_fetchedResultsController.fetchRequest setPredicate:compoundPredicate];
+    }
+    else
+    {
+        [_fetchedResultsController.fetchRequest setPredicate:_filteringPredicate];
+    }
 }
 
 - (void)selectionUpdatedWithCats:(NSArray *)categories
@@ -400,9 +300,9 @@
         [catPredicates addObject:currentPartPredicate];
     }
     
-    NSPredicate *fullPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:catPredicates];
+//    NSPredicate *fullPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:catPredicates];
 
-    _filteredMakers = [NSMutableArray arrayWithArray:[_makers filteredArrayUsingPredicate:fullPredicate]];
+//    _filteredMakers = [NSMutableArray arrayWithArray:[_makers filteredArrayUsingPredicate:fullPredicate]];
     
     [_tableview reloadData];
 }
@@ -475,18 +375,14 @@
     {
         case NSFetchedResultsChangeInsert:
         {
-//            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
-                                 withRowAnimation:UITableViewRowAnimationAutomatic];
-//            });
+            [weakTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
         }
         case NSFetchedResultsChangeDelete:
         {
-//            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                                     withRowAnimation:UITableViewRowAnimationAutomatic];
-//            });
+            [weakTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                                 withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
         }
         case NSFetchedResultsChangeUpdate:
