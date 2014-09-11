@@ -50,7 +50,7 @@
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}
                                              forState:UIControlStateSelected];
     
-    [[UITableView appearance] setBackgroundColor:[UIColor lightTextColor]];
+//    [[UITableView appearance] setBackgroundColor:[UIColor lightTextColor]];
 
     [[UILabel appearance] setTintColor:[UIColor makerRed]];
     
@@ -118,6 +118,9 @@
     {
         NSString *responseBody = [[NSString alloc] initWithData:data
                                                        encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"responseBody: %@", responseBody);
+        
         NSHTTPURLResponse *realResponse = (NSHTTPURLResponse *)response;
         
         if ([responseBody isEqualToString:@"OK"] && realResponse.statusCode == 200)

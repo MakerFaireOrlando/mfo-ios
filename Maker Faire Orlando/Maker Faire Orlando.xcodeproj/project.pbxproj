@@ -584,7 +584,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PROVISIONING_PROFILE = "102cdad2-a663-47da-985c-f198186a66c0";
+				PROVISIONING_PROFILE = "dccc954f-91d6-4ce7-a789-e871b63642be";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -607,7 +607,7 @@
 				INFOPLIST_FILE = "Maker Faire Orlando/Maker Faire Orlando-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c3d00721-5e6a-41d6-aad4-3914209f21f6";
+				PROVISIONING_PROFILE = "2fd6dd3c-3791-4f4c-82e3-c1525a03062a";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -629,7 +629,7 @@
 				INFOPLIST_FILE = "Maker Faire Orlando/Maker Faire Orlando-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "102cdad2-a663-47da-985c-f198186a66c0";
+				PROVISIONING_PROFILE = "dccc954f-91d6-4ce7-a789-e871b63642be";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

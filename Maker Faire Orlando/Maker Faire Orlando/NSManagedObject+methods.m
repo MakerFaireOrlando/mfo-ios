@@ -17,27 +17,29 @@ static NSManagedObjectContext *context;
 {
     NSManagedObjectContext *context = [self defaultContext];
     
-    NSFetchRequest *allItems = [[NSFetchRequest alloc] initWithEntityName:entityName];
-    [allItems setIncludesPropertyValues:NO];
-    
-    NSError *error = nil;
-    
-    NSArray *tableItems = [context executeFetchRequest:allItems
-                                                 error:&error];
-    
-    for (NSManagedObject *item in tableItems)
-    {
-        [context deleteObject:item];
-    }
-    
-    error = nil;
-    
-    [context save:&error];
-    
-    if (error)
-    {
-        NSLog(@"murder error: %@", error);
-    }
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        NSFetchRequest *allItems = [[NSFetchRequest alloc] initWithEntityName:entityName];
+        [allItems setIncludesPropertyValues:NO];
+        
+        NSError *error = nil;
+        
+        NSArray *tableItems = [context executeFetchRequest:allItems
+                                                     error:&error];
+        
+        for (NSManagedObject *item in tableItems)
+        {
+            [context deleteObject:item];
+        }
+        
+        error = nil;
+        
+        [context save:&error];
+        
+        if (error)
+        {
+            NSLog(@"murder error: %@", error);
+        }
+    });
 }
 
 + (NSManagedObjectContext *)defaultContext
