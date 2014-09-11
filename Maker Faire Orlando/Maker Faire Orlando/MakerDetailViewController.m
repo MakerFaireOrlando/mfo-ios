@@ -62,6 +62,7 @@
     [_organizationLabel     setText:_maker.organization];
     [_descriptionTextView   setText:_maker.descript];
     [_categoriesLabel       setText:_maker.categories];
+    [_locationLabel         setText:_maker.location];
     
     if (_maker.websiteURL == nil || [_maker.websiteURL isEqualToString:@""])
     {

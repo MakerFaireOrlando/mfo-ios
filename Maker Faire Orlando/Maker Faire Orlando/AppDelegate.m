@@ -118,6 +118,9 @@
     {
         NSString *responseBody = [[NSString alloc] initWithData:data
                                                        encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"responseBody: %@", responseBody);
+        
         NSHTTPURLResponse *realResponse = (NSHTTPURLResponse *)response;
         
         if ([responseBody isEqualToString:@"OK"] && realResponse.statusCode == 200)
