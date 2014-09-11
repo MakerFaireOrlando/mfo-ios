@@ -16,7 +16,7 @@
 #import "CategoryTransitionAnimator.h"
 #import "CategoriesViewController.h"
 
-@interface MakerViewController () <CategoryDelegate, NSFetchedResultsControllerDelegate, UIViewControllerAnimatedTransitioning>
+@interface MakerViewController () <CategoryDelegate, NSFetchedResultsControllerDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 
 //@property (strong, nonatomic) NSArray *makers;
@@ -248,6 +248,12 @@
         Maker *maker = [self.fetchedResultsController objectAtIndexPath:[_tableview indexPathForSelectedRow]];
         
         [detailViewController setMaker:maker];
+        
+        __weak MakerViewController *weakSelf = self;
+        
+        [UIView animateWithDuration:0.5f animations:^{
+            [weakSelf.tabBarController.tabBar setHidden:YES];
+        }];
     }
 }
 
