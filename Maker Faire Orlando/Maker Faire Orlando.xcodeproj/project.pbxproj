@@ -607,7 +607,7 @@
 				INFOPLIST_FILE = "Maker Faire Orlando/Maker Faire Orlando-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2fd6dd3c-3791-4f4c-82e3-c1525a03062a";
+				PROVISIONING_PROFILE = "9fdfeef4-5fc3-4787-8762-6fa6ae5966b7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
