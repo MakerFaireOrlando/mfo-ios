@@ -1,0 +1,2 @@
+language: objective-c
+xcode_project: Maker\ Faire\ Orlando/Maker\ Faire\ Orlando.xcodeproj # path to your xcodeproj folder
