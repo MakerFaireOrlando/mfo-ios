@@ -12,7 +12,8 @@
 #import "Photo.h"
 #import "NSManagedObject+methods.h"
 
-#define kMakersURL @"http://www.makerfaireorlando.com/wp-content/themes/minimakerfaire/makerlist/json_backup/makerlist_json"
+// #define kMakersURL @"http://www.makerfaireorlando.com/wp-content/themes/minimakerfaire/makerlist/json_backup/makerlist_json"
+#define kMakersURL @"http://www.makerfaireorlando.com/makers-json"
 
 @implementation Maker (methods)
 
@@ -113,7 +114,7 @@ void (^makersDownloadResponse)(NSData *, NSURLResponse*, NSError*) = ^(NSData *d
             
             NSString *photoLocation = [maker objectForKey:@"photo_link"];
             
-            if (photoLocation != nil && ![photoLocation isEqualToString:@""])
+            if (photoLocation != nil && ![photoLocation isEqual:[NSNull null]] && ![photoLocation isEqualToString:@""])
             {
                 Photo *newPhoto = [NSEntityDescription insertNewObjectForEntityForName:@"Photo"
                                                                 inManagedObjectContext:context];

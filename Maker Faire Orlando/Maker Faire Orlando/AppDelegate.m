@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <Crashlytics/Crashlytics.h>
+// #import <Crashlytics/Crashlytics.h>
 #import <AudioToolbox/AudioToolbox.h>
 
 @implementation AppDelegate
@@ -20,13 +20,25 @@
 {
 //    [self.window setTintColor:[UIColor redColor]];
     
-    [Crashlytics startWithAPIKey:@"429e7433a85ac099498619d27e007b0313c7e3cd"];
+//    [Crashlytics startWithAPIKey:@"429e7433a85ac099498619d27e007b0313c7e3cd"];
     
 //    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"didRegister"] == nil)
 //    {
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert |
-                                                                               UIRemoteNotificationTypeSound)];
-//    }
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        // use registerUserNotificationSettings
+         UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil];
+         [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+         } else {
+        // use registerForRemoteNotificationTypes:
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
+    }
+#else
+    // use registerForRemoteNotificationTypes:
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
+#endif
+
+    //    }
     
     [self setupAppearance];
     return YES;
